@@ -12,13 +12,15 @@ import java.util.concurrent.TimeUnit;
 
 public class AppTest extends commonApi
 {
-
+     homePage homepage=new homePage();
 
 
 
     @Test
     public void test01(){
         waitFor(3);
+        homepage.testtheclick();
+
 
     }
 

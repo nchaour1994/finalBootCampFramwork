@@ -19,8 +19,8 @@ import java.util.concurrent.TimeUnit;
 
 public class commonApi {
 
-    public WebDriver driver=null;
-    String path=System.getProperty("user.home");
+    public WebDriver driver;
+    String path = System.getProperty("user.home");
     @Parameters({"os","browserName","URL"})
     @BeforeMethod
     public void init(@Optional("windows") String os, @Optional("chrome")String browserName, @Optional("https://www.google.com") String url){
@@ -33,16 +33,16 @@ public class commonApi {
     public WebDriver getDriver(String os ,String browserName ){
         if (browserName.equalsIgnoreCase("chrome")){
             if (os.equalsIgnoreCase("windows")){
-                System.setProperty("webdriver.chrome.driver",path+"\\IdeaProjects\\framework-homework6\\generic\\drivers\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver",path+"\\IdeaProjects\\finalBootCampFramwork\\Generic\\src\\Drivers\\chromedriver.exe");
             }else{
-                System.setProperty("webdriver.chrome.driver",path+"\\IdeaProjects\\framework-homework6\\generic\\drivers\\chromedriver");
+                System.setProperty("webdriver.chrome.driver",path+"\\IdeaProjects\\finalBootCampFramwork\\Generic\\src\\Drivers\\chromedriver");
             }
             driver=new ChromeDriver();
         }else if (browserName.equalsIgnoreCase("firefox")){
             if(os.equalsIgnoreCase("windows")){
-                System.setProperty("webdriver.gecko.driver",path+"\\IdeaProjects\\framework-homework6\\generic\\drivers\\geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver",path+"\\IdeaProjects\\finalBootCampFramwork\\Generic\\src\\Drivers\\geckodriver.exe");
             }else{
-                System.setProperty("webdriver.gecko.driver",path+"\\IdeaProjects\\framework-homework6\\generic\\drivers\\geckodriver");
+                System.setProperty("webdriver.gecko.driver",path+"\\IdeaProjects\\finalBootCampFramwork\\Generic\\src\\Drivers\\chromedriver");
             }
 
             driver=new FirefoxDriver();
