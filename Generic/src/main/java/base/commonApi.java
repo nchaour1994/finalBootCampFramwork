@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 public class commonApi {
 
-    public WebDriver driver;
+    public static  WebDriver driver;
     String path = System.getProperty("user.home");
     @Parameters({"os","browserName","URL"})
     @BeforeMethod
