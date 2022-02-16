@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class AppTest  extends commonApi
 {
-   //@Test
+   @Test
     public void test01(){
     homePage home = PageFactory.initElements(driver,homePage.class);
     //Instragram  user can access  Validation with valid  credential
