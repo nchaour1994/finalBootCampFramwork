@@ -17,7 +17,7 @@ import java.util.Set;
 
 public class AppTest extends HomePage
 {
-  // @Test
+  @Test
     public void createAnAccount(){
       HomePage home= PageFactory.initElements(driver, HomePage.class);
        WebElement expected=home.accountBtn;
