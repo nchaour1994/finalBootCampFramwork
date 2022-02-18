@@ -13,14 +13,19 @@ public class AcuvuePage extends commonApi {
     }
 
     @FindBy(css = "#rPower")
+    public
     WebElement rightPowerField;
     @FindBy(css = "#rBasecurve")
+    public
     WebElement rBaseCuvue;
     @FindBy(css = "#lPower")
+    public
     WebElement leftPowerField;
     @FindBy(css = "#lBasecurve")
+    public
     WebElement lBaseCuvue;
     @FindBy(xpath = "//*[text()='Add to cart']")
+    public
     WebElement addToCart;
 
 

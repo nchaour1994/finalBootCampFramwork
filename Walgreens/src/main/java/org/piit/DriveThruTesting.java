@@ -13,14 +13,19 @@ public class DriveThruTesting extends commonApi {
     }
 
     @FindBy(css = "#check_1")
+    public
     WebElement rapidDiagnosticCheckbox;
     @FindBy(css = "#covid-map-city-radio-2")
+    public
     WebElement locationCheckbox;
     @FindBy(xpath = "//input[@id='Rapid Diagnostic Test (ID NOW)']")
+    public
     WebElement rapidDiagnosticTest;
-    @FindBy( xpath= "//tbody/tr[3]/td[5]")
+    @FindBy( xpath= "//tbody/tr[3]/td[6]")
+    public
     WebElement testDate;
-    @FindBy(css = "#timeSlot3")
+    @FindBy(css = "#timeSlot1")
+    public
     WebElement testTime;
     @FindBy(xpath = "//span[contains(text(),'Continue')]")
     WebElement continueBtn;

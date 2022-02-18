@@ -30,6 +30,7 @@ public class ResultPage extends commonApi {
     WebElement viewCartBtn;
     //-------------------------------------------------------------------------------------
     @FindBy(xpath = "//span[text()='Acuvue Oasys 12 pack']/..")
+    public
     WebElement AcuvueOasys12pack;
 
     public void clickOnfirstElementInSearchList(){

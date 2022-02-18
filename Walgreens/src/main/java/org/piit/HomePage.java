@@ -2,6 +2,7 @@ package org.piit;
 
 import base.commonApi;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -99,20 +100,27 @@ public class HomePage extends commonApi {
     @FindBy (xpath = "//span[text()='myWalgreens™ Credit Card']")
     WebElement myWalgreensCreditCard;
     @FindBy(xpath = "//Strong[text()='COVID-19 vaccine information']")
+    public
     WebElement covid19vaccineInformationIcon;
     @FindBy(xpath = "//a[@data-element-name='Find Care']")
+    public
     WebElement findCareInMenu;
     @FindBy(xpath = "//a[@data-element-name='Find Care near you']")
+    public
     WebElement findCareNearYouInsubMenu;
     @FindBy(xpath = "//span[text()='Contacts & Glasses']")
+    public
     WebElement contactAndGlasses;
     @FindBy(xpath = "//a[text()='Shop All Contact Lenses']")
+    public
     WebElement shopAllcontactAndGlasses;
     @FindBy(xpath = "//Strong[text()='Pharmacy Chat']")
     WebElement pharmacyChatIcon;
     @FindBy(xpath = "//span[text()='Weekly Ad']")
+    public
     WebElement weeklyAD;
     @FindBy(xpath = "//span[contains(text(),'Find a Store')]")
+    public
     WebElement findStoreInMenu;
 
 
@@ -172,8 +180,10 @@ public class HomePage extends commonApi {
 
 
     public void clickOnarrowDownForStoreLocation(){
-        Actions actions=new Actions(driver);
-        actions.moveToElement(arrowDownForStoreLocation).click().build().perform();
+       // Actions actions=new Actions(driver);
+      //  actions.moveToElement(arrowDownForStoreLocation).click().build().perform();
+        JavascriptExecutor js=(JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click();",arrowDownForStoreLocation);
 
      // hoverOver(driver,arrowDownForStoreLocation);
        // click(arrowDownForStoreLocation);
