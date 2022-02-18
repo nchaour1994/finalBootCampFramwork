@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import test.tmp.AssertEqualsTest;
 
 public class SignPage extends commonApi{
-     //@Test
+     @Test
     public void test01(){
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         //Instragram  user can access  Validation with valid  credential
@@ -16,7 +16,7 @@ public class SignPage extends commonApi{
         sign.logIn();
         waitFor(4);}
 
-   // @Test
+    @Test
     public void test02(){SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         //save your login info button
         sign.enterEmail();
@@ -25,7 +25,7 @@ public class SignPage extends commonApi{
         Assert.assertEquals(driver.getTitle(),"Instagram");
         sign.loginnotNow();
         waitFor(4);}
-    //@Test
+    @Test
     public void test03(){SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         //notifications button
         sign.enterEmail();
@@ -35,7 +35,7 @@ public class SignPage extends commonApi{
         sign.loginnotNow();
         sign.turnOnNotifications();
         waitFor(4);}
-     //@Test
+     @Test
     public void test04(){
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         //Wrong Password
@@ -44,7 +44,7 @@ public class SignPage extends commonApi{
         sign.logIn();
         Assert.assertEquals(driver.getTitle(),"Instagram");
         waitFor(4);}
-    //@Test
+    @Test
     public void test05(){
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         //Wrong email

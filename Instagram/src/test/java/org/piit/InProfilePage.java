@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 public class InProfilePage extends commonApi{
-    //@Test
+    @Test
     public void test01(){
         ProfilePage profile = PageFactory.initElements(driver,ProfilePage.class);
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
@@ -26,7 +26,7 @@ public class InProfilePage extends commonApi{
         Assert.assertEquals(driver.getTitle(),"Probal (@probalshela) • Instagram photos and videos");
         profile.onFollower();
         waitFor(4);}
-   // @Test
+    @Test
     public void test2(){ ProfilePage profile = PageFactory.initElements(driver,ProfilePage.class);
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         HomePage home = PageFactory.initElements(driver,HomePage.class);
@@ -44,7 +44,7 @@ public class InProfilePage extends commonApi{
         Assert.assertEquals(driver.getTitle(),"Probal (@probalshela) • Instagram photos and videos");
         profile.onFollowing();
         waitFor(4);}
-   // @Test
+   @Test
     public void test3(){ ProfilePage profile = PageFactory.initElements(driver,ProfilePage.class);
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         HomePage home = PageFactory.initElements(driver,HomePage.class);
@@ -60,7 +60,7 @@ public class InProfilePage extends commonApi{
         waitFor(8);
         profile.onSwitch();
         waitFor(4);}
-  //  @Test
+    @Test
     public void test4(){ ProfilePage profile = PageFactory.initElements(driver,ProfilePage.class);
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         HomePage home = PageFactory.initElements(driver,HomePage.class);
@@ -76,7 +76,7 @@ public class InProfilePage extends commonApi{
         waitFor(8);
         profile.onLogOut();
         waitFor(4);}
-    //@Test
+    @Test
     public void test5() {
         ProfilePage profile = PageFactory.initElements(driver, ProfilePage.class);
         SignInPage sign = PageFactory.initElements(driver, SignInPage.class);
