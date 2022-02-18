@@ -12,6 +12,7 @@ public class Covid19VaccinePge extends commonApi {
         PageFactory.initElements(driver,this);
     }
     @FindBy(xpath = "(//span[text()='Schedule vaccine'])[1]")
+    public
     WebElement scheduleVaccineBtn;
 
     public void clickOnscheduleVaccineBtn(){

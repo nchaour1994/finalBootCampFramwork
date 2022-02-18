@@ -11,10 +11,9 @@ public class AccessToCoupon extends commonApi {
         HomePage home= new HomePage(driver);
         Assert.assertTrue(home.menuBtn.isEnabled());
         home.clickONMenuBtn();
-        waitFor(2);
         Assert.assertTrue(home.couponOnMenuList.isEnabled());
         home.clickOncouponOnMenuList();
-        waitFor(5);
+
 
    }
 }

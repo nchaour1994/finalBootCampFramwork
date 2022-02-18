@@ -1,13 +1,13 @@
 package base;
 
 import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.ITestContext;
@@ -15,13 +15,21 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 import reporting.ExtentManager;
 import reporting.ExtentTestManager;
+import utility.GetProperties;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class commonApi {
@@ -29,6 +37,10 @@ public class commonApi {
     public WebDriver driver;
     //-------------------------------
     public static com.relevantcodes.extentreports.ExtentReports extent;
+
+    Properties prop= GetProperties.loadProperties("C:\\Users\\nchao\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
+     String username=prop.getProperty("username");
+     String password=prop.getProperty("password");
 
     @BeforeSuite
     public void extentSetup(ITestContext context) {
@@ -69,7 +81,7 @@ public class commonApi {
         ExtentTestManager.endTest();
         extent.flush();
         if (result.getStatus() == ITestResult.FAILURE) {
-          //  takeScreenshot(result.getName());
+           takeScreenshot(result.getName());
         }
         driver.quit();
     }
@@ -87,10 +99,19 @@ public class commonApi {
 
 
     String path = System.getProperty("user.home");
-    @Parameters({"os","browserName","URL"})
+    @Parameters({"useCloud","cloudEnvName","os","versionOs","browserName","browserVersion","URL"})
     @BeforeMethod
-    public void init(@Optional("windows") String os, @Optional("chrome")String browserName, @Optional("https://www.google.com") String url){
-        getDriver(os,browserName);
+    public void init( @Optional("false") boolean useCloud,@Optional("browserStack") String cloudEnvName,@Optional("windows") String os,@Optional("10") String versionOs, @Optional("chrome")String browserName,@Optional("98") String browserVersion, @Optional("https://www.google.com") String url) throws MalformedURLException {
+        if (useCloud== true){
+            if(cloudEnvName.equalsIgnoreCase("browserstack")){
+                       getCloudDriver(cloudEnvName, username, password, os, versionOs, browserName, browserVersion);
+            }else if(cloudEnvName.equalsIgnoreCase("saucelabs")){
+                getCloudDriver(cloudEnvName, "", "", os, versionOs, browserName, browserVersion);
+
+            }
+        }else {
+            getDriver(os, browserName);
+        }
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -115,6 +136,23 @@ public class commonApi {
         }
         return driver;
     }
+
+    public WebDriver getCloudDriver(String cloudEnvName,String username,String accesKey,String os,String osVesrion,String browserName,String browserVersion) throws MalformedURLException {
+        DesiredCapabilities cap=new DesiredCapabilities();
+        cap.setCapability("browser",browserName);
+        cap.setCapability("browserVesrsion",browserVersion);
+        cap.setCapability("os",os);
+        cap.setCapability("osVersion",osVesrion);
+        if(cloudEnvName.equalsIgnoreCase("sauselabs")){
+            driver = new RemoteWebDriver(new URL("http://"+ username + ":" + accesKey + "@ondemand.saucelabs.com:80/wd/hub"), cap);
+        }else if(cloudEnvName.equalsIgnoreCase("browserstack")){
+            cap.setCapability("resolution", "1024x768");
+            driver = new RemoteWebDriver(new URL("http://"+ username + ":" + accesKey + "@hub-cloud.browserstack.com:80/wd/hub"), cap);
+        }
+        return driver;
+
+    }
+
     @AfterMethod
     public void afterMethod(){
         driver.quit();
@@ -214,6 +252,31 @@ public class commonApi {
             driver.switchTo().frame(Integer.parseInt(id));
         }
 
+    }
+
+    public void captureScreenshot() {
+        File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(file,new File("screenshots/screenshot.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void takeScreenshot(String screenshotName){
+        DateFormat df = new SimpleDateFormat("(MM.dd.yyyy-HH:mma)");
+        Date date = new Date();
+        df.format(date);
+
+        File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(file, new File(System.getProperty("user.dir")+File.pathSeparator+ "screenshots"+File.pathSeparator+screenshotName+" "+df.format(date)+".png"));
+            System.out.println("Screenshot captured");
+        } catch (Exception e) {
+            String path = System.getProperty("user.dir")+ "/screenshots/"+screenshotName+" "+df.format(date)+".png";
+            System.out.println(path);
+            System.out.println("Exception while taking screenshot "+e.getMessage());;
+        }
     }
 
 

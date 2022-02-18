@@ -3,6 +3,7 @@ package org.piit.accessWeeklyad;
 import base.commonApi;
 import org.piit.HomePage;
 import org.piit.WeeklyAd;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class WeekyAd extends commonApi {
@@ -11,12 +12,13 @@ public class WeekyAd extends commonApi {
     public void accessToweeklyAd(){
         HomePage home=new HomePage(driver);
         WeeklyAd weeklyAd=new WeeklyAd(driver);
+        Assert.assertTrue(home.menuBtn.isEnabled());
         home.clickONMenuBtn();
-        waitFor(2);
+        Assert.assertTrue(home.weeklyAD.isEnabled());
         home.clickOnweeklyAD();
-        waitFor(2);
+        Assert.assertEquals(driver.getTitle(),"Weekly Ad: Top Deals Online & In-Store | Walgreens");
         weeklyAd.selectFromjumpToDropDown();
-        waitFor(5);
+
 
     }
 }

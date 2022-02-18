@@ -2,18 +2,21 @@ package org.piit.purchase;
 
 import base.commonApi;
 import database.ConnectDB;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.piit.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utility.DataReader;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PurchaseItems extends commonApi {
 
     // @Test
-    public void orderAnItem(){
+    public void TestorderAnItem(){
          HomePage home=new HomePage(driver);
          ResultPage resultPage=new ResultPage(driver);
         home.typeOnsearchfield();
@@ -26,72 +29,74 @@ public class PurchaseItems extends commonApi {
          resultPage.clickOnpickUpIcon();
         Assert.assertTrue(resultPage.finishBtn.isEnabled());
          resultPage.clickOnfinishBtn();
-        waitFor(5);
 
     }
-   // @Test
-    public void orderAnItemSecondWay(){
+  //  @Test
+    public void TestorderAnItemFromMenu(){
         HomePage home= new HomePage(driver);
         ResultPage resultPage=new ResultPage(driver);
         ContinueShoppingPage continueShoppingPage= new ContinueShoppingPage(driver);
         SignInPage signInPage=new SignInPage(driver);
         CheckoutPage checkoutPage = new CheckoutPage(driver);
-
         Assert.assertTrue(home.menuBtn.isEnabled());
         home.clickONMenuBtn();
-        waitFor(2);
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(1));
+        wait.until(ExpectedConditions.visibilityOf(home.shopProductInMenu));
         Assert.assertTrue(home.shopProductInMenu.isEnabled());
         home.clickOnshopProductInMenu();
-        waitFor(2);
+        wait.until(ExpectedConditions.visibilityOf(home.homeGoodInSubMenu));
         Assert.assertTrue(home.homeGoodInSubMenu.isEnabled());
         home.clickOnhomeGoodInSubMenu();
-        waitFor(2);
+        wait.until(ExpectedConditions.visibilityOf(home.smallHomeAppliances));
         Assert.assertTrue(home.smallHomeAppliances.isEnabled());
         home.clickOnsmallHomeAppliances();
-        waitFor(2);
         Assert.assertTrue(home.kitchenAppliances.isEnabled());
         home.clickOnkitchenAppliances();
-        waitFor(2);
         Assert.assertTrue(resultPage.firstItemInSearchForKitchenAppliances.isEnabled());
         resultPage.clickOnfirstItemInSearchForKitchenAppliances();
-        waitFor(2);
         Assert.assertTrue(resultPage.viewCartBtn.isEnabled());
         resultPage.clickOnviewCartBtn();
-        waitFor(2);
         Assert.assertTrue(continueShoppingPage.proccedToCheckutBtn.isEnabled());
         continueShoppingPage.clickOnproccedToCheckutBtn();
-        waitFor(2);
         signInPage.typeOnuserNameFieldInSignIn();
         signInPage.typeOnpasswordFieldInSignIn();
         Assert.assertTrue(signInPage.signInBtn.isEnabled());
         signInPage.clickOnsignInBtn();
-        waitFor(3);
+        waitFor(2);
         checkoutPage.typeOnadressFieldInShippingProcess();
         checkoutPage.typeOncityFieldInShippingProcess();
         checkoutPage.selectFromdropDownStates();
         Assert.assertNotNull(checkoutPage.dropDownStates);
         checkoutPage.typeOnzipCodeInShippingProcess();
-        waitFor(10);
+
 
     }
 
-  //  @Test
-    public  void shopLneses(){
+    @Test
+    public  void TestshopLneses(){
         HomePage home= new HomePage(driver);
         ResultPage resultPage=new ResultPage(driver);
         AcuvuePage acuvuePage=new AcuvuePage(driver);
+        Assert.assertEquals(getTitle(),"Walgreens: Pharmacy, Health & Wellness, Photo & More for You");
+        Assert.assertTrue(home.menuBtn.isEnabled());
         home.clickONMenuBtn();
-        waitFor(2);
+        Assert.assertTrue(home.contactAndGlasses.isEnabled());
+       waitFor(1);
         home.clickOncontactAndGlasses();
+        Assert.assertTrue(home.shopAllcontactAndGlasses.isEnabled());
         home.clickOnshopAllcontactAndGlasses();
-        waitFor(3);
+        Assert.assertTrue(resultPage.AcuvueOasys12pack.isEnabled());
         resultPage.clickOnAcuvueOasys12pack();
         acuvuePage.selectFromrightPowerField();
+      //  Assert.assertTrue(acuvuePage.rightPowerField.isSelected());
         acuvuePage.selectFromrBaseCuvue();
+      //  Assert.assertTrue(acuvuePage.rBaseCuvue.isSelected());
         acuvuePage.selectFromleftPowerField();
+       // Assert.assertTrue(acuvuePage.leftPowerField.isSelected());
         acuvuePage.selectFromlBaseCuvue();
+      //  Assert.assertTrue(acuvuePage.lBaseCuvue.isSelected());
+        Assert.assertTrue(acuvuePage.addToCart.isEnabled());
         acuvuePage.clickOnaddToCart();
-        waitFor(5);
 
     }
     public List<String> myList(){
@@ -111,6 +116,7 @@ public class PurchaseItems extends commonApi {
         ConnectDB con=new ConnectDB();
         return con.readDataBase("items","itm");
     }
+
     public List<String> readFromMongo(){
         ConnectDB con=new ConnectDB();
         List<String> list=con.readFromMongo();
@@ -123,16 +129,18 @@ public class PurchaseItems extends commonApi {
     }
 
    // @Test
-    public void searchForMultipleItems() throws Exception {
+    public void TestsearchForMultipleItems() throws Exception {
         HomePage home = new HomePage(driver);
+        Assert.assertEquals(getTitle(),"Walgreens: Pharmacy, Health & Wellness, Photo & More for You");
         List<String> listOfItems = listFromDb();
         for (String item : listOfItems) {
             home.typeAndClear(item);
         }
     }
-       // @Test
-        public void searchForMultiplefromExcel()  {
+      //  @Test
+        public void TestsearchForMultiplefromExcel()  {
             HomePage home= new HomePage(driver);
+            Assert.assertEquals(getTitle(),"Walgreens: Pharmacy, Health & Wellness, Photo & More for You");
             List<String> listOfItems=data();
             for (String item:listOfItems) {
                 home.typeAndClear(item);
@@ -140,9 +148,10 @@ public class PurchaseItems extends commonApi {
 
 
     }
-    @Test
-    public void searchForMultiplefrommongol() {
+   // @Test
+    public void TestsearchForMultiplefrommongol() {
         HomePage home = new HomePage(driver);
+        Assert.assertEquals(getTitle(),"Walgreens: Pharmacy, Health & Wellness, Photo & More for You");
         List<String> listOfItems = readFromMongo();
         for (String item : listOfItems) {
             home.typeAndClear(item);

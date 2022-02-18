@@ -16,6 +16,7 @@ public class FindCarePage extends commonApi {
     @FindBy(xpath = "//input[@placeholder='Search by symptom, condition, service']")
     WebElement symptomField;
     @FindBy(xpath = "//a[text()='Find a location']")
+    public
     WebElement findLocationBtnInCityMd;
     @FindBy(xpath = "(//a[text()='Got it'])[1]")
     WebElement gotItBtnInCityMd;

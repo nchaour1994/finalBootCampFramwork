@@ -1,29 +1,30 @@
 package org.piit.findLocations;
 
 import base.commonApi;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.piit.FindStorePage;
 import org.piit.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+
 public class FindLocationsNearby extends commonApi {
 
 
-   //  @Test
-    public  void findLocations(){
+     @Test
+    public  void TestfindLocations(){
         HomePage home= new HomePage(driver);
-
-       waitFor(3);
        Assert.assertTrue(home.arrowDownForStoreLocation.isEnabled());
        home.clickOnarrowDownForStoreLocation();
-       waitFor(3);
 
        home.typeOnsearchForLocationField();
        Assert.assertNotNull(home.searchForLocationField);
-         waitFor(5);
+
     }
-  //  @Test
-    public void findLOcationUsingMyLocation(){
+   @Test
+    public void TestfindLOcationUsingMyLocation(){
         //find nearby locations using our location
         HomePage home= new HomePage(driver);
         waitFor(3);
@@ -35,15 +36,18 @@ public class FindLocationsNearby extends commonApi {
         waitFor(8);
 
     }
-    @Test
-    public void findLocationFromMenu(){
+   @Test
+    public void TestfindLocationFromMenu(){
         HomePage home= new HomePage(driver);
         FindStorePage findStorePage=new FindStorePage(driver);
+        Assert.assertEquals(driver.getTitle(),"Walgreens: Pharmacy, Health & Wellness, Photo & More for You");
         home.clickONMenuBtn();
-        waitFor(2);
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.visibilityOf(home.findStoreInMenu));
         home.clickOnfindStoreInMenu();
+        Assert.assertEquals(driver.getTitle(),"Store Locator | Walgreens");
         findStorePage.clickOnUpdateLocation();
-        waitFor(2);
+        Assert.assertTrue(findStorePage.locationField.isDisplayed());
         findStorePage.typeOnlocationField();
     }
 }

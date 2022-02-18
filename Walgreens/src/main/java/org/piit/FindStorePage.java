@@ -15,6 +15,7 @@ public class FindStorePage extends commonApi {
     @FindBy(xpath = "//a[@id='updateLocation']")
     WebElement upadteLocation;
     @FindBy(xpath = "//input[@id='detailsPageTextFieldMob']")
+    public
     WebElement locationField;
 
 
