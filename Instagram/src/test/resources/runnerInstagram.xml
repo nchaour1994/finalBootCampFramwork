@@ -6,7 +6,9 @@
     <parameter name="browserName" value="chrome"></parameter>
     <test name="practice test">
         <classes>
-            <class name="org.piit.AppTest"></class>
+            <class name="org.piit.OnHome"></class>
+            <class name="org.piit.InProfilePage"></class>
+            <class name="org.piit.SignPage"></class>
         </classes>
 
     </test>
