@@ -1,13 +1,17 @@
-package org.piit;
+package org.piit.home;
 
 import base.commonApi;
 import org.openqa.selenium.support.PageFactory;
+import org.piit.HomePage;
+import org.piit.ProfilePage;
+import org.piit.SignInPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class OnHome extends commonApi {
     @Test
-    public void test01(){HomePage home = PageFactory.initElements(driver,HomePage.class);
+    public void test01(){
+        HomePage home = PageFactory.initElements(driver,HomePage.class);
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         //Activity
         sign.enterEmail();
