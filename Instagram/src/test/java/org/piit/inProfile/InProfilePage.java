@@ -1,9 +1,9 @@
-package org.piit;
+package org.piit.inProfile;
 import base.commonApi;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.piit.HomePage;
+import org.piit.ProfilePage;
+import org.piit.SignInPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 public class InProfilePage extends commonApi{
@@ -44,7 +44,7 @@ public class InProfilePage extends commonApi{
         Assert.assertEquals(driver.getTitle(),"Probal (@probalshela) • Instagram photos and videos");
         profile.onFollowing();
         waitFor(4);}
-   @Test
+  // @Test
     public void test3(){ ProfilePage profile = PageFactory.initElements(driver,ProfilePage.class);
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         HomePage home = PageFactory.initElements(driver,HomePage.class);

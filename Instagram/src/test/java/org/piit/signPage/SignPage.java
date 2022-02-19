@@ -1,6 +1,7 @@
-package org.piit;
+package org.piit.signPage;
 import base.commonApi;
 import org.openqa.selenium.support.PageFactory;
+import org.piit.SignInPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import test.tmp.AssertEqualsTest;
