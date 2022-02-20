@@ -31,7 +31,7 @@ public class ScheduleAppointment extends commonApi {
 
     }
 
-   // @Test
+    @Test
     public void TestscheduleVaccineApointment(){
         HomePage home=new HomePage(driver);
         Covid19VaccinePge covid19VaccinePge=new Covid19VaccinePge(driver);

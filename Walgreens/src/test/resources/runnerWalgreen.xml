@@ -10,8 +10,9 @@
     <parameter name="URL" value="https://www.walgreens.com/"></parameter>
 
 
-    <test name="practice test">
+    <test name="walgreens test">
         <classes>
+<<<<<<< HEAD
 <!--           <class name="org.piit.registration.CreateAccount"></class>-->
 <!--    <class name="org.piit.appointmentsForCovid.ScheduleAppointment"></class>-->
 <!--           <class name="org.piit.orderTestCovid.OderTests"></class>-->
@@ -25,6 +26,22 @@
 <!--            <class name="org.piit.chat.ChatWithWalgreens"></class>-->
            <class name="org.piit.accessWeeklyad.WeekyAd"></class>
 
+=======
+            <class name="org.piit.registration.CreateAccount"></class>
+<!--            <class name="org.piit.appointmentsForCovid.ScheduleAppointment"></class>-->
+<!--            <class name="org.piit.orderTestCovid.OderTests"></class>-->
+<!--            <class name="org.piit.purchase.PurchaseItems"></class>-->
+<!--            <class name="org.piit.findLocations.FindLocationsNearby"></class>-->
+<!--            <class name="org.piit.updateAccountInfo.UpdateAccountInformations"></class>-->
+<!--            <class name="org.piit.acccessToCoupon.AccessToCoupon"></class>-->
+<!--            <class name="org.piit.login.LoginToAccount"></class>-->
+<!--            <class name="org.piit.qualificationForCreditCard.QualifyForCreditCard"></class>-->
+<!--            <class name="org.piit.findCare.FindCare"></class>-->
+<!--            <class name="org.piit.chat.ChatWithWalgreens"></class>-->
+<!--            <class name="org.piit.accessWeeklyad.WeekyAd"></class>-->
+
+            
+>>>>>>> 740dbb70eda611e0de2e7a59a6be3ce898a8a134
         </classes>
 
     </test>
