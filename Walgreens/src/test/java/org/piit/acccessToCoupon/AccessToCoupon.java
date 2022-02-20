@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class AccessToCoupon extends commonApi {
      @Test
-    public void test10(){
+    public void TestaccessToCouponPage(){
         HomePage home= new HomePage(driver);
         Assert.assertTrue(home.menuBtn.isEnabled());
         home.clickONMenuBtn();

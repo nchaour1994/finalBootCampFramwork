@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class CreateAccount extends commonApi {
 
-   // @Test
+    @Test
     public void TestcreateAnAccount(){
          HomePage home=new HomePage(driver);
         RegisterPage resiterPage=new RegisterPage(driver);

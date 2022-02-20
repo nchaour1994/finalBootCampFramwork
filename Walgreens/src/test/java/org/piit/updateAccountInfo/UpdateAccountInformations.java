@@ -23,27 +23,24 @@ public class UpdateAccountInformations extends commonApi {
 
         Assert.assertTrue(home.signInBtnInAccountMenu.isEnabled());
         home.clickOnsignInBtnInAccountMenu();
+        waitFor(2);
 
         signInPage.typeOnuserNameFieldInSignIn();
         signInPage.typeOnpasswordFieldInSignIn();
         Assert.assertTrue(signInPage.signInBtn.isEnabled());
         signInPage.clickOnsignInBtn();
-
+        waitFor(1);
         Assert.assertTrue(home.accountBtn.isEnabled());
         home.clickOnAccountBtn();
-
         Assert.assertTrue(home.accountHomeInAccountList.isEnabled());
         home.clickOnaccountHomeInAccountList();
         Assert.assertTrue(yourAccountPage.profileBtn.isDisplayed());
         yourAccountPage.hoverOverOnprofileBtn();
         waitFor(1);
-
         Assert.assertTrue(yourAccountPage.personalInformationInProfile.isDisplayed());
         yourAccountPage.clickOnpersonalInformationInProfile();
-
         Assert.assertTrue(personalInformationPage.editBtn.isEnabled());
         personalInformationPage.clickOneditBtn();
-
         personalInformationPage.typeOnadressFieldInMyAccount();
 
     }
