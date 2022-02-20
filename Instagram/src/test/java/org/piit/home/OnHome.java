@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class OnHome extends commonApi {
-    @Test
+  //  @Test
     public void test01(){
         HomePage home = PageFactory.initElements(driver,HomePage.class);
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
@@ -23,7 +23,7 @@ public class OnHome extends commonApi {
         sign.turnOnNotifications();
         home.onActivity();
         waitFor(8);}
-     @Test
+   //  @Test
     public void test02(){HomePage home = PageFactory.initElements(driver,HomePage.class);
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         //search
@@ -35,7 +35,7 @@ public class OnHome extends commonApi {
         Assert.assertEquals(driver.getTitle(),"Instagram");
         home.onSearch();
         waitFor(8);}
-    @Test
+   // @Test
     public void test03(){HomePage home = PageFactory.initElements(driver,HomePage.class);
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         ProfilePage profile = PageFactory.initElements(driver,ProfilePage.class);
@@ -52,7 +52,7 @@ public class OnHome extends commonApi {
         waitFor(4);
 
     }
-    @Test
+  //  @Test
     public void test04(){HomePage home = PageFactory.initElements(driver,HomePage.class);
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         ProfilePage profile = PageFactory.initElements(driver,ProfilePage.class);
@@ -67,7 +67,7 @@ public class OnHome extends commonApi {
         waitFor(8);
         profile.Saved();
         waitFor(4);}
-    @Test
+    //@Test
     public void test05(){HomePage home = PageFactory.initElements(driver,HomePage.class);
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         ProfilePage profile = PageFactory.initElements(driver,ProfilePage.class);
@@ -84,7 +84,7 @@ public class OnHome extends commonApi {
         waitFor(4);
         Assert.assertEquals(driver.getTitle(),"Edit Profile • Instagram");
         }
-    @Test
+  //  @Test
     public void test06(){HomePage home = PageFactory.initElements(driver,HomePage.class);
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         //Polygon
@@ -96,7 +96,7 @@ public class OnHome extends commonApi {
         sign.turnOnNotifications();
         home.onPolygon();
         waitFor(4);}
-    @Test
+   // @Test
     public void test07(){HomePage home = PageFactory.initElements(driver,HomePage.class);
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         //Add
@@ -108,7 +108,7 @@ public class OnHome extends commonApi {
         sign.turnOnNotifications();
         home.onAdd();
         waitFor(4);}
-    @Test
+   // @Test
     public void test08(){HomePage home = PageFactory.initElements(driver,HomePage.class);
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         //send message
@@ -121,7 +121,7 @@ public class OnHome extends commonApi {
         waitFor(5);
         home.SendMessage();
         waitFor(8);}
-    @Test
+  //  @Test
     public void test09(){HomePage home = PageFactory.initElements(driver,HomePage.class);
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         //see all suggestions
@@ -134,7 +134,7 @@ public class OnHome extends commonApi {
         waitFor(5);
         home.SeaAll();
         waitFor(8);}
-    @Test
+ //   @Test
     public void test10(){HomePage home = PageFactory.initElements(driver,HomePage.class);
         SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
         ProfilePage profile = PageFactory.initElements(driver,ProfilePage.class);

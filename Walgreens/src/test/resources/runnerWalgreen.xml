@@ -12,19 +12,19 @@
 
     <test name="practice test">
         <classes>
-<!--            <class name="org.piit.registration.CreateAccount"></class>-->
-<!--            <class name="org.piit.appointmentsForCovid.ScheduleAppointment"></class>-->
-<!--            <class name="org.piit.orderTestCovid.OderTests"></class>-->
-            <class name="org.piit.purchase.PurchaseItems"></class>
-<!--            <class name="org.piit.findLocations.FindLocationsNearby"></class>-->
-<!--            <class name="org.piit.updateAccountInfo.UpdateAccountInformations"></class>-->
-<!--            <class name="org.piit.acccessToCoupon.AccessToCoupon"></class>-->
-<!--            <class name="org.piit.login.LoginToAccount"></class>-->
+<!--           <class name="org.piit.registration.CreateAccount"></class>-->
+<!--    <class name="org.piit.appointmentsForCovid.ScheduleAppointment"></class>-->
+<!--           <class name="org.piit.orderTestCovid.OderTests"></class>-->
+<!--            <class name="org.piit.purchase.PurchaseItems"></class>-->
+<!--           <class name="org.piit.findLocations.FindLocationsNearby"></class>-->
+<!--        <class name="org.piit.updateAccountInfo.UpdateAccountInformations"></class>-->
+<!--          <class name="org.piit.acccessToCoupon.AccessToCoupon"></class>-->
+<!--            <class name="org.piit.login.LoginToAccount"></class>&ndash;&gt;-->
 <!--            <class name="org.piit.qualificationForCreditCard.QualifyForCreditCard"></class>-->
 <!--            <class name="org.piit.findCare.FindCare"></class>-->
 <!--            <class name="org.piit.chat.ChatWithWalgreens"></class>-->
-<!--            <class name="org.piit.accessWeeklyad.WeekyAd"></class>-->
-            
+           <class name="org.piit.accessWeeklyad.WeekyAd"></class>
+
         </classes>
 
     </test>
