@@ -38,11 +38,11 @@ public class commonApi {
     //-------------------------------
     public static com.relevantcodes.extentreports.ExtentReports extent;
 
-   // Properties prop= GetProperties.loadProperties("C:\\Users\\nchao\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
+    Properties prop= GetProperties.loadProperties("C:\\Users\\nchao\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
     //Properties prop1= GetProperties.loadProperties("C:\\Users\\sadia\\IdeaProjects\\finalBootCampFramwork\\Instagram\\src\\test\\resources\\config.properties");
 
-   // String username=prop.getProperty("username");
-   // String password=prop.getProperty("password");
+    String username=prop.getProperty("username");
+    String password=prop.getProperty("password");
     //String Username1=prop1.getProperty("username");
    // String Password1=prop1.getProperty("password");
 
@@ -108,7 +108,7 @@ public class commonApi {
     public void init( @Optional("false") boolean useCloud,@Optional("browserStack") String cloudEnvName,@Optional("windows") String os,@Optional("10") String versionOs, @Optional("chrome")String browserName,@Optional("98") String browserVersion, @Optional("https://www.google.com") String url) throws MalformedURLException {
         if (useCloud== true){
             if(cloudEnvName.equalsIgnoreCase("browserstack")){
-               getCloudDriver(cloudEnvName, "", "", os, versionOs, browserName, browserVersion);
+               getCloudDriver(cloudEnvName, username, password, os, versionOs, browserName, browserVersion);
                 //getCloudDriver(cloudEnvName, "sadiatarnima_7Ul96x", "EZy1LYHy7cMw1cpy9jt3", os, versionOs, browserName, browserVersion);
             }else if(cloudEnvName.equalsIgnoreCase("saucelabs")){
                 getCloudDriver(cloudEnvName, "", "", os, versionOs, browserName, browserVersion);

@@ -15,7 +15,7 @@ import java.util.List;
 
 public class PurchaseItems extends commonApi {
 
-    // @Test
+     @Test
     public void TestorderAnItem(){
          HomePage home=new HomePage(driver);
          ResultPage resultPage=new ResultPage(driver);
@@ -31,7 +31,7 @@ public class PurchaseItems extends commonApi {
          resultPage.clickOnfinishBtn();
 
     }
-  //  @Test
+    @Test
     public void TestorderAnItemFromMenu(){
         HomePage home= new HomePage(driver);
         ResultPage resultPage=new ResultPage(driver);
@@ -44,7 +44,7 @@ public class PurchaseItems extends commonApi {
         wait.until(ExpectedConditions.visibilityOf(home.shopProductInMenu));
         Assert.assertTrue(home.shopProductInMenu.isEnabled());
         home.clickOnshopProductInMenu();
-        wait.until(ExpectedConditions.visibilityOf(home.homeGoodInSubMenu));
+       waitFor(1);
         Assert.assertTrue(home.homeGoodInSubMenu.isEnabled());
         home.clickOnhomeGoodInSubMenu();
         wait.until(ExpectedConditions.visibilityOf(home.smallHomeAppliances));
@@ -128,7 +128,7 @@ public class PurchaseItems extends commonApi {
 
     }
 
-   // @Test
+    @Test
     public void TestsearchForMultipleItems() throws Exception {
         HomePage home = new HomePage(driver);
         Assert.assertEquals(getTitle(),"Walgreens: Pharmacy, Health & Wellness, Photo & More for You");
@@ -137,7 +137,7 @@ public class PurchaseItems extends commonApi {
             home.typeAndClear(item);
         }
     }
-      //  @Test
+        @Test
         public void TestsearchForMultiplefromExcel()  {
             HomePage home= new HomePage(driver);
             Assert.assertEquals(getTitle(),"Walgreens: Pharmacy, Health & Wellness, Photo & More for You");
@@ -148,7 +148,7 @@ public class PurchaseItems extends commonApi {
 
 
     }
-   // @Test
+    @Test
     public void TestsearchForMultiplefrommongol() {
         HomePage home = new HomePage(driver);
         Assert.assertEquals(getTitle(),"Walgreens: Pharmacy, Health & Wellness, Photo & More for You");

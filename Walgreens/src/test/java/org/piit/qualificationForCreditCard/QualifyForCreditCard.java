@@ -16,51 +16,40 @@ import java.util.Set;
 
 public class QualifyForCreditCard extends commonApi {
     @Test
-    public void seeIfIQualify(){
+    public void TestseeIfIQualify(){
         HomePage home=new HomePage(driver);
         MyWalgreensCreditCardPage myWalgreensCreditCardPage=new MyWalgreensCreditCardPage(driver);
         SignInPage signInPage=new SignInPage(driver);
         StartApplicationPage startApplicationPage=new StartApplicationPage(driver);
         home.clickONMenuBtn();
-        waitFor(2);
+        waitFor(1);
         home.clickOnmyWalgreensCreditCard();
-        waitFor(2);
-        Assert.assertEquals("","");
-
+        Assert.assertEquals(getTitle(),"myWalgreens | Credit Card");
         myWalgreensCreditCardPage.clickOnseeIfIqualifyBtn();
-        Assert.assertEquals("","");
+        Assert.assertEquals(getTitle(),"Sign In or Register to Get Started Using Walgreens.com");
         signInPage.typeOnuserNameFieldInSignIn();
         signInPage.typeOnpasswordFieldInSignIn();
         signInPage.clickOnsignInBtn();
         myWalgreensCreditCardPage.clickOnsetWithoutAddingAsPreferred();
         waitFor(2);
         myWalgreensCreditCardPage.clickOnstartMyApplicationBtn();
-        waitFor(12);
+        waitFor(8);
+
         String parent = driver.getWindowHandle();
-        System.out.println(parent);
         Set<String> allTabs=driver.getWindowHandles();
 
         for (String window:allTabs) {
             if(!(parent.equals(window))){
                 driver.switchTo().window(window);
-                System.out.println(window);
+                Assert.assertEquals(getTitle(),"WALGREENS");
                 JavascriptExecutor js=(JavascriptExecutor)driver;
                 js.executeScript("window.scrollBy(0,200)");
                 startApplicationPage.typeOnssnField();
                 startApplicationPage.typeOnphoneNumberFieldInApplication();
                 startApplicationPage.clickOncontinueBtnInApplication();
-
-
                // js.executeScript("arguments[0].value='4587';",  driver.findElement(By.xpath("//label[@for='pfLandinglast4SSN']")));
-              //  driver.findElement(By.xpath("//label[@for='pfLandinglast4SSN']")).sendKeys("4569");
-
-
-                 waitFor(10);
-
-
-
-//                startApplicationPage.typeOnadressFieldInApplication();
-//                startApplicationPage.typeOncityAndstateInApplication();
+             // startApplicationPage.typeOnadressFieldInApplication();
+             // startApplicationPage.typeOncityAndstateInApplication();
 
 
             }
