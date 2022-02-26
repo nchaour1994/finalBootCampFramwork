@@ -9,9 +9,9 @@ public class AccessToCoupon extends commonApi {
      @Test
     public void TestaccessToCouponPage(){
         HomePage home= new HomePage(driver);
-        Assert.assertTrue(home.menuBtn.isEnabled());
+        Assert.assertTrue(home.checkIfmenuBtnIsEnabled());
         home.clickONMenuBtn();
-        Assert.assertTrue(home.couponOnMenuList.isEnabled());
+        Assert.assertTrue(home.checkIfcouponOnMenuListIsEnabled());
         home.clickOncouponOnMenuList();
 
 

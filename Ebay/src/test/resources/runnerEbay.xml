@@ -4,9 +4,40 @@
     <parameter name="URL" value="https://www.ebay.com/"></parameter>
     <parameter name="os" value="windows"></parameter>
     <parameter name="browserName" value="chrome"></parameter>
-    <test name="practice test">
+    <test name="Ebay test">
         <classes>
-            <class name="org.piit.InsurancePageTest"></class>
+
+        
+
+<!--            <class name="org.piit.home.TestHelpAndContact"></class>-->
+<!--            <class name="org.piit.home.TestFindStore"></class>-->
+<!--            <class name="org.piit.home.TestBrandOutlet"></class>-->
+<!--            <class name="org.piit.home.TestFeatured"></class>-->
+<!--            <class name="org.piit.home.TestForFriends"></class>-->
+<!--            <class name="org.piit.home.TestLifeTimeWaranty"></class>-->
+<!--            <class name="org.piit.home.TestMensShoes"></class>-->
+<!--            <class name="org.piit.home.TestGetTheSavings"></class>-->
+<!--            <class name="org.piit.home.TestCockieNotice"></class>-->
+<!--            <class name="org.piit.home.TestSolutions"></class>-->
+<!--            <class name="org.piit.home.TestSecurityResearchers"></class>-->
+<!--            <class name="org.piit.home.TestCampusPhotos"></class>-->
+<!--            <class name="org.piit.home.TestCommerce"></class>-->
+<!--            <class name="org.piit.home.TestOverview"></class>-->
+<!--            <class name="org.piit.home.TestRatchets"></class>-->
+<!--            <class name="org.piit.home.TestStyle"></class>-->
+<!--            <class name="org.piit.home.TestClutch"></class>-->
+<!--            <class name="org.piit.home.TestWomen"></class>-->
+<!--            <class name="org.piit.home.TestRegister"></class>-->
+<!--            <class name="org.piit.home.TestEbay"></class>-->
+<!--            <class name="org.piit.home.TestFees"></class>-->
+<!--            <class name="org.piit.home.TestInvestorDay"></class>-->
+            <class name="org.piit.home.TestImpact"></class>
+
+
+
+
+            <!--            -->
+
         </classes>
 
     </test>

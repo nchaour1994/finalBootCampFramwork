@@ -2,9 +2,14 @@ package org.piit;
 import base.commonApi;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
 public class SignInPage extends commonApi{
+    public SignInPage(WebDriver driver){this.driver=driver;
+        PageFactory.initElements(driver, this);}
     @FindBy(xpath = "//*[@name='username']")
      WebElement email;
     @FindBy(xpath = "//*[@name='password']")
@@ -20,7 +25,7 @@ public class SignInPage extends commonApi{
     public void enterWrongEmail() {
         type(email, "probal@yahoo.com");}
     public void enterPassword(){
-        type(password,"Newyork718");}
+        type(password,"Newyork718/");}
     public void enterWrongPassword(){
         type(password,"Newyork");}
     public void logIn(){

@@ -33,4 +33,13 @@ public class HealthConfirmPage extends commonApi {
     public void clickOnorderNowBtnInNewTab(){
         click(orderNowBtnInNewTab);
     }
+    public boolean checkIfgetStartedBtnInCovidTestingOptionsIsEnabled(){
+        return getStartedBtnInCovidTestingOptions.isEnabled();
+    }
+    public boolean checkIfgotItBtnInCovidTestingOptionsIsEnabled(){
+        return gotItBtnInCovidTestingOptions.isEnabled();
+    }
+    public boolean checkIforderNowBtnInNewTabIsEnabled(){
+        return orderNowBtnInNewTab.isEnabled();
+    }
 }
