@@ -37,8 +37,9 @@ public class commonApi {
     public WebDriver driver;
     //-------------------------------
     public static com.relevantcodes.extentreports.ExtentReports extent;
+    String path = System.getProperty("user.home");
 
-    public  Properties prop= GetProperties.loadProperties("C:\\Users\\nchao\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
+    public  Properties prop= GetProperties.loadProperties(path+"\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
     //Properties prop1= GetProperties.loadProperties("C:\\Users\\sadia\\IdeaProjects\\finalBootCampFramwork\\Instagram\\src\\test\\resources\\config.properties");
 
     String username=prop.getProperty("username");
@@ -102,7 +103,7 @@ public class commonApi {
     //------------------------------------------------------------------------------
 
 
-    String path = System.getProperty("user.home");
+
     @Parameters({"useCloud","cloudEnvName","os","versionOs","browserName","browserVersion","URL"})
     @BeforeMethod
     public void init( @Optional("false") boolean useCloud,@Optional("browserStack") String cloudEnvName,@Optional("windows") String os,@Optional("10") String versionOs, @Optional("chrome")String browserName,@Optional("98") String browserVersion, @Optional("https://www.google.com") String url) throws MalformedURLException {
