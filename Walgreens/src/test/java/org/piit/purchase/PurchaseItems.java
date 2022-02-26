@@ -14,52 +14,62 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PurchaseItems extends commonApi {
+    String titleHomePage=prop.getProperty("titleHomePage");
+    String titleCardPage=prop.getProperty("titleCardPage");
+    String titleBusinessCardPage=prop.getProperty("titleBusinessCardPage");
+    String titleBusinessDesignCardPage=prop.getProperty("titleBusinessDesignCardPage");
+    String businessCardModel=prop.getProperty("businessCardModel");
+    String titleHealthConfirmPage=prop.getProperty("titleHealthConfirmPage");
+    String titleCovidTestingPage= prop.getProperty("titleCovidTestingPage");
+    String titleQuickVuePAge=prop.getProperty("titleQuickVuePAge");
+    String email=prop.getProperty("email");
+    String password=prop.getProperty("passwordAccount");
 
      @Test
-    public void TestorderAnItem(){
-         HomePage home=new HomePage(driver);
-         ResultPage resultPage=new ResultPage(driver);
+    public void testOrderAnItem(){
+        HomePage home=new HomePage(driver);
+        ResultPage resultPage=new ResultPage(driver);
         home.typeOnsearchfield();
-       // driver.findElement(By.xpath("//button[@class=\"icon icon__search\"][@title=\"Search\"]")).sendKeys(Keys.RETURN);
-//        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
-//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id=\"pickup-ship-btncompare_sku6314909\"]")));
-        Assert.assertTrue(resultPage.firstElementInSearchList.isEnabled());
-         resultPage.clickOnfirstElementInSearchList();
-        Assert.assertTrue(resultPage.pickUpIcon.isEnabled());
-         resultPage.clickOnpickUpIcon();
-        Assert.assertTrue(resultPage.finishBtn.isEnabled());
-         resultPage.clickOnfinishBtn();
+        Assert.assertTrue(resultPage.checkIffirstElementInSearchListIsEnabled());
+        resultPage.clickOnfirstElementInSearchList();
+        Assert.assertTrue(resultPage.checkIfpickUpIconIsEnabled());
+        resultPage.clickOnpickUpIcon();
+        Assert.assertTrue(resultPage.checkIffinishBtnIsEnabled());
+        resultPage.clickOnfinishBtn();
 
     }
     @Test
-    public void TestorderAnItemFromMenu(){
+    public void testOrderAnItemFromMenu(){
         HomePage home= new HomePage(driver);
         ResultPage resultPage=new ResultPage(driver);
         ContinueShoppingPage continueShoppingPage= new ContinueShoppingPage(driver);
         SignInPage signInPage=new SignInPage(driver);
         CheckoutPage checkoutPage = new CheckoutPage(driver);
-        Assert.assertTrue(home.menuBtn.isEnabled());
+        Assert.assertEquals(getTitle(),titleHomePage);
+        Assert.assertTrue(home.checkIfmenuBtnIsEnabled());
         home.clickONMenuBtn();
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(1));
         wait.until(ExpectedConditions.visibilityOf(home.shopProductInMenu));
-        Assert.assertTrue(home.shopProductInMenu.isEnabled());
+        Assert.assertTrue(home.checkIfshopProductInMenuIsEnabled());
         home.clickOnshopProductInMenu();
-       waitFor(1);
-        Assert.assertTrue(home.homeGoodInSubMenu.isEnabled());
+       waitFor(2);
+        Assert.assertTrue(home.checkIfhomeGoodInSubMenuIsEnabled());
         home.clickOnhomeGoodInSubMenu();
         wait.until(ExpectedConditions.visibilityOf(home.smallHomeAppliances));
-        Assert.assertTrue(home.smallHomeAppliances.isEnabled());
+        Assert.assertTrue(home.checkIfsmallHomeAppliancesIsEnabled());
         home.clickOnsmallHomeAppliances();
-        Assert.assertTrue(home.kitchenAppliances.isEnabled());
+        Assert.assertTrue(home.checkIfkitchenAppliancesIsEnabled());
         home.clickOnkitchenAppliances();
-        Assert.assertTrue(resultPage.firstItemInSearchForKitchenAppliances.isEnabled());
+        Assert.assertTrue(resultPage.checkIffirstItemInSearchForKitchenAppliancesIsEnabled());
         resultPage.clickOnfirstItemInSearchForKitchenAppliances();
-        Assert.assertTrue(resultPage.viewCartBtn.isEnabled());
+        Assert.assertTrue(resultPage.checkIfviewCartBtnIsEnabled());
         resultPage.clickOnviewCartBtn();
-        Assert.assertTrue(continueShoppingPage.proccedToCheckutBtn.isEnabled());
+        Assert.assertTrue(continueShoppingPage.checkIfproccedToCheckutBtnIsEnabled());
         continueShoppingPage.clickOnproccedToCheckutBtn();
         signInPage.typeOnuserNameFieldInSignIn();
+        Assert.assertEquals(signInPage.getValueOfuserNameFieldInSignIn(),email);
         signInPage.typeOnpasswordFieldInSignIn();
+        Assert.assertEquals(signInPage.getValueOfpasswordFieldInSignIn(),password);
         Assert.assertTrue(signInPage.signInBtn.isEnabled());
         signInPage.clickOnsignInBtn();
         waitFor(2);
@@ -73,29 +83,25 @@ public class PurchaseItems extends commonApi {
     }
 
     @Test
-    public  void TestshopLneses(){
+    public  void testshopLneses(){
         HomePage home= new HomePage(driver);
         ResultPage resultPage=new ResultPage(driver);
         AcuvuePage acuvuePage=new AcuvuePage(driver);
-        Assert.assertEquals(getTitle(),"Walgreens: Pharmacy, Health & Wellness, Photo & More for You");
-        Assert.assertTrue(home.menuBtn.isEnabled());
+        Assert.assertEquals(getTitle(),titleHomePage);
+        Assert.assertTrue(home.checkIfmenuBtnIsEnabled());
         home.clickONMenuBtn();
-        Assert.assertTrue(home.contactAndGlasses.isEnabled());
+        Assert.assertTrue(home.checkIfcontactAndGlassesIsEnabled());
        waitFor(1);
         home.clickOncontactAndGlasses();
-        Assert.assertTrue(home.shopAllcontactAndGlasses.isEnabled());
+        Assert.assertTrue(home.checkIfshopAllcontactAndGlassesIsEnabled());
         home.clickOnshopAllcontactAndGlasses();
-        Assert.assertTrue(resultPage.AcuvueOasys12pack.isEnabled());
+        Assert.assertTrue(resultPage.checkIfAcuvueOasys12packIsEnabled());
         resultPage.clickOnAcuvueOasys12pack();
         acuvuePage.selectFromrightPowerField();
-      //  Assert.assertTrue(acuvuePage.rightPowerField.isSelected());
         acuvuePage.selectFromrBaseCuvue();
-      //  Assert.assertTrue(acuvuePage.rBaseCuvue.isSelected());
         acuvuePage.selectFromleftPowerField();
-       // Assert.assertTrue(acuvuePage.leftPowerField.isSelected());
         acuvuePage.selectFromlBaseCuvue();
-      //  Assert.assertTrue(acuvuePage.lBaseCuvue.isSelected());
-        Assert.assertTrue(acuvuePage.addToCart.isEnabled());
+        Assert.assertTrue(acuvuePage.checkIfaddToCartIsEnabled());
         acuvuePage.clickOnaddToCart();
 
     }
@@ -129,7 +135,7 @@ public class PurchaseItems extends commonApi {
     }
 
     @Test
-    public void TestsearchForMultipleItems() throws Exception {
+    public void testsearchForMultipleItems() throws Exception {
         HomePage home = new HomePage(driver);
         Assert.assertEquals(getTitle(),"Walgreens: Pharmacy, Health & Wellness, Photo & More for You");
         List<String> listOfItems = listFromDb();
@@ -138,7 +144,7 @@ public class PurchaseItems extends commonApi {
         }
     }
         @Test
-        public void TestsearchForMultiplefromExcel()  {
+        public void testSearchForMultiplefromExcel()  {
             HomePage home= new HomePage(driver);
             Assert.assertEquals(getTitle(),"Walgreens: Pharmacy, Health & Wellness, Photo & More for You");
             List<String> listOfItems=data();
@@ -156,5 +162,14 @@ public class PurchaseItems extends commonApi {
         for (String item : listOfItems) {
             home.typeAndClear(item);
         }
+    }
+
+    @Test
+    public void searchItemsAndPrint(){
+         HomePage home=new HomePage(driver);
+         ResultPage resultPage=new ResultPage(driver);
+         home.typeOnsearchfield();
+         resultPage.printAllItems();
+         waitFor(2);
     }
 }

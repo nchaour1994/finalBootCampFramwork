@@ -38,7 +38,7 @@ public class commonApi {
     //-------------------------------
     public static com.relevantcodes.extentreports.ExtentReports extent;
 
-    Properties prop= GetProperties.loadProperties("C:\\Users\\nchao\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
+    public  Properties prop= GetProperties.loadProperties("C:\\Users\\nchao\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
     //Properties prop1= GetProperties.loadProperties("C:\\Users\\sadia\\IdeaProjects\\finalBootCampFramwork\\Instagram\\src\\test\\resources\\config.properties");
 
     String username=prop.getProperty("username");
@@ -235,7 +235,7 @@ public class commonApi {
         Assert.assertFalse(element.isDisplayed());
     }
     public void checkIfEnabled(WebElement element){
-        Assert.assertTrue(element.isEnabled());
+           Assert.assertTrue(element.isEnabled());
     }
     public void checkIfDisabled(WebElement element){
         Assert.assertFalse(element.isEnabled());

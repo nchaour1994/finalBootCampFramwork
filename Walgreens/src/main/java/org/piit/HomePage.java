@@ -1,30 +1,40 @@
 package org.piit;
 
 import base.commonApi;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utility.GetProperties;
 
-import java.util.List;
+import java.util.Properties;
 
 public class HomePage extends commonApi {
+
+
    public HomePage(WebDriver driver){
        this.driver=driver;
        PageFactory.initElements(driver,this);
    }
 
+   String zipCode=prop.getProperty("zipCode");
 
 
+
+
+    @FindBy(xpath = "(//*[text()='Sign Out'])[2]")
+     WebElement signOutBtn;
+   @FindBy(xpath = "(//*[text()='Shopping List'])[2]")
+   WebElement shoppingList;
     @FindBy(xpath = "//span[@class=\"inner-focus hide-on-mobile truncate\"]")
     public
     WebElement accountBtn;
     @FindBy(xpath = "//a[@id=\"pf-dropdown-register\"]")
     public
     WebElement registerBtn;
+    @FindBy(xpath = "(//*[@class='card__item card__item-new'])[5]")
+    WebElement createHealthProfile;
 
     //----------------------------------------------------------------------------------------------
     @FindBy(xpath = "//strong[contains(text(),'Menu')]")
@@ -122,11 +132,42 @@ public class HomePage extends commonApi {
     @FindBy(xpath = "//span[contains(text(),'Find a Store')]")
     public
     WebElement findStoreInMenu;
-
-
-
-
-
+    @FindBy(css = "#menu-photo")
+    WebElement photosInMenu;
+    @FindBy(xpath = "//a[@data-element-name='Photo Books']")
+    WebElement photoBookInSubMenu;
+    @FindBy(css = "#cards__stationery")
+    WebElement cardAndStationery;
+    @FindBy(xpath = "//a[@data-element-name='Canvas & Décor']")
+    WebElement canvasAndDecor;
+    @FindBy(xpath = "//a[@data-element-name='Prescriptions']")
+    WebElement prescriptionInMenu;
+    @FindBy(xpath = "//a[@data-element-name='Getting Started']")
+    WebElement gettingStartedInSubMenuPrescription;
+    @FindBy(xpath = "//*[@data-element-name='Posters']")
+    WebElement postersInsubMenuPhoto;
+    @FindBy(xpath = "//a[@data-element-name='myWalgreens™']")
+    WebElement myWalgreens;
+    @FindBy(xpath = "(//*[text()='Buy It Again'])[2]")
+    WebElement buyItAgain;
+    @FindBy(css = "#pf-icon__cart")
+    WebElement shoppingCart;
+    @FindBy(xpath = "//*[@data-element-name='Product Purchase History']")
+    WebElement productPurchaseHistoryInMenu;
+    @FindBy(xpath = "//*[@data-element-name='Buy It Again']")
+    WebElement buyitAgainInMenu;
+    @FindBy(xpath = "//*[@data-element-name='Shopping List']")
+    WebElement shoppingListInMenu;
+    @FindBy(xpath = "//*[@data-element-name='Prescription Status']")
+    WebElement prescriptionstatus;
+    @FindBy(xpath = "(//a[text()='Prescription Status'])[2]")
+    WebElement prescriptionStatusINAccountMenu;
+    @FindBy(xpath = "(//a[text()='Messages (0)'])[2]")
+    WebElement messageInAccountMenu;
+    @FindBy(xpath = "//*[@data-element-name='Messages (0)']")
+    WebElement messagesInMenu;
+    @FindBy(xpath = "//*[@data-element-name='Sign Out']")
+    WebElement signOutBtnInMenu;
 
 
 
@@ -191,7 +232,7 @@ public class HomePage extends commonApi {
 
     }
     public void typeOnsearchForLocationField(){
-        typeAndEnter(searchForLocationField,"11104");
+        typeAndEnter(searchForLocationField,zipCode);
     }
     public void clickOnuseMyLocationBtn(){
         click(useMyLocationBtn);
@@ -245,6 +286,177 @@ public class HomePage extends commonApi {
         clear(searchfield);
     }
 
+    public void clickOnphotosInMenu(){
+        click(photosInMenu);
+    }
+    public void clickOnphotoBookInSubMenu(){
+        click(photoBookInSubMenu);
+    }
+    public void clickOncardAndStationery(){
+        click(cardAndStationery);
+    }
+    public void clickOncanvasAndDecor(){
+        click(canvasAndDecor);
+    }
+    public void clickOnprescriptionInMenu(){
+        click(prescriptionInMenu);
+    }
+    public void clickOngettingStartedInSubMenuPrescription(){
+        click(gettingStartedInSubMenuPrescription);
+    }
+    public void clickOnpostersInsubMenuPhoto(){
+        click(postersInsubMenuPhoto);
+    }
+    public void clickOnmyWalgreens(){
+        click(myWalgreens);
+    }
+    public void clickOnsignOutBtn(){
+        click(signOutBtn);
+    }
+    public void clickOnshoppingList(){
+        click(shoppingList);
+    }
+    public void clickOnbuyItAgain(){
+        click(buyItAgain);
+    }
+    public void clickOnshoppingCart(){
+        click(shoppingCart);
+    }
+    public void clickOncreateHealthProfile(){
+        click(createHealthProfile);
+    }
+    public void scrollTocreateHealthProfile(){
+        scrollToView(createHealthProfile);
+    }
+    public void clickOnproductPurchaseHistoryInMenu(){
+        click(productPurchaseHistoryInMenu);
+    }
+    public void clickOnbuyitAgainInMenu(){
+        click(buyitAgainInMenu);
+    }
+    public void clickOnshoppingListInMenu(){
+        click(shoppingListInMenu);
+    }
+    public void clickOnprescriptionstatus(){
+        click(prescriptionstatus);
+    }
+    public void clickOnprescriptionStatusINAccountMenu(){
+        click(prescriptionStatusINAccountMenu);
+    }
+    public void clickOnmessageInAccountMenu(){
+        click(messageInAccountMenu);
+    }
+    public void clickOnMessageInMenu(){
+        click(messagesInMenu);
+    }
+    public void clickOnsignOutBtnInMenu(){
+        click(signOutBtnInMenu);
+    }
+    public void scrollTosignOutBtnInMenu(){
+        scrollToView(signOutBtnInMenu);
+    }
+
+    public boolean checkIfmenuBtnIsEnabled(){
+        return menuBtn.isEnabled();
+    }
+    public boolean checkIfcouponOnMenuListIsEnabled(){
+        return couponOnMenuList.isEnabled();
+    }
+    public boolean checkIfAccountBtnIsEnabled(){
+        return  accountBtn.isEnabled();
+    }
+    public boolean checkIfsignInBtnInAccountMenuIsEnabled(){
+        return signInBtnInAccountMenu.isEnabled();
+    }
+    public boolean checkIfbuyItAgainBtnIsEnabled(){
+        return buyItAgain.isEnabled();
+    }
+    public boolean checkIfyourAccountInMenuDropDownIsEnabled(){
+        return yourAccountInMenuDropDown.isEnabled();
+    }
+    public boolean checkIfsingInBtnInMenuIsEnabled(){
+        return singInBtnInMenu.isEnabled();
+    }
+    public boolean checkIfbuyitAgainInMenuIsEnabled(){
+        return buyitAgainInMenu.isEnabled();
+    }
+    public boolean checkIfshoppingListInMenuIsEnabled(){
+        return shoppingListInMenu.isEnabled();
+    }
+    public boolean chekcIfaccountHomeInAccountListIsEnabled(){
+        return accountHomeInAccountList.isEnabled();
+    }
+    public boolean checkIfcreateHealthProfileIsEnabled(){
+        return createHealthProfile.isEnabled();
+    }
+    public boolean checkIfmessageInAccountMenuIsEnabled(){
+        return messageInAccountMenu.isEnabled();
+    }
+    public boolean checkIfmessagesInMenuIsEnabled(){
+        return messagesInMenu.isEnabled();
+    }
+    public boolean checkIfshoppingCartIsEnbled(){
+        return shoppingCart.isEnabled();
+    }
+    public boolean checkIfprescriptionstatusIsEnabled(){
+        return prescriptionstatus.isEnabled();
+    }
+    public boolean checkIfweeklyADIsEnabled(){
+        return weeklyAD.isEnabled();
+    }
+    public boolean checkIfcovid19vaccineInformationIconIsEnabled(){
+        return covid19vaccineInformationIcon.isEnabled();
+    }
+    public boolean checkIfscheduleVaccineIconIsEnabled(){
+        return scheduleVaccineIcon.isEnabled();
+    }
+    public  boolean checkIfFindCareInMenuIsEnabled(){
+        return findCareInMenu.isEnabled();
+    }
+    public boolean checkIfFindCareNearYouInsubMenuIsEnabled(){
+        return findCareNearYouInsubMenu.isEnabled();
+    }
+    public boolean checkIfarrowDownForStoreLocationIsEnabled(){
+        return arrowDownForStoreLocation.isEnabled();
+    } public boolean checkIfuseMyLocationBtnIsEnabled(){
+        return useMyLocationBtn.isEnabled();
+    }
+    public boolean checkIfsignOutBtnIsEnabled(){
+        return signOutBtn.isEnabled();
+    }
+    public boolean checkIfphotosInMenuIsEnabled(){
+        return photosInMenu.isEnabled();
+    }
+   public boolean checkIfcanvasAndDecorIsEnabled(){
+        return canvasAndDecor.isEnabled();
+   }
+   public boolean checkIfpostersInsubMenuPhotoIsEnabled(){
+        return postersInsubMenuPhoto.isEnabled();
+   }
+   public boolean checkIfcardAndStationeryIsEnabled(){
+        return cardAndStationery.isEnabled();
+   }
+  public boolean checkIfcovid19TestingOptionsIsEnabled(){
+        return covid19TestingOptions.isEnabled();
+  }
+  public boolean checkIfshopProductInMenuIsEnabled(){
+        return shopProductInMenu.isEnabled();
+  }
+  public boolean checkIfhomeGoodInSubMenuIsEnabled(){
+        return homeGoodInSubMenu.isEnabled();
+  }
+  public boolean checkIfsmallHomeAppliancesIsEnabled(){
+        return smallHomeAppliances.isEnabled();
+  }
+  public boolean checkIfkitchenAppliancesIsEnabled(){
+        return kitchenAppliances.isEnabled();
+  }
+  public boolean checkIfcontactAndGlassesIsEnabled(){
+        return contactAndGlasses.isEnabled();
+  }
+  public  boolean checkIfshopAllcontactAndGlassesIsEnabled(){
+        return shopAllcontactAndGlasses.isEnabled();
+  }
 
 
 

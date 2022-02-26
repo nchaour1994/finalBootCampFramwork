@@ -27,6 +27,23 @@ public class ScheduleVaccinationAppointments extends commonApi {
     @FindBy(xpath = "//span[@name=\"nextBtn\"]")
     public
     WebElement continueBtnOnScheduleVaccine;
+    @FindBy(css = "#flu-btn")
+    WebElement fluCheckbox;
+
+    @FindBy(css = "#covid-additionalbtn")
+    WebElement boosterCheckbox;
+    @FindBy(css= "#additionaldose2")
+    WebElement shotsReceived;
+    @FindBy(css = "#immuno_yes")
+    WebElement patientCompemised;
+    @FindBy(css = "#id-textbox-1")
+    WebElement lastDoseDate;
+    @FindBy(css = "#manufacturer-dropdown")
+    WebElement typeOfVaccine
+            ;
+    public void flagFluCheckbox(){
+        click(fluCheckbox);
+    }
     public void flagCovid19VaccineCheckBox(){
         click(checkboxCovid19Vaccine);
     }
@@ -48,5 +65,32 @@ public class ScheduleVaccinationAppointments extends commonApi {
     }
     public void clickOncontinueBtnOnScheduleVaccine(){
         click(continueBtnOnScheduleVaccine);
+    }
+    public void flagboosterCheckbox(){
+        click(boosterCheckbox);
+    }
+    public void flagshotsReceived(){
+        click(shotsReceived);
+    }
+    public void flagpatientCompemised(){
+        click(patientCompemised);
+    }
+    public void typeOnlastDoseDate(){
+        type(lastDoseDate,"02022021");
+    }
+    public void selectFromtypeOfVaccine(){
+        selectDropdownOption(typeOfVaccine,"Pfizer-BioNtech");
+    }
+    public boolean checkIfoptionNoInScheduleVaccineIsSelected(){
+        return optionNoInScheduleVaccine.isSelected();
+    }
+    public boolean checkIfoptionNoHasReceiveAuthorisationCodeIsSelected(){
+        return optionNoHasReceiveAuthorisationCode.isSelected();
+    }
+    public boolean checkIfcontinueBtnOnScheduleVaccineIsEnabled(){
+        return continueBtnOnScheduleVaccine.isEnabled();
+    }
+    public boolean checkIfcheckboxCovid19VaccineIsSelected(){
+        return checkboxCovid19Vaccine.isSelected();
     }
 }

@@ -12,10 +12,10 @@
 
     <test name="walgreens test">
         <classes>
-            <class name="org.piit.registration.CreateAccount"></class>
+<!--            <class name="org.piit.registration.CreateAccount"></class>-->
 <!--            <class name="org.piit.appointmentsForCovid.ScheduleAppointment"></class>-->
 <!--            <class name="org.piit.orderTestCovid.OderTests"></class>-->
-<!--            <class name="org.piit.purchase.PurchaseItems"></class>-->
+            <class name="org.piit.purchase.PurchaseItems"></class>
 <!--            <class name="org.piit.findLocations.FindLocationsNearby"></class>-->
 <!--            <class name="org.piit.updateAccountInfo.UpdateAccountInformations"></class>-->
 <!--            <class name="org.piit.acccessToCoupon.AccessToCoupon"></class>-->
@@ -24,8 +24,28 @@
 <!--            <class name="org.piit.findCare.FindCare"></class>-->
 <!--            <class name="org.piit.chat.ChatWithWalgreens"></class>-->
 <!--            <class name="org.piit.accessWeeklyad.WeekyAd"></class>-->
-
-            
+<!--            <class name="org.piit.takePhotos.MakePhotoBook"></class>-->
+<!--            <class name="org.piit.orderPostCard.OrderBusinessPostCard"></class>-->
+<!--            <class name="org.piit.makeCanvasAndDecor.MakeCanvas"></class>-->
+<!--            <class name="org.piit.transferRx.TransferRx"></class>-->
+<!--            <class name="org.piit.makePoster.MakePoster"></class>-->
+<!--            <class name="org.piit.joinMyWalgreens.JoinMyWalgreens"></class>-->
+<!--            <class name="org.piit.viewBenefitsAndActivities.viewBenefits"></class>-->
+<!--            <class name="org.piit.viewPurchaseHistory.ViewHistory"></class>-->
+<!--            <class name="org.piit.viewMemberShip.ViewMemberShip"></class>-->
+<!--            <class name="org.piit.accessToEmailAndAlert.accessToEmailAndAlert"></class>-->
+<!--            <class name="org.piit.scheduleFluVaccine.ScheduleFluVaccine"></class>-->
+<!--            <class name="org.piit.scheduleBoosterShot.ScheduleBoosterShot"></class>-->
+<!--            <class name="org.piit.writeAReview.WriteReview"></class>-->
+<!--            <class name="org.piit.viewVaccineRecord.ViewRecordVaccine"></class>-->
+<!--            <class name="org.piit.logout.Logout"></class>-->
+<!--            <class name="org.piit.accessShoppingListAndBuyItAgain.AccessToShoppingList"></class>-->
+<!--            <class name="org.piit.accessToMyShoppingCart.AccessShoppingCart"></class>-->
+<!--            <class name="org.piit.addQuantityInShoppingCart.AddQuantity"></class>-->
+<!--            <class name="org.piit.accessToHealthProfile.AccessToHealthProfile"></class>-->
+<!--            <class name="org.piit.accessToPrescriptionStatus.AccessToPrescription"></class>-->
+<!--            <class name="org.piit.accessToMessages.AccessToMessage"></class>-->
+<!--            <class name="org.piit.sortItems.SortItems"></class>-->
         </classes>
 
     </test>

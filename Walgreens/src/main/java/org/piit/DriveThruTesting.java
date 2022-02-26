@@ -51,4 +51,13 @@ public class DriveThruTesting extends commonApi {
     public void clickOnrapidDiagnosticTest(){
         click(rapidDiagnosticTest);
     }
+    public boolean checkIfrapidDiagnosticCheckboxIsSelected(){
+        return rapidDiagnosticCheckbox.isSelected();
+    }
+    public boolean checkIflocationCheckboxIsSelected(){
+        return locationCheckbox.isSelected();
+    }
+    public boolean checkIfrapidDiagnosticTestIsSelected(){
+        return rapidDiagnosticTest.isSelected();
+    }
 }

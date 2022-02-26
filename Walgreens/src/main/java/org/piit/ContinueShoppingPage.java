@@ -20,4 +20,7 @@ public class ContinueShoppingPage extends commonApi {
     public void clickOnproccedToCheckutBtn(){
         click(proccedToCheckutBtn);
     }
+    public boolean checkIfproccedToCheckutBtnIsEnabled(){
+        return proccedToCheckutBtn.isEnabled();
+    }
 }

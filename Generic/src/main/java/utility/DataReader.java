@@ -66,11 +66,29 @@ public class DataReader {
         return getAllColumn(path,sheet,1,i);
     }
 
+    public String getValueForGivenHeaderAndKey(String path, String sheet, String headerName, String key){
+        String value = null;
+        int i = 0;
+        while (readCell(path, sheet, 0, i) != null){
+            if(readCell(path, sheet, 0, i).equalsIgnoreCase(headerName)){
+                for (int j = 0; j < getAllColumn(path, sheet, 1, i).size(); j++){
+                    if(getAllColumn(path, sheet, 1, i).get(j).equalsIgnoreCase(key)){
+                        value = getAllColumn(path, sheet, 1, i+1).get(j);
+                    }
+                }
+                break;
+            }
+            i++;
+        }
+        return value;
+    }
+
     public static void main(String[] args) throws IOException {
         DataReader dataReader=new DataReader();
         //System.out.println(dataReader.readCell());
        // System.out.println(dataReader.getAllColumn("C:\\Users\\nchao\\Downloads\\Book1.xlsx","Sheet1",0,1));
-        System.out.println(dataReader.getEntireColumnForGivenHeader("C:\\Users\\nchao\\Downloads\\Book1.xlsx","Sheet1","prices"));
+       // System.out.println(dataReader.getValueForGivenHeaderAndKey("C:\\Users\\nchao\\Downloads\\Book1.xlsx","Sheet1","items","masks"));
+       // System.out.println(dataReader.getEntireColumnForGivenHeader("C:\\Users\\nchao\\Downloads\\Book1.xlsx","Sheet1","prices"));
     }
 
 }

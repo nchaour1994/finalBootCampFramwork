@@ -5,8 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utility.GetProperties;
+
+import java.util.Properties;
 
 public class WeeklyAd extends commonApi {
+
+    Properties prop = GetProperties.loadProperties("..\\Walgreens\\src\\test\\resources\\config.properties");
+    String myChoiceInWeeklyAd=prop.getProperty("myChoiceInWeeklyAd");
     public WeeklyAd(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver,this);
@@ -16,7 +22,7 @@ public class WeeklyAd extends commonApi {
     WebElement jumpToDropDown;
 
     public void selectFromjumpToDropDown(){
-        selectDropdownOption(jumpToDropDown,"Deals of the week");
+        selectDropdownOption(jumpToDropDown,myChoiceInWeeklyAd);
     }
 
 }
