@@ -3,18 +3,20 @@ import base.commonApi;
 import org.openqa.selenium.support.PageFactory;
 import org.piit.HomePage;
 import org.piit.ProfilePage;
+import org.piit.ProfileSelections;
 import org.piit.SignInPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+///9
 public class InProfilePage extends commonApi{
     //@Test
-    public void test01(){
-        ProfilePage profile = PageFactory.initElements(driver,ProfilePage.class);
-        SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
-        HomePage home = PageFactory.initElements(driver,HomePage.class);
-        //Followers
+    public void SeeFollowers(){
+        HomePage home = new HomePage(driver);
+        SignInPage sign = new SignInPage(driver);
+        ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
+        Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
         waitFor(4);
         sign.loginnotNow();
@@ -26,14 +28,15 @@ public class InProfilePage extends commonApi{
         Assert.assertEquals(driver.getTitle(),"Probal (@probalshela) • Instagram photos and videos");
         profile.onFollower();
         waitFor(4);}
-    @Test
-    public void test2(){ ProfilePage profile = PageFactory.initElements(driver,ProfilePage.class);
-        SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
-        HomePage home = PageFactory.initElements(driver,HomePage.class);
-        //Following
+    //@Test
+    public void SeeFollowing(){HomePage home = new HomePage(driver);
+        SignInPage sign = new SignInPage(driver);
+        ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
+        Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
+        Assert.assertEquals(driver.getTitle(),"Instagram");
         sign.loginnotNow();
         sign.turnOnNotifications();
         waitFor(2);
@@ -44,11 +47,10 @@ public class InProfilePage extends commonApi{
         Assert.assertEquals(driver.getTitle(),"Probal (@probalshela) • Instagram photos and videos");
         profile.onFollowing();
         waitFor(4);}
-   @Test
-    public void test3(){ ProfilePage profile = PageFactory.initElements(driver,ProfilePage.class);
-        SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
-        HomePage home = PageFactory.initElements(driver,HomePage.class);
-        //Post
+    // @Test
+    public void ClickProfile(){HomePage home = new HomePage(driver);
+        SignInPage sign = new SignInPage(driver);
+        ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
@@ -58,13 +60,11 @@ public class InProfilePage extends commonApi{
         waitFor(2);
         home.inProfile();
         waitFor(8);
-        profile.onSwitch();
+        home.onSwitch();
         waitFor(4);}
-    @Test
-    public void test4(){ ProfilePage profile = PageFactory.initElements(driver,ProfilePage.class);
-        SignInPage sign = PageFactory.initElements(driver,SignInPage.class);
-        HomePage home = PageFactory.initElements(driver,HomePage.class);
-        //logout
+    // @Test
+    public void ClickLogout(){ HomePage home = new HomePage(driver);
+        SignInPage sign = new SignInPage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
@@ -74,14 +74,13 @@ public class InProfilePage extends commonApi{
         waitFor(2);
         home.inProfile();
         waitFor(8);
-        profile.onLogOut();
+        home.onLogOut();
         waitFor(4);}
-  //  @Test
-    public void test5() {
-        ProfilePage profile = PageFactory.initElements(driver, ProfilePage.class);
-        SignInPage sign = PageFactory.initElements(driver, SignInPage.class);
-        HomePage home = PageFactory.initElements(driver, HomePage.class);
-        //click ins
+    //  @Test
+    public void ClickInstagram() {
+        HomePage home = new HomePage(driver);
+        SignInPage sign = new SignInPage(driver);
+        ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
@@ -93,8 +92,88 @@ public class InProfilePage extends commonApi{
         waitFor(2);
         profile.onProfile();
         waitFor(2);
-        home.Instagram();
+        home.instagram();
         waitFor(2);
     }
+    //  @Test
+    public void Tagged(){
+        HomePage home = new HomePage(driver);
+        SignInPage sign = new SignInPage(driver);
+        ProfilePage profile = new ProfilePage(driver);
+        ProfileSelections selections = new ProfileSelections(driver);
+        sign.enterEmail();
+        sign.enterPassword();
+        sign.logIn();
+        waitFor(4);
+        sign.loginnotNow();
+        sign.turnOnNotifications();
+        home.inProfile();
+        waitFor(2);
+        profile.onProfile();
+        waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Probal (@probalshela) • Instagram photos and videos");
+        profile.clickTagged();
+        waitFor(4);}
+    //  @Test
+    public void Post(){
+        HomePage home = new HomePage(driver);
+        SignInPage sign = new SignInPage(driver);
+        ProfilePage profile = new ProfilePage(driver);
+        ProfileSelections selections = new ProfileSelections(driver);
+        sign.enterEmail();
+        sign.enterPassword();
+        sign.logIn();
+        Assert.assertEquals(driver.getTitle(),"Instagram");
+        waitFor(4);
+        sign.loginnotNow();
+        sign.turnOnNotifications();
+        home.inProfile();
+        waitFor(2);
+        profile.onProfile();
+        waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Probal (@probalshela) • Instagram photos and videos");
+        profile.clickPost();
+        waitFor(4);}
+    //@Test
+    public void AppStore(){
+        HomePage home = new HomePage(driver);
+        SignInPage sign = new SignInPage(driver);
+        ProfilePage profile = new ProfilePage(driver);
+        ProfileSelections selections = new ProfileSelections(driver);
+        sign.enterEmail();
+        sign.enterPassword();
+        sign.logIn();
+        Assert.assertEquals(driver.getTitle(),"Instagram");
+        waitFor(4);
+        sign.loginnotNow();
+        sign.turnOnNotifications();
+        home.inProfile();
+        waitFor(2);
+        profile.onProfile();
+        waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Probal (@probalshela) • Instagram photos and videos");
+        profile.clickApp();
+        waitFor(4);}
+    //@Test
+    public void GooglePlay(){
+        HomePage home = new HomePage(driver);
+        SignInPage sign = new SignInPage(driver);
+        ProfilePage profile = new ProfilePage(driver);
+        ProfileSelections selections = new ProfileSelections(driver);
+        sign.enterEmail();
+        sign.enterPassword();
+        Assert.assertTrue(sign.logIn.isEnabled());
+        sign.logIn();
+        Assert.assertEquals(driver.getTitle(),"Instagram");
+        waitFor(4);
+        sign.loginnotNow();
+        sign.turnOnNotifications();
+        home.inProfile();
+        waitFor(2);
+        profile.onProfile();
+        waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Probal (@probalshela) • Instagram photos and videos");
+        profile.clickGoogle();
+        waitFor(4);}
 
 }

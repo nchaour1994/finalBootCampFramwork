@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="practice" parallel="false">
-    <parameter name="useCloud" value="true"></parameter>
+    <parameter name="useCloud" value="false"></parameter>
     <parameter name="cloudEnvName" value="browserstack"></parameter>
     <parameter name="versionOs" value="10"></parameter>
     <parameter name="browserVersion" value="98"></parameter>
@@ -11,14 +11,13 @@
     <parameter name="browserName" value="chrome"></parameter>
     <test name="practice test">
         <classes>
-<<<<<<< HEAD
-<!--            <class name="org.piit.home.OnHome"></class>-->
-<!--            <class name="org.piit.inProfile.InProfilePage"></class>-->
-            <class name="org.piit.signPage.SignPage"></class>
-=======
-            <class name="org.piit.inProfile.InProfilePage"></class>
 
->>>>>>> 740dbb70eda611e0de2e7a59a6be3ce898a8a134
+            <class name="org.piit.home.OnHome"></class>
+<!--            <class name="org.piit.inProfile.InProfilePage"></class>-->
+<!--                <class name="org.piit.signPage.SignPage"></class>-->
+<!--            <class name="org.piit.setting.TestSettingPages"></class>-->
+<!--               <class name="org.piit.profileSelection.PofileSelection"></class>-->
+
 
         </classes>
 

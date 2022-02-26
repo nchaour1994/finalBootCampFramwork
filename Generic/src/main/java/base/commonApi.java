@@ -118,13 +118,13 @@ public class commonApi {
     public void init( @Optional("false") boolean useCloud,@Optional("browserStack") String cloudEnvName,@Optional("windows") String os,@Optional("10") String versionOs, @Optional("chrome")String browserName,@Optional("98") String browserVersion, @Optional("https://www.google.com") String url) throws MalformedURLException {
         if (useCloud== true){
             if(cloudEnvName.equalsIgnoreCase("browserstack")){
-<<<<<<< HEAD
+
              //  getCloudDriver(cloudEnvName, "", "", os, versionOs, browserName, browserVersion);
                 getCloudDriver(cloudEnvName, "sadiatarnima_7Ul96x", "EZy1LYHy7cMw1cpy9jt3", os, versionOs, browserName, browserVersion);
-=======
-               getCloudDriver(cloudEnvName, username, password, os, versionOs, browserName, browserVersion);
+
+              // getCloudDriver(cloudEnvName, "", "", os, versionOs, browserName, browserVersion);
                 //getCloudDriver(cloudEnvName, "sadiatarnima_7Ul96x", "EZy1LYHy7cMw1cpy9jt3", os, versionOs, browserName, browserVersion);
->>>>>>> 740dbb70eda611e0de2e7a59a6be3ce898a8a134
+
             }else if(cloudEnvName.equalsIgnoreCase("saucelabs")){
                 getCloudDriver(cloudEnvName, "", "", os, versionOs, browserName, browserVersion);
 
