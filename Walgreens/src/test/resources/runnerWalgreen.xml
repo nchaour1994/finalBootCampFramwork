@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="practice" parallel="false">
-    <parameter name="URL" value="https://www.walgreens.com/"></parameter>
+    <parameter name="useCloud" value="false"></parameter>
+    <parameter name="cloudEnvName" value="browserstack"></parameter>
     <parameter name="os" value="windows"></parameter>
+    <parameter name="versionOs" value="10"></parameter>
     <parameter name="browserName" value="chrome"></parameter>
-    <test name="practice test">
+    <parameter name="browserVersion" value="98"></parameter>
+    <parameter name="URL" value="https://www.walgreens.com/"></parameter>
+
+
+    <test name="walgreens test">
         <classes>
-            <class name="org.piit.AppTest"></class>
+            <class name="org.piit.registration.CreateAccount"></class>
+<!--            <class name="org.piit.appointmentsForCovid.ScheduleAppointment"></class>-->
+<!--            <class name="org.piit.orderTestCovid.OderTests"></class>-->
+<!--            <class name="org.piit.purchase.PurchaseItems"></class>-->
+<!--            <class name="org.piit.findLocations.FindLocationsNearby"></class>-->
+<!--            <class name="org.piit.updateAccountInfo.UpdateAccountInformations"></class>-->
+<!--            <class name="org.piit.acccessToCoupon.AccessToCoupon"></class>-->
+<!--            <class name="org.piit.login.LoginToAccount"></class>-->
+<!--            <class name="org.piit.qualificationForCreditCard.QualifyForCreditCard"></class>-->
+<!--            <class name="org.piit.findCare.FindCare"></class>-->
+<!--            <class name="org.piit.chat.ChatWithWalgreens"></class>-->
+<!--            <class name="org.piit.accessWeeklyad.WeekyAd"></class>-->
+
+            
         </classes>
 
     </test>
