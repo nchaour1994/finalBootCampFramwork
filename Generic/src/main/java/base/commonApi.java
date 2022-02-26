@@ -1,6 +1,7 @@
 package base;
 
 import com.relevantcodes.extentreports.LogStatus;
+import com.sun.deploy.config.JREInfo;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -53,10 +54,19 @@ public class commonApi {
 
     public  Properties prop= GetProperties.loadProperties(path+"\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
 
+
+
+    // Properties prop= GetProperties.loadProperties("C:\\Users\\nchao\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
+    //Properties prop1= GetProperties.loadProperties("C:\\Users\\sadia\\IdeaProjects\\finalBootCampFramwork\\Instagram\\src\\test\\resources\\config.properties");
+
+   // String username=prop.getProperty("username");
+    //String password=prop.getProperty("password");
+
     //Properties prop1= GetProperties.loadProperties("C:\\Users\\sadia\\IdeaProjects\\finalBootCampFramwork\\Instagram\\src\\test\\resources\\config.properties");
 
   //  String username=prop.getProperty("username");
   //  String password=prop.getProperty("password");
+
     //String Username1=prop1.getProperty("username");
    // String Password1=prop1.getProperty("password");
 
@@ -124,10 +134,14 @@ public class commonApi {
         if (useCloud== true){
             if(cloudEnvName.equalsIgnoreCase("browserstack")){
 
+               getCloudDriver(cloudEnvName, "", "", os, versionOs, browserName, browserVersion);
+
+
              //  getCloudDriver(cloudEnvName, "", "", os, versionOs, browserName, browserVersion);
                 getCloudDriver(cloudEnvName, "sadiatarnima_7Ul96x", "EZy1LYHy7cMw1cpy9jt3", os, versionOs, browserName, browserVersion);
 
               // getCloudDriver(cloudEnvName, "", "", os, versionOs, browserName, browserVersion);
+
                 //getCloudDriver(cloudEnvName, "sadiatarnima_7Ul96x", "EZy1LYHy7cMw1cpy9jt3", os, versionOs, browserName, browserVersion);
 
             }else if(cloudEnvName.equalsIgnoreCase("saucelabs")){
@@ -200,7 +214,7 @@ public class commonApi {
 
         element.sendKeys(text, Keys.ENTER);
     }
-    public void click(WebElement element){
+    public static void click(WebElement element){
 
         element.click();
     }
