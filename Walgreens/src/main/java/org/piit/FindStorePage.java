@@ -25,4 +25,7 @@ public class FindStorePage extends commonApi {
     public void typeOnlocationField(){
         typeAndEnter(locationField,"11104");
     }
+    public boolean checkIflocationFieldIsDisplayed(){
+        return locationField.isDisplayed();
+    }
 }

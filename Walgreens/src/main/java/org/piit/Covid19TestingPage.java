@@ -23,6 +23,11 @@ public class Covid19TestingPage extends commonApi {
     @FindBy(xpath = "//span [@class='sr-only'][contains(text(),'healthconfirm')]/preceding-sibling::span[contains(text(),'Shop now')]")
     public
     WebElement healthConfirmTesting;
+    @FindBy(xpath = "(//*[text()='Shop now'])[2]")
+    WebElement shopNowBtn;
+    @FindBy(xpath = "(//span[text()='Schedule free drive-thru test'])[3]")
+    WebElement freeThruDriveBtn;
+
 
 
     public void clickOnexploreAtHomeTesting(){
@@ -36,6 +41,27 @@ public class Covid19TestingPage extends commonApi {
     }
     public void clickOnfreeDriveThruTest(){
         click(freeDriveThruTest);
+    }
+    public void clickOnshopNowBtn(){
+        click(shopNowBtn);
+    }
+    public void clickOnfreeThruDriveBtn(){
+        click(freeThruDriveBtn);
+    }
+    public void scrolltofreeThruDriveBtn(){
+        scrollToView(freeThruDriveBtn);
+    }
+    public boolean checkIfexploreAtHomeTestingIsEnabled(){
+        return exploreAtHomeTesting.isEnabled();
+    }
+    public boolean checkIfpcrAtHomeTestingIconIsEnabled(){
+        return pcrAtHomeTestingIcon.isEnabled();
+    }
+    public boolean checkIfhealthConfirmTestingIsEnabled(){
+        return healthConfirmTesting.isEnabled();
+    }
+    public boolean checkIfshopNowBtnIsEnabled(){
+        return shopNowBtn.isEnabled();
     }
 
 }

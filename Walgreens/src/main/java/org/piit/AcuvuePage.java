@@ -46,5 +46,8 @@ public class AcuvuePage extends commonApi {
     public  void clickOnaddToCart(){
         click(addToCart);
     }
+    public boolean checkIfaddToCartIsEnabled(){
+        return addToCart.isEnabled();
+    }
 
 }
