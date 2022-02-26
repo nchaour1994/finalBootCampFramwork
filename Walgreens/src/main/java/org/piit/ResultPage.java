@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class ResultPage extends commonApi {
     public  ResultPage(WebDriver driver){
         this.driver=driver;
@@ -33,6 +35,12 @@ public class ResultPage extends commonApi {
     public
     WebElement AcuvueOasys12pack;
 
+    @FindBy(xpath = "//*[@class='description']")
+    List<WebElement> allItem;
+
+    @FindBy(css = "#onSortOptionChangeHandler")
+    WebElement sortBy;
+
     public void clickOnfirstElementInSearchList(){
         click(firstElementInSearchList);
     }
@@ -51,5 +59,37 @@ public class ResultPage extends commonApi {
     }
     public void clickOnAcuvueOasys12pack(){
         click(AcuvueOasys12pack);
+    }
+    public void selectFromsortBy(){
+        selectDropdownOption(sortBy,"Top Sellers");
+    }
+    public void printAllItems(){
+         List<WebElement> l=allItem;
+        for (WebElement element : l) {
+           if((element.getText()).equals("Stain Fighter Teeth Whitening Toothpaste Clean Mint Paste")){
+               element.click();
+               System.out.println("clicked");
+           }
+            System.out.println(element.getText());
+           // to see
+        }
+    }
+    public boolean checkIffirstElementInSearchListIsEnabled(){
+        return firstElementInSearchList.isEnabled();
+    }
+    public boolean checkIfpickUpIconIsEnabled(){
+        return pickUpIcon.isEnabled();
+    }
+    public boolean checkIffinishBtnIsEnabled(){
+        return finishBtn.isEnabled();
+    }
+    public boolean checkIffirstItemInSearchForKitchenAppliancesIsEnabled(){
+        return firstItemInSearchForKitchenAppliances.isEnabled();
+    }
+    public boolean checkIfviewCartBtnIsEnabled(){
+        return viewCartBtn.isEnabled();
+    }
+    public boolean checkIfAcuvueOasys12packIsEnabled(){
+        return AcuvueOasys12pack.isEnabled();
     }
 }

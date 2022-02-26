@@ -14,9 +14,17 @@ public class Covid19VaccinePge extends commonApi {
     @FindBy(xpath = "(//span[text()='Schedule vaccine'])[1]")
     public
     WebElement scheduleVaccineBtn;
+    @FindBy(xpath = "(//*[@class='cov-vaccine-icons-container'])[4]")
+    WebElement viewRecord;
 
     public void clickOnscheduleVaccineBtn(){
         click(scheduleVaccineBtn);
+    }
+    public void clickOnviewRecord(){
+        click(viewRecord);
+    }
+    public boolean checkIfscheduleVaccineBtnIsEnabled(){
+        return scheduleVaccineBtn.isEnabled();
     }
 
 }
