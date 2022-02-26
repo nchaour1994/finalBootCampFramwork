@@ -13,14 +13,13 @@ public class GetAQuotePageTest extends commonApi {
         GetAQuotePage getAQuotePage = new GetAQuotePage(driver);
        Assert.assertTrue(getAQuotePage.productDropDown.isEnabled());
         homePageV.getAQuoteMenu();
-        waitFor(2);
+
        getAQuotePage.productDropDown();
-        waitFor(2);
 
         getAQuotePage.zipCodeField();
-        waitFor(2);
+
         getAQuotePage.startQuoteBtn();
-        waitFor(2);
+
 
 
 

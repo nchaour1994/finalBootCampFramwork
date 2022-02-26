@@ -21,11 +21,11 @@ public class GoPaperLessPageTest extends commonApi {
         jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,250)");
         goPaperLessPage.phoneNumberField();
-        waitFor(2);
+
         goPaperLessPage.dateOfBirthField();
-        waitFor(2);
+
         goPaperLessPage.continueBtn();
-        waitFor(2);
+
 
 
     }

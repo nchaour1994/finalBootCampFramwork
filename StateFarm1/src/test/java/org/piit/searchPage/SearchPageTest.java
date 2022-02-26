@@ -12,16 +12,16 @@ public class SearchPageTest extends commonApi {
     public void searchPageTest() {
         InsurancePage homePageV = new InsurancePage(driver);
         SearchPage searchPage = new SearchPage(driver);
-//        Assert.assertTrue(SearchPage.searchPage.isEnabled());
+//      Assert.assertTrue(homePageV.searchField.isEnabled());
         homePageV.search();
         searchPage.searchField();
-        waitFor(2);
+
         searchPage.searchBtn();
-        waitFor(2);
+
         searchPage.auto();
-        waitFor(2);
+waitFor(2);
         searchPage.whatToDoAfterAccident();
-        waitFor(2);
+        ;
 
 
 

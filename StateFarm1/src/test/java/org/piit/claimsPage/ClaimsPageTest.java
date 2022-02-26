@@ -18,11 +18,11 @@ public class ClaimsPageTest extends commonApi {
 
         homePageV.claimsMenu();
         claimsPage.fileAClaim();
-        waitFor(1);
+
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("window.scrollBy(0,250)");
         claimsPage.lifeSelected();
-        waitFor(2);
+
 
 
 

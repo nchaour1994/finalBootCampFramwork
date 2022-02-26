@@ -31,16 +31,16 @@ public class InvestmentsPageTest extends commonApi {
      driver.switchTo().window(handlesList.get(0));
         homePageV.investmentsMenu();
         investmentsPage.mutualFunds();
-        waitFor(2);
+
         homePageV.investmentsMenu();
         investmentsPage.educationSavings();
-        waitFor(2);
+
         homePageV.investmentsMenu();
         investmentsPage.estatePlanning();
-        waitFor(2);
+
         homePageV.investmentsMenu();
         investmentsPage.annuities();
-        waitFor(2);
+
 
 
 

@@ -18,13 +18,13 @@ public class PayInsuranceBillPageTest extends commonApi {
 
 
         homePageV.payABillMenu();
-        waitFor(2);
+
         payInsuranceBillPage.phoneNumberField();
-        waitFor(2);
+
         payInsuranceBillPage.dateOfBirthField();
-        waitFor(2);
+
         payInsuranceBillPage.payNowBtn();
-        waitFor(2);
+
 
 
 

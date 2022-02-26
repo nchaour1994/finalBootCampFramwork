@@ -20,27 +20,26 @@ public class BankingPageTest extends commonApi {
 
 
       homePageV.bankingMenu();
-      waitFor(2);
        bankingPage.personalBanking();
        waitFor(2);
        JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("window.scrollBy(0,250)");
        bankingPage.bankingOption();
-       waitFor(2);
+
        bankingPage.checkingAccount();
-       waitFor(2);
+
        homePageV.bankingMenu();
        bankingPage.saving();
-       waitFor(2);
+
         homePageV.bankingMenu();
         bankingPage.creditCard();
-        waitFor(2);
+
         homePageV.bankingMenu();
         bankingPage.cDS();
-        waitFor(2);
+
         homePageV.bankingMenu();
         bankingPage.retirementCds();
-        waitFor(2);
+
         homePageV.bankingMenu();
 
 

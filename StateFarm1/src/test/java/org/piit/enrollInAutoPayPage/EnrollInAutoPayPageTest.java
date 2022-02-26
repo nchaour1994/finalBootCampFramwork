@@ -16,13 +16,13 @@ public class EnrollInAutoPayPageTest extends commonApi {
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("window.scrollBy(0,250)");
         homePageV.enrollInAutoPayMenu();
-        waitFor(2);
+
         enrollInAutoPayPage.phoneNumberField();
-        waitFor(2);
+
         enrollInAutoPayPage.dateOfBirthField();
-        waitFor(2);
+
         enrollInAutoPayPage.continueBtn();
-        waitFor(2);
+
 
 
     }

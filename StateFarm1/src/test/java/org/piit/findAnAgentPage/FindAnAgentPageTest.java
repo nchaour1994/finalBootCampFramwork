@@ -16,19 +16,19 @@ public class FindAnAgentPageTest extends commonApi {
         homePageV.findAnAgentMenu();
         waitFor(2);
         findAnAgentPage.zipCodeField();
-        waitFor(2);
+
         findAnAgentPage.findAnAgentBtn();
-        waitFor(2);
+
         findAnAgentPage.advanceSearchOptions();
         waitFor(2);
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("window.scrollBy(0,250)");
         findAnAgentPage.firstNameField();
-        waitFor(2);
+
         findAnAgentPage.lastNameField();
-        waitFor(2);
+
         findAnAgentPage.searchBtn();
-        waitFor(2);
+
 
 
 

@@ -19,13 +19,13 @@ import org.testng.annotations.Test;
             //Assert.assertTrue(PayABillPage.payABillPage.isEnabled());
 
             homePageV.payABillMenu();
-            waitFor(2);
+
             payABillPage.phoneNumberField();
-            waitFor(2);
+
             payABillPage.dateOfBirthField();
-            waitFor(2);
+
             payABillPage.payNowBtn();
-            waitFor(2);
+
 
 
 

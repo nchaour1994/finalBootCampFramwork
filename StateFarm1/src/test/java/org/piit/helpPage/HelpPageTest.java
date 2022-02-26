@@ -30,15 +30,15 @@ public class HelpPageTest extends commonApi {
        JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,250)");
         helpPage.phoneNumberField();
-        waitFor(2);
+
         helpPage.birthDayField();
-        waitFor(2);
+
         helpPage.emailField();
-        waitFor(2);
+
         helpPage.textSelected();
         waitFor(2);
         helpPage.submitBtn();
-        waitFor(2);
+
 
 
 
