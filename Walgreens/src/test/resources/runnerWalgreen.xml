@@ -12,6 +12,7 @@
 
     <test name="walgreens test">
         <classes>
+
 <!--            <class name="org.piit.registration.CreateAccount"></class>-->
 <!--            <class name="org.piit.appointmentsForCovid.ScheduleAppointment"></class>-->
 <!--            <class name="org.piit.orderTestCovid.OderTests"></class>-->
@@ -46,6 +47,7 @@
 <!--            <class name="org.piit.accessToPrescriptionStatus.AccessToPrescription"></class>-->
 <!--            <class name="org.piit.accessToMessages.AccessToMessage"></class>-->
 <!--            <class name="org.piit.sortItems.SortItems"></class>-->
+
         </classes>
 
     </test>
