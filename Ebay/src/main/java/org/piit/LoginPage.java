@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Login extends commonApi {
+public class LoginPage extends commonApi {
     public LoginPage(WebDriver driver) {
         super.driver = driver;
         PageFactory.initElements(driver, this);
