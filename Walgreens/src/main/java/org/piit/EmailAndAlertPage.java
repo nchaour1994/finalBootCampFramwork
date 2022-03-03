@@ -27,4 +27,7 @@ public class EmailAndAlertPage extends commonApi {
     public boolean checkIfhelthcareClinicCheckboxIsSelected(){
         return helthcareClinicCheckbox.isSelected();
     }
+    public boolean checkIfdigitalReceiptCheckboxIsSelected(){
+        return digitalReceiptCheckbox.isSelected();
+    }
 }

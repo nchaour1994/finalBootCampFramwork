@@ -1,11 +1,14 @@
 package org.piit.joinMyWalgreens;
 
 import base.commonApi;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.piit.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utility.GetProperties;
 
+import java.time.Duration;
 import java.util.Properties;
 
 public class JoinMyWalgreens extends commonApi {
@@ -30,10 +33,11 @@ public class JoinMyWalgreens extends commonApi {
         MyWalgreensPage myWalgreensPage=new MyWalgreensPage(driver);
         SignInPage signInPage=new SignInPage(driver);
         YourAccountPage yourAccountPage=new YourAccountPage(driver);
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(2));
         CompleteYourAccountPage completeYourAccountPage=new CompleteYourAccountPage(driver);
         Assert.assertEquals(getTitle(),titleHomePage);
         home.clickONMenuBtn();
-        waitFor(1);
+        wait.until(ExpectedConditions.visibilityOf(home.myWalgreens));
         home.clickOnmyWalgreens();
         Assert.assertEquals(getTitle(),titleMyWalgreensPage);
         myWalgreensPage.clickOnjoinForFreeBtn();

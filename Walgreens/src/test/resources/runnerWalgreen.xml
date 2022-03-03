@@ -10,46 +10,99 @@
     <parameter name="URL" value="https://www.walgreens.com/"></parameter>
 
 
-    <test name="walgreens test">
-        <classes>
 
-<!--            <class name="org.piit.registration.CreateAccount"></class>-->
-<!--            <class name="org.piit.appointmentsForCovid.ScheduleAppointment"></class>-->
-<!--            <class name="org.piit.orderTestCovid.OderTests"></class>-->
-            <class name="org.piit.purchase.PurchaseItems"></class>
-<!--            <class name="org.piit.findLocations.FindLocationsNearby"></class>-->
-<!--            <class name="org.piit.updateAccountInfo.UpdateAccountInformations"></class>-->
-<!--            <class name="org.piit.acccessToCoupon.AccessToCoupon"></class>-->
+<!--    <test name="walgreens test">-->
+<!--        <classes>-->
+
+
+<!--        </classes>-->
+
+<!--    </test>-->
+    <test name="g1">
+        <classes>
+<!--            <class name="org.piit.accessToHealthProfile.AccessToHealthProfile"></class>-->
+<!--            <class name="org.piit.accessToPrescriptionStatus.AccessToPrescription"></class>-->
+        </classes>
+    </test>
+    <test name="g2">
+        <classes>
+<!--            <class name="org.piit.addQuantityInShoppingCart.AddQuantity"></class>-->
+<!--            <class name="org.piit.accessToMessages.AccessToMessage"></class>-->
+        </classes>
+    </test>
+    <test name="g3">
+        <classes>
 <!--            <class name="org.piit.login.LoginToAccount"></class>-->
-<!--            <class name="org.piit.qualificationForCreditCard.QualifyForCreditCard"></class>-->
-<!--            <class name="org.piit.findCare.FindCare"></class>-->
-<!--            <class name="org.piit.chat.ChatWithWalgreens"></class>-->
-<!--            <class name="org.piit.accessWeeklyad.WeekyAd"></class>-->
-<!--            <class name="org.piit.takePhotos.MakePhotoBook"></class>-->
-<!--            <class name="org.piit.orderPostCard.OrderBusinessPostCard"></class>-->
-<!--            <class name="org.piit.makeCanvasAndDecor.MakeCanvas"></class>-->
-<!--            <class name="org.piit.transferRx.TransferRx"></class>-->
-<!--            <class name="org.piit.makePoster.MakePoster"></class>-->
-<!--            <class name="org.piit.joinMyWalgreens.JoinMyWalgreens"></class>-->
-<!--            <class name="org.piit.viewBenefitsAndActivities.viewBenefits"></class>-->
-<!--            <class name="org.piit.viewPurchaseHistory.ViewHistory"></class>-->
-<!--            <class name="org.piit.viewMemberShip.ViewMemberShip"></class>-->
-<!--            <class name="org.piit.accessToEmailAndAlert.accessToEmailAndAlert"></class>-->
+<!--            <class name="org.piit.logout.Logout"></class>-->
+        </classes>
+    </test>
+    <test name="g4">
+        <classes>
+<!--                        <class name="org.piit.scheduleFluVaccine.ScheduleFluVaccine"></class>-->
+<!--                        <class name="org.piit.scheduleBoosterShot.ScheduleBoosterShot"></class>-->
+<!--                        <class name="org.piit.writeAReview.WriteReview"></class>-->
+<!--                        <class name="org.piit.viewVaccineRecord.ViewRecordVaccine"></class>-->
+        </classes>
+    </test>
+    <test name="g5">
+        <classes>
 <!--            <class name="org.piit.scheduleFluVaccine.ScheduleFluVaccine"></class>-->
 <!--            <class name="org.piit.scheduleBoosterShot.ScheduleBoosterShot"></class>-->
 <!--            <class name="org.piit.writeAReview.WriteReview"></class>-->
 <!--            <class name="org.piit.viewVaccineRecord.ViewRecordVaccine"></class>-->
-<!--            <class name="org.piit.logout.Logout"></class>-->
-<!--            <class name="org.piit.accessShoppingListAndBuyItAgain.AccessToShoppingList"></class>-->
-<!--            <class name="org.piit.accessToMyShoppingCart.AccessShoppingCart"></class>-->
-<!--            <class name="org.piit.addQuantityInShoppingCart.AddQuantity"></class>-->
-<!--            <class name="org.piit.accessToHealthProfile.AccessToHealthProfile"></class>-->
-<!--            <class name="org.piit.accessToPrescriptionStatus.AccessToPrescription"></class>-->
-<!--            <class name="org.piit.accessToMessages.AccessToMessage"></class>-->
-<!--            <class name="org.piit.sortItems.SortItems"></class>-->
+        </classes>
+    </test>
+    <test name="g6">
+        <classes>
+<!--                        <class name="org.piit.makePoster.MakePoster"></class>-->
+<!--                        <class name="org.piit.joinMyWalgreens.JoinMyWalgreens"></class>-->
+<!--                        <class name="org.piit.viewBenefitsAndActivities.viewBenefits"></class>-->
+<!--                        <class name="org.piit.viewPurchaseHistory.ViewHistory"></class>-->
+<!--                        <class name="org.piit.viewMemberShip.ViewMemberShip"></class>-->
+<!--                        <class name="org.piit.accessToEmailAndAlert.accessToEmailAndAlert"></class>-->
+<!--                        <class name="org.piit.accessShoppingListAndBuyItAgain.AccessToShoppingList"></class>-->
+<!--                        <class name="org.piit.accessToMyShoppingCart.AccessShoppingCart"></class>-->
+<!--                        <class name="org.piit.sortItems.SortItems"></class>-->
 
         </classes>
+    </test>
+    <test name="g7">
+        <classes>
 
+<!--                        <class name="org.piit.qualificationForCreditCard.QualifyForCreditCard"></class>-->
+<!--                        <class name="org.piit.findCare.FindCare"></class>-->
+<!--                        <class name="org.piit.chat.ChatWithWalgreens"></class>-->
+<!--                        <class name="org.piit.accessWeeklyad.WeekyAd"></class>-->
+<!--                        <class name="org.piit.takePhotos.MakePhotoBook"></class>-->
+<!--                        <class name="org.piit.orderPostCard.OrderBusinessPostCard"></class>-->
+<!--                        <class name="org.piit.makeCanvasAndDecor.MakeCanvas"></class>-->
+<!--                        <class name="org.piit.transferRx.TransferRx"></class>-->
+
+        </classes>
+    </test>
+    <test name="g8">
+        <classes>
+<!--            <class name="org.piit.registration.CreateAccount"></class>-->
+<!--            <class name="org.piit.appointmentsForCovid.ScheduleAppointment"></class>-->
+<!--            <class name="org.piit.orderTestCovid.OderTests"></class>-->
+<!--            <class name="org.piit.purchase.PurchaseItems"></class>-->
+<!--            <class name="org.piit.findLocations.FindLocationsNearby"></class>-->
+<!--            <class name="org.piit.updateAccountInfo.UpdateAccountInformations"></class>-->
+<!--            <class name="org.piit.acccessToCoupon.AccessToCoupon"></class>-->
+        </classes>
+    </test>
+    <test name="g10">
+        <classes>
+<!--          <class name="org.piit.shopPassportPhoto.ShopPassportPhotos"></class>-->
+<!--            <class name="org.piit.makeFullPhoto.MakeFullPhoto"></class>-->
+<!--            <class name="org.piit.makeBirthDayCard.MakeBirthDayCard"></class>-->
+<!--<class name="org.piit.makeCalendar.MakeCalendar"></class>-->
+<!--            <class name="org.piit.makeCustomPuzzle.MakeCustomPuzzle"></class>-->
+<!--<class name="org.piit.printBook.PrintBook"></class>-->
+<!--            <class name="org.piit.accessToPhotoDeal.PhotoDeal"></class>-->
+<!--            <class name="org.piit.accessToHealthInssuranceMarketPlace.healthIssuranceMarketPlace"></class>-->
+            <class name="org.piit.shopGiftCards.ShopGoogleGiftCard"></class>
+        </classes>
     </test>
 
 

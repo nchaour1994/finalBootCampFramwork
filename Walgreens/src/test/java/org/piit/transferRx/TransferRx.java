@@ -26,9 +26,7 @@ public class TransferRx extends commonApi {
         Assert.assertEquals(getTitle(),"Guest Transfer RX | Pharmacy | Walgreens");
         guestTransferRx.typeOnpharmacyNameField();
         guestTransferRx.typeOnpharmacyphoneField();
-
         guestTransferRx.typeOnDrugNameField();
-
         guestTransferRx.selectCheckboxSupply();
         guestTransferRx.clickOncontinueBtn();
         guestTransferRx.typeOnfirstNameField();
@@ -37,7 +35,6 @@ public class TransferRx extends commonApi {
         guestTransferRx.typeOndob();
         guestTransferRx.typeOnphoneNumber();
         guestTransferRx.selecttypePhone();
-
 
 
     }

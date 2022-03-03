@@ -9,16 +9,17 @@ import utility.GetProperties;
 
 import java.util.Properties;
 
-public class WeeklyAd extends commonApi {
+public class WeeklyAdPage extends commonApi {
 
     Properties prop = GetProperties.loadProperties("..\\Walgreens\\src\\test\\resources\\config.properties");
     String myChoiceInWeeklyAd=prop.getProperty("myChoiceInWeeklyAd");
-    public WeeklyAd(WebDriver driver){
+    public WeeklyAdPage(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver,this);
     }
 
     @FindBy(css = "#pr-dwa-jumpmenu-ddl")
+    public
     WebElement jumpToDropDown;
 
     public void selectFromjumpToDropDown(){
