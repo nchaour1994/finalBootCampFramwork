@@ -12,10 +12,12 @@ public class RegisterPage extends commonApi {
         this.driver=driver;
         PageFactory.initElements(driver,this);
     }
+    String name=prop.getProperty("name");
+    String lastName=prop.getProperty("lastName");
     @FindBy(xpath = "//input[@name=\"firstName\"]")
     WebElement firstNameField;
     @FindBy(xpath = "//input[@name=\"lastName\"]")
-    WebElement lastNameFiled;
+    WebElement lastNameField;
     @FindBy(xpath = "//input[@name=\"registerData\"]")
     WebElement emailField;
     @FindBy(xpath = "//input[@name=\"registerPassword\"]")
@@ -34,12 +36,12 @@ public class RegisterPage extends commonApi {
     public
     WebElement checkBoxAgreement;
     public void typeOnFirstNameField(){
-        type(firstNameField,"john");
+        type(firstNameField,name);
 
 
     }
     public void typeOnLastNameField(){
-        type(lastNameFiled,"alba");
+        type(lastNameField,lastName);
     }
     public void typeOnEmailField(){
         type(emailField,"john1994123@gmail.com");
@@ -58,5 +60,11 @@ public class RegisterPage extends commonApi {
     }
     public void flagCheckBoxAgreement(){
         click(checkBoxAgreement);
+    }
+    public String getValueOfName(){
+        return firstNameField.getAttribute("value");
+    }
+    public String getValueOfLastName(){
+        return lastNameField.getAttribute("value");
     }
 }

@@ -15,7 +15,8 @@ public class ChatPage extends commonApi {
 
     @FindBy(css = "#ChatButton")
     WebElement chatBtn;
-    @FindBy(css = "div[class='d2102020'] div div div")
+    @FindBy(xpath = "//div[@class='d2102020']")
+    public
     WebElement chatWindow;
 
     public void clickOnchatBtn(){
@@ -24,5 +25,8 @@ public class ChatPage extends commonApi {
     public void dragChatWindow(){
         Actions actions=new Actions(driver);
         actions.dragAndDropBy(chatWindow,500,7).build().perform();
+    }
+    public boolean checkIfchatWindowIsDsplayed(){
+        return chatWindow.isDisplayed();
     }
 }

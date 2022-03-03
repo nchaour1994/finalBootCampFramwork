@@ -24,7 +24,7 @@ public class FindLocationsNearby extends commonApi {
          waitFor(3);
          Assert.assertTrue(home.checkIfarrowDownForStoreLocationIsEnabled());
          home.clickOnarrowDownForStoreLocation();
-       home.typeOnsearchForLocationField();
+         home.typeOnsearchForLocationField();
 
 
     }

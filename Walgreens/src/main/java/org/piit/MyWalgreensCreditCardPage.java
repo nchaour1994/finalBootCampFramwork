@@ -18,6 +18,7 @@ public class MyWalgreensCreditCardPage extends commonApi {
     @FindBy(xpath = "//a[@data-element-name='do not add as preferred post-approval']")
     WebElement setWithoutAddingAsPreferred;
     @FindBy(xpath = "//button[text()='Start my application']")
+    public
     WebElement startMyApplicationBtn;
 
 

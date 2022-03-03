@@ -18,6 +18,7 @@ public class ConsentPage extends commonApi {
     @FindBy(xpath = "//*[@class='btn-signin btn__aqua']")
     WebElement signInBtn;
     @FindBy(xpath = "//*[text()='Health Profile']")
+    public
     WebElement healthProfileActive;
     @FindBy(css = "#myWag_icon")
     WebElement myWalgreensHealthGoals;

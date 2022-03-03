@@ -16,6 +16,8 @@ public class ScheduleAppointment extends commonApi {
     String titleCovidTestingPage=prop.getProperty("titleCovidTestingPage");
     String titleDriveThruTestingPage=prop.getProperty("titleDriveThruTestingPage");
     String titlecovidRecord=prop.getProperty("titlecovidRecord");
+    String zipCode=prop.getProperty("zipCode");
+    String titleVaccineAppointmentPage=prop.getProperty("titleVaccineAppointmentPage");
 
    @Test
     public void testScheduleAnAppointment(){
@@ -29,6 +31,7 @@ public class ScheduleAppointment extends commonApi {
         Assert.assertTrue(scheduleVaccinationAppointments.checkIfcheckboxCovid19VaccineIsSelected());
         scheduleVaccinationAppointments.clearZipCodeLoctionForScheduleVaccine();
         scheduleVaccinationAppointments.typeOnZipCodeLoctionForScheduleVaccine();
+        Assert.assertEquals(scheduleVaccinationAppointments.getValueOfzipcodeLocationForScheduleVaccine(),zipCode);
         scheduleVaccinationAppointments.typeONdateOfBirthForScheduleVaccine();
         scheduleVaccinationAppointments.flagoptionNoInScheduleVaccine();
         Assert.assertTrue(scheduleVaccinationAppointments.checkIfoptionNoInScheduleVaccineIsSelected());
@@ -36,7 +39,7 @@ public class ScheduleAppointment extends commonApi {
         Assert.assertTrue(scheduleVaccinationAppointments.checkIfoptionNoHasReceiveAuthorisationCodeIsSelected());
         Assert.assertTrue(scheduleVaccinationAppointments.checkIfcontinueBtnOnScheduleVaccineIsEnabled());
         scheduleVaccinationAppointments.clickOncontinueBtnOnScheduleVaccine();
-          waitFor(3);
+        Assert.assertEquals(getTitle(),titleVaccineAppointmentPage);
        // (//section[@role='group']/ul/li/span[text()='05:00 pm'])[3]
 
         //missing script
@@ -58,6 +61,7 @@ public class ScheduleAppointment extends commonApi {
         scheduleVaccinationAppointments.flagCovid19VaccineCheckBox();
         scheduleVaccinationAppointments.clearZipCodeLoctionForScheduleVaccine();
         scheduleVaccinationAppointments.typeOnZipCodeLoctionForScheduleVaccine();
+        Assert.assertEquals(scheduleVaccinationAppointments.getValueOfzipcodeLocationForScheduleVaccine(),zipCode);
         scheduleVaccinationAppointments.typeONdateOfBirthForScheduleVaccine();
         scheduleVaccinationAppointments.flagoptionNoInScheduleVaccine();
         Assert.assertTrue(scheduleVaccinationAppointments.checkIfoptionNoInScheduleVaccineIsSelected());
@@ -65,6 +69,8 @@ public class ScheduleAppointment extends commonApi {
         Assert.assertTrue(scheduleVaccinationAppointments.checkIfoptionNoHasReceiveAuthorisationCodeIsSelected());
         Assert.assertTrue(scheduleVaccinationAppointments.checkIfcontinueBtnOnScheduleVaccineIsEnabled());
         scheduleVaccinationAppointments.clickOncontinueBtnOnScheduleVaccine();
+       Assert.assertEquals(getTitle(),titleVaccineAppointmentPage);
+
 
 
     }
@@ -85,7 +91,7 @@ public class ScheduleAppointment extends commonApi {
         driveThruTesting.clickOnrapidDiagnosticTest();
         Assert.assertTrue(driveThruTesting.checkIfrapidDiagnosticTestIsSelected());
         driveThruTesting.clickOntestDate();
-        waitFor(2);
+        Assert.assertTrue(driveThruTesting.checkIfcalendarIsDisplayed());
        // Assert.assertTrue(driveThruTesting.testDate.isSelected());
         //driveThruTesting.clickOntestTime();
        // Assert.assertTrue(driveThruTesting.testTime.isSelected());
@@ -112,7 +118,8 @@ public class ScheduleAppointment extends commonApi {
         driveThruTesting.clickOnrapidDiagnosticTest();
         Assert.assertTrue(driveThruTesting.checkIfrapidDiagnosticTestIsSelected());
         driveThruTesting.clickOntestDate();
-        waitFor(2);
+        Assert.assertTrue(driveThruTesting.checkIfcalendarIsDisplayed());
+
         // Assert.assertTrue(driveThruTesting.testDate.isSelected());
        // driveThruTesting.clickOntestTime();
         // Assert.assertTrue(driveThruTesting.testTime.isSelected());

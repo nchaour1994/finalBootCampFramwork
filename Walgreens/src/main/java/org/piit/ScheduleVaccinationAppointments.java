@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ScheduleVaccinationAppointments extends commonApi {
+
+    String zipCode=prop.getProperty("zipCode");
     public ScheduleVaccinationAppointments(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver,this);
@@ -52,7 +54,7 @@ public class ScheduleVaccinationAppointments extends commonApi {
         clear(zipcodeLocationForScheduleVaccine);
     }
     public void typeOnZipCodeLoctionForScheduleVaccine(){
-        type(zipcodeLocationForScheduleVaccine,"11104");
+        type(zipcodeLocationForScheduleVaccine,zipCode);
     }
     public void typeONdateOfBirthForScheduleVaccine(){
         type(dateOfBirthForScheduleVaccine,"02021995");
@@ -93,4 +95,11 @@ public class ScheduleVaccinationAppointments extends commonApi {
     public boolean checkIfcheckboxCovid19VaccineIsSelected(){
         return checkboxCovid19Vaccine.isSelected();
     }
+    public String getValueOfzipcodeLocationForScheduleVaccine(){
+        return zipcodeLocationForScheduleVaccine.getAttribute("value");
+    }
+    public boolean checkIfpatientCompemisedIsSelected(){
+        return patientCompemised.isSelected();
+    }
+
 }

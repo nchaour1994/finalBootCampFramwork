@@ -1,13 +1,14 @@
 package org.piit.accessWeeklyad;
 
 import base.commonApi;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.piit.HomePage;
-import org.piit.WeeklyAd;
+import org.piit.WeeklyAdPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utility.GetProperties;
 
-import java.util.Properties;
+import java.time.Duration;
 
 public class WeekyAd extends commonApi {
 
@@ -17,14 +18,17 @@ public class WeekyAd extends commonApi {
     @Test
     public void TestAccessToweeklyAd(){
         HomePage home=new HomePage(driver);
-        WeeklyAd weeklyAd=new WeeklyAd(driver);
+        WeeklyAdPage weeklyAd=new WeeklyAdPage(driver);
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(2));
         Assert.assertTrue(home.checkIfmenuBtnIsEnabled());
         home.clickONMenuBtn();
         Assert.assertTrue(home.checkIfweeklyADIsEnabled());
-        waitFor(1);
+        wait.until(ExpectedConditions.visibilityOf(home.weeklyAD));
         home.clickOnweeklyAD();
         Assert.assertEquals(driver.getTitle(),titleWeeklyAdPage);
         weeklyAd.selectFromjumpToDropDown();
+        Assert.assertTrue(weeklyAd.jumpToDropDown.isDisplayed());
+
 
 
     }

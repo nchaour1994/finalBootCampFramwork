@@ -20,6 +20,7 @@ public class YourAccountPage extends commonApi {
     public
     WebElement personalInformationInProfile;
     @FindBy(css = "#sign_up")
+    public
     WebElement joinNowBtn;
     @FindBy(xpath = "//*[text()='View benefits ']")
     WebElement viewBenefits;
