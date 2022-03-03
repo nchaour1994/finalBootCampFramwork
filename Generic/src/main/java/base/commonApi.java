@@ -1,10 +1,10 @@
 package base;
 
 import com.relevantcodes.extentreports.LogStatus;
-import com.sun.deploy.config.JREInfo;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -14,10 +14,10 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import org.testng.annotations.Optional;
 import reporting.ExtentManager;
 import reporting.ExtentTestManager;
 import utility.GetProperties;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -27,10 +27,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class commonApi {
@@ -152,18 +149,30 @@ public class commonApi {
             getDriver(os, browserName);
         }
         driver.get(url);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
     }
     public WebDriver getDriver(String os ,String browserName ){
+        ChromeOptions options = new ChromeOptions();
+        Proxy proxy = new Proxy();
+        proxy.setHttpProxy("<HOST:PORT>");
+
+        Map<String, Object> prefs = new HashMap<String, Object>();
+        prefs.put("credentials_enable_service", false);
         if (browserName.equalsIgnoreCase("chrome")){
             if (os.equalsIgnoreCase("windows")){
+                options.setExperimentalOption("useAutomationExtension", false);
+                options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+                options.setExperimentalOption("prefs", prefs);
+                options.setCapability("proxy", proxy);
+
+                //  options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
                 System.setProperty("webdriver.chrome.driver",path+"\\IdeaProjects\\finalBootCampFramwork\\Generic\\src\\Drivers\\chromedriver.exe");
             }else{
                 System.setProperty("webdriver.chrome.driver",path+"\\IdeaProjects\\finalBootCampFramwork\\Generic\\src\\Drivers\\chromedriver");
             }
-            driver=new ChromeDriver();
+            driver=new ChromeDriver(options);
         }else if (browserName.equalsIgnoreCase("firefox")){
             if(os.equalsIgnoreCase("windows")){
                 System.setProperty("webdriver.gecko.driver",path+"\\IdeaProjects\\finalBootCampFramwork\\Generic\\src\\Drivers\\geckodriver.exe");
