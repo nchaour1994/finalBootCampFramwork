@@ -1,6 +1,8 @@
 package org.piit.accessToMessages;
 
 import base.commonApi;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.piit.CompleteYourAccountPage;
 import org.piit.HomePage;
 import org.piit.SignInPage;
@@ -8,6 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utility.GetProperties;
 
+import java.time.Duration;
 import java.util.Properties;
 
 public class AccessToMessage extends commonApi {
@@ -30,9 +33,10 @@ public class AccessToMessage extends commonApi {
         HomePage home=new HomePage(driver);
         SignInPage signInPage=new SignInPage(driver);
         CompleteYourAccountPage completeYourAccountPage = new CompleteYourAccountPage(driver);
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(3));
         Assert.assertEquals(getTitle(),titleHomePage);
         home.clickOnAccountBtn();
-        waitFor(1);
+        wait.until(ExpectedConditions.visibilityOf(home.signInBtnInAccountMenu));
         home.clickOnsignInBtnInAccountMenu();
         Assert.assertEquals(getTitle(),titleSignInPage);
         signInPage.typeOnuserNameFieldInSignIn();
@@ -43,7 +47,7 @@ public class AccessToMessage extends commonApi {
         signInPage.clickOnsignInBtn();
         Assert.assertTrue(home.checkIfAccountBtnIsEnabled());
         home.clickOnAccountBtn();
-        waitFor(2);
+        wait.until(ExpectedConditions.visibilityOf(home.messageInAccountMenu));
         Assert.assertTrue(home.checkIfmessageInAccountMenuIsEnabled());
         home.clickOnmessageInAccountMenu();
         Assert.assertEquals(getTitle(),titleCompleteAccountPage);
@@ -66,10 +70,11 @@ public class AccessToMessage extends commonApi {
         HomePage home =new HomePage(driver);
         SignInPage signInPage=new SignInPage(driver);
         CompleteYourAccountPage completeYourAccountPage = new CompleteYourAccountPage(driver);
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(3));
         Assert.assertEquals(getTitle(),titleHomePage);
         Assert.assertTrue(home.checkIfmenuBtnIsEnabled());
         home.clickONMenuBtn();
-        waitFor(1);
+        wait.until(ExpectedConditions.visibilityOf(home.yourAccountInMenuDropDown));
         Assert.assertTrue(home.checkIfyourAccountInMenuDropDownIsEnabled());
         home.clickOnAccountMenuInDropDown();
         Assert.assertTrue(home.checkIfsingInBtnInMenuIsEnabled());
@@ -81,9 +86,10 @@ public class AccessToMessage extends commonApi {
         Assert.assertEquals(signInPage.getValueOfpasswordFieldInSignIn(),password);
         Assert.assertTrue(signInPage.checkIfSignInBtnIsEnabled());
         signInPage.clickOnsignInBtn();
+        wait.until(ExpectedConditions.visibilityOf(home.menuBtn));
         Assert.assertTrue(home.checkIfmenuBtnIsEnabled());
         home.clickONMenuBtn();
-        waitFor(1);
+        wait.until(ExpectedConditions.visibilityOf(home.yourAccountInMenuDropDown));
         Assert.assertTrue(home.checkIfyourAccountInMenuDropDownIsEnabled());
         home.clickOnAccountMenuInDropDown();
         Assert.assertTrue(home.checkIfmessagesInMenuIsEnabled());

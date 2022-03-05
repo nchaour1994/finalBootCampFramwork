@@ -24,7 +24,7 @@ public class FindLocationsNearby extends commonApi {
          waitFor(3);
          Assert.assertTrue(home.checkIfarrowDownForStoreLocationIsEnabled());
          home.clickOnarrowDownForStoreLocation();
-       home.typeOnsearchForLocationField();
+         home.typeOnsearchForLocationField();
 
 
     }
@@ -51,6 +51,26 @@ public class FindLocationsNearby extends commonApi {
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(2));
         wait.until(ExpectedConditions.visibilityOf(home.findStoreInMenu));
         home.clickOnfindStoreInMenu();
+        Assert.assertEquals(driver.getTitle(),titleFindStorePage);
+        findStorePage.clickOnUpdateLocation();
+        Assert.assertTrue(findStorePage.checkIflocationFieldIsDisplayed());
+        findStorePage.typeOnlocationField();
+    }
+    @Test
+    public void testFindLocationFromInformationPage(){
+        HomePage home= new HomePage(driver);
+        FindStorePage findStorePage=new FindStorePage(driver);
+        Assert.assertEquals(getTitle(),titleHomePage);
+        home.clickOncovid19vaccineInformationIcon();
+
+
+    }
+    @Test
+    public void testFindLocationFromHomePage(){
+        HomePage home= new HomePage(driver);
+        FindStorePage findStorePage=new FindStorePage(driver);
+        Assert.assertEquals(getTitle(),titleHomePage);
+        home.clickOnfindStore();
         Assert.assertEquals(driver.getTitle(),titleFindStorePage);
         findStorePage.clickOnUpdateLocation();
         Assert.assertTrue(findStorePage.checkIflocationFieldIsDisplayed());

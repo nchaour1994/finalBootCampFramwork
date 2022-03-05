@@ -1,8 +1,6 @@
 package org.piit;
 
 import base.commonApi;
-import com.sun.deploy.config.JREInfo;
-import com.sun.glass.ui.MenuItem;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

@@ -1,7 +1,5 @@
 package org.piit;
 import base.commonApi;
-
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -51,14 +49,47 @@ public class SettingPage extends commonApi{
     WebElement PushNotifications;
     public void  clickPushNotification(){click(PushNotifications);}
     @FindBy(xpath = "//body/div[@id='react-root']/section[1]/main[1]/div[1]/article[1]/div[1]/section[1]/div[2]/fieldset[1]/label[2]/div[1]")
-    WebElement FromPeople;
+    WebElement FromPeople;//likes
     public void clickFromPeople(){click(FromPeople);}
     @FindBy(xpath = "//body/div[@id='react-root']/section[1]/main[1]/div[1]/article[1]/div[1]/section[2]/div[2]/fieldset[1]/label[1]/div[1]")
-    WebElement Commentsoff;
+    WebElement Commentsoff;//comments
     public void clickCommentsOff(){click(Commentsoff);}
     @FindBy(xpath = "//h2[contains(text(),'Reminders')]")
-    WebElement ReminderOff;
+    WebElement ReminderOff;//reminder
     public void clickReminderOff(){click(ReminderOff);}
+    @FindBy(xpath = "//body/div[@id='react-root']/section[1]/main[1]/div[1]/article[1]/div[1]/section[3]/div[2]/fieldset[1]/label[1]/div[1]")
+    WebElement CommentLikesoff;
+    public void clickCommentLikesoff(){click(CommentLikesoff);}
+    @FindBy(xpath = "//body/div[@id='react-root']/section[1]/main[1]/div[1]/article[1]/div[1]/section[4]/div[2]/fieldset[1]/label[1]/div[1]")
+    WebElement LikesCommentsPhotosoff;
+    public void clickLikesCommentPhotosOff(){click(LikesCommentsPhotosoff);}
+    @FindBy(xpath = "//body/div[@id='react-root']/section[1]/main[1]/div[1]/article[1]/div[1]/section[4]/div[2]/fieldset[1]/label[3]/div[1]")
+    WebElement LikesCommentsPhotosFromEveryone;
+    public void clickLikesCommentsPhotosFromEveryone(){click(LikesCommentsPhotosFromEveryone);}
+    @FindBy(xpath = "//h2[contains(text(),'Accepted Follow Requests')]")
+    WebElement AcceptedFollowRequests;
+    public void  clickAcceptedFollowRequests(){click(AcceptedFollowRequests);}
+    @FindBy(xpath = "//body/div[@id='react-root']/section[1]/main[1]/div[1]/article[1]/div[1]/section[5]/div[2]/fieldset[1]/label[1]/div[1]")
+    WebElement AcceptedFollowRequestsOff;
+    public void  clickAcceptedFollowRequestsOff(){click(AcceptedFollowRequestsOff);}
+    @FindBy(xpath = "//body/div[@id='react-root']/section[1]/main[1]/div[1]/article[1]/div[1]/section[6]/div[2]/fieldset[1]/label[1]/div[1]")
+    WebElement InstagramDirectRequests;
+    public void clickInstagramDirectRequests(){click(InstagramDirectRequests);}
+    @FindBy(xpath = "//body/div[@id='react-root']/section[1]/main[1]/div[1]/article[1]/div[1]/section[7]/div[2]/fieldset[1]/label[1]/div[1]")
+    WebElement InstagramDirect;
+    public void clickInstagramDirect(){click(InstagramDirect);}
+    @FindBy(xpath = "//body/div[@id='react-root']/section[1]/main[1]/div[1]/article[1]/div[1]/section[9]/div[2]/fieldset[1]/label[2]/div[1]")
+    WebElement FindPostsStories;
+    public void clickFindPostsStories(){click(FindPostsStories);}
+    @FindBy(xpath = "//body/div[@id='react-root']/section[1]/main[1]/div[1]/article[1]/div[1]/section[10]/div[2]/fieldset[1]/label[1]/div[1]")
+    WebElement VideoViewCounts;
+    public void clickVideoViewCounts(){click(VideoViewCounts);}
+    @FindBy(xpath = "//body/div[@id='react-root']/section[1]/main[1]/div[1]/article[1]/div[1]/section[11]/div[2]/fieldset[1]/label[1]/div[1]")
+    WebElement SupportRequests;
+    public void clickSupportRequests(){click(SupportRequests);}
+    @FindBy(xpath = "//body/div[@id='react-root']/section[1]/main[1]/div[1]/article[1]/div[1]/section[12]/div[2]/fieldset[1]/label[1]/div[1]")
+    WebElement LiveVideos;
+    public void clickLiveVideos(){click(LiveVideos);}
 
     @FindBy(xpath = "//a[contains(text(),'Manage Contacts')]")
     WebElement ManageContacts;
@@ -82,6 +113,31 @@ public class SettingPage extends commonApi{
     @FindBy(xpath = "//a[contains(text(),'View Account Data')]")
     WebElement AccountData;
     public void clickAccountData(){click(AccountData);}
+    @FindBy(xpath = "//body/div[@id='react-root']/section[1]/main[1]/div[1]/article[1]/main[1]/section[3]/div[2]/div[1]/div[1]/label[1]/div[1]")
+    WebElement StorySharing;
+    public void clickStorySharing(){click(StorySharing);}
+    @FindBy(xpath = "//a[contains(text(),'Edit Comment Settings')]")
+    WebElement EditCommentingSettings;
+    public void clickEditCommentingSetting(){click(EditCommentingSettings);}
+    @FindBy(xpath = "//body/div[@id='react-root']/section[1]/main[1]/div[1]/article[1]/main[1]/section[5]/div[2]/fieldset[1]/label[2]/div[1]")
+    WebElement PhotosOfYouManually;
+    public void clickPhotosOfYouManually(){click(PhotosOfYouManually);}
+   @FindBy(xpath = "//a[contains(text(),'Request Download')]")
+   WebElement DataDownLoad;
+    public void clickDataDownload(){click(DataDownLoad);}
+    @FindBy(xpath = "//button[contains(text(),'Next')]")
+    WebElement DataDownLoadNext;
+    public void clickDataDownloadNext(){click(DataDownLoadNext);}
+    @FindBy(xpath = "//a[contains(text(),'Support')]")
+    WebElement PrivacySecurityHelp;
+    public void clickPrivacySecurityHelp(){click(PrivacySecurityHelp);}
+    @FindBy(xpath = "//a[contains(text(),'Age Requirements')]")
+    WebElement AgeRequirements;
+    public void clickAgeRequirements(){click(AgeRequirements);}
+    @FindBy(xpath = "//a[contains(text(),'Location Sharing')]")
+    WebElement LocationSharing;
+    public void clickLocationSharing(){click(LocationSharing);}
+
 
     @FindBy(xpath = "//a[contains(text(),'Login Activity')]")
     WebElement loginActivity;
@@ -103,6 +159,13 @@ public class SettingPage extends commonApi{
     @FindBy(xpath = "//a[contains(text(),'Help')]")
     WebElement Helps;
     public void clickHelp(){click(Helps);}
+    @FindBy(xpath = "//span[contains(text(),'Support Requests')]")
+    WebElement SupportsRequests;
+    public void clickSupportsRequests(){click(SupportsRequests);}
+    @FindBy(xpath = "//span[contains(text(),'Reports')]")
+    WebElement HelpReport;
+    public void clickHelpReport(){click(HelpReport);}
+
     @FindBy(xpath = "//a[contains(text(),'Switch to Professional Account')]")
     WebElement ProfessionalAccount;
     public void clickProfessionalAccount(){click(ProfessionalAccount);}

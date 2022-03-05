@@ -1,6 +1,8 @@
 package org.piit.accessToPrescriptionStatus;
 
 import base.commonApi;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.piit.CompleteYourAccountPage;
 import org.piit.HomePage;
 import org.piit.SignInPage;
@@ -8,6 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utility.GetProperties;
 
+import java.time.Duration;
 import java.util.Properties;
 
 public class AccessToPrescription extends commonApi {
@@ -32,9 +35,10 @@ public class AccessToPrescription extends commonApi {
         SignInPage signInPage = new SignInPage(driver);
         CompleteYourAccountPage completeYourAccountPage = new CompleteYourAccountPage(driver);
         Assert.assertEquals(getTitle(),titleHomePage);
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(2));
         Assert.assertTrue(home.checkIfmenuBtnIsEnabled());
         home.clickONMenuBtn();
-        waitFor(1);
+        wait.until(ExpectedConditions.visibilityOf(home.yourAccountInMenuDropDown));
         Assert.assertTrue(home.checkIfyourAccountInMenuDropDownIsEnabled());
         home.clickOnAccountMenuInDropDown();
         Assert.assertTrue(home.checkIfsingInBtnInMenuIsEnabled());
@@ -48,7 +52,7 @@ public class AccessToPrescription extends commonApi {
         signInPage.clickOnsignInBtn();
         Assert.assertTrue(home.checkIfmenuBtnIsEnabled());
         home.clickONMenuBtn();
-        waitFor(1);
+        wait.until(ExpectedConditions.visibilityOf(home.yourAccountInMenuDropDown));
         Assert.assertTrue(home.checkIfyourAccountInMenuDropDownIsEnabled());
         home.clickOnAccountMenuInDropDown();
         Assert.assertTrue(home.checkIfprescriptionstatusIsEnabled());
@@ -73,9 +77,10 @@ public class AccessToPrescription extends commonApi {
         SignInPage signInPage=new SignInPage(driver);
         CompleteYourAccountPage completeYourAccountPage = new CompleteYourAccountPage(driver);
         Assert.assertEquals(getTitle(),titleHomePage);
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(2));
         Assert.assertTrue(home.checkIfAccountBtnIsEnabled());
         home.clickOnAccountBtn();
-        waitFor(1);
+        wait.until(ExpectedConditions.visibilityOf(home.signInBtnInAccountMenu));
         Assert.assertTrue(home.checkIfsignInBtnInAccountMenuIsEnabled());
         home.clickOnsignInBtnInAccountMenu();
         Assert.assertEquals(getTitle(),titleSignInPage);
@@ -86,7 +91,7 @@ public class AccessToPrescription extends commonApi {
         Assert.assertTrue(signInPage.signInBtn.isEnabled());
         signInPage.clickOnsignInBtn();
         home.clickOnAccountBtn();
-        waitFor(1);
+        wait.until(ExpectedConditions.visibilityOf(home.prescriptionStatusINAccountMenu));
         home.clickOnprescriptionStatusINAccountMenu();
         Assert.assertEquals(getTitle(),titleCompleteAccountPage);
         completeYourAccountPage.typeOndobField();

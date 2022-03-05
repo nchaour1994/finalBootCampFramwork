@@ -5,10 +5,10 @@ import org.piit.SignInPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import test.tmp.AssertEqualsTest;
-
+//3
 public class SignPage extends commonApi{
-  //   @Test
-    public void LoginWithValidCresential(){
+     @Test
+    public void loginWithValidCresential(){
         SignInPage sign = new SignInPage(driver);
         sign.enterEmail();
         sign.enterPassword();
@@ -16,33 +16,16 @@ public class SignPage extends commonApi{
         sign.logIn();
         waitFor(4);}
 
-   // @Test
-    public void SaveLogin(){SignInPage sign = new SignInPage(driver);
-        sign.enterEmail();
-        sign.enterPassword();
-        sign.logIn();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
-        waitFor(4);}
-   //@Test
-    public void NotificationButton(){SignInPage sign = new SignInPage(driver);
-        sign.enterEmail();
-        sign.enterPassword();
-        Assert.assertTrue(sign.logIn.isEnabled());
-        sign.logIn();
-        sign.loginnotNow();
-        sign.turnOnNotifications();
-        waitFor(4);}
-   // @Test
-    public void WrongPassword(){
+  @Test
+    public void wrongPassword(){
         SignInPage sign = new SignInPage(driver);
         sign.enterEmail();
         sign.enterWrongPassword();
         sign.logIn();
         Assert.assertEquals(driver.getTitle(),"Instagram");
         waitFor(4);}
-  //  @Test
-    public void WrongEmail(){
+    @Test
+    public void wrongEmail(){
         SignInPage sign = new SignInPage(driver);
         sign.enterWrongEmail();
         sign.enterPassword();

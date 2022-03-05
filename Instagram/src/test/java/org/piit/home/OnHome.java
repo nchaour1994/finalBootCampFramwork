@@ -1,193 +1,108 @@
 package org.piit.home;
-
 import base.commonApi;
-import org.openqa.selenium.support.PageFactory;
 import org.piit.HomePage;
 import org.piit.ProfilePage;
+import org.piit.SaveLoginNotNow;
 import org.piit.SignInPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-///////13
+
+///////6
 public class OnHome extends commonApi {
-  //  @Test
-    public void Activity(){
-        HomePage home = new HomePage(driver);
-        SignInPage sign = new SignInPage(driver);
-        sign.enterEmail();
-        sign.enterPassword();
-        Assert.assertTrue(sign.logIn.isEnabled());
-        sign.logIn();
-        waitFor(4);
-        sign.loginnotNow();
-        sign.turnOnNotifications();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        home.onActivity();
-        waitFor(8);}
-   //  @Test
-    public void Search(){ HomePage home = new HomePage(driver);
-        SignInPage sign = new SignInPage(driver);
-        sign.enterEmail();
-        sign.enterPassword();
-        Assert.assertTrue(sign.logIn.isEnabled());
-        sign.logIn();
-        sign.loginnotNow();
-        sign.turnOnNotifications();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        home.onSearch();
-        waitFor(8);}
-   // @Test
-    public void SearchFollower(){ HomePage home = new HomePage(driver);
-        SignInPage sign = new SignInPage(driver);
-        sign.enterEmail();
-        sign.enterPassword();
-        Assert.assertTrue(sign.logIn.isEnabled());
-        sign.logIn();
-        sign.loginnotNow();
-        sign.turnOnNotifications();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        home.onSearch();
-        waitFor(8);
-       home.clickAngelinasFollower();
-       waitFor(5);}
-   // @Test
-    public void SearchFollowing(){ HomePage home = new HomePage(driver);
-        SignInPage sign = new SignInPage(driver);
-        sign.enterEmail();
-        sign.enterPassword();
-        Assert.assertTrue(sign.logIn.isEnabled());
-        sign.logIn();
-        sign.loginnotNow();
-        sign.turnOnNotifications();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        home.onSearch();
-        waitFor(8);
-        home.clickAngelinasFollowing();
-        waitFor(5);}
-   // @Test
-    public void AngellinasPost(){ HomePage home = new HomePage(driver);
-        SignInPage sign = new SignInPage(driver);
-        sign.enterEmail();
-        sign.enterPassword();
-        Assert.assertTrue(sign.logIn.isEnabled());
-        sign.logIn();
-        sign.loginnotNow();
-        sign.turnOnNotifications();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        home.onSearch();
-        waitFor(8);
-        home.clickAngelinasPost();
-        waitFor(5);}
-   // @Test
-    public void TestProfile(){ HomePage home = new HomePage(driver);
+
+    @Test
+    public void testProfile(){HomePage home = new HomePage(driver);
         SignInPage sign = new SignInPage(driver);
         ProfilePage profile = new ProfilePage(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         home.inProfile();
-        waitFor(8);
+        Assert.assertEquals(driver.getTitle(),"Instagram");
         profile.onProfile();
-        waitFor(4);
-
-    }
-  //  @Test
-    public void Saved(){ HomePage home = new HomePage(driver);
-        SignInPage sign = new SignInPage(driver);
-        sign.enterEmail();
-        sign.enterPassword();
-        Assert.assertTrue(sign.logIn.isEnabled());
-        sign.logIn();
-        sign.loginnotNow();
-        sign.turnOnNotifications();
-        home.inProfile();
-        waitFor(8);
-        home.saved();
-        waitFor(4);}
-    //@Test
-    public void Settings(){ HomePage home = new HomePage(driver);
-        SignInPage sign = new SignInPage(driver);
-        sign.enterEmail();
-        sign.enterPassword();
-        Assert.assertTrue(sign.logIn.isEnabled());
-        sign.logIn();
-        sign.loginnotNow();
-        sign.turnOnNotifications();
-        home.inProfile();
-        waitFor(4);
-        home.onsettings();
-        waitFor(4);
-        Assert.assertEquals(driver.getTitle(),"Edit Profile • Instagram");
-        }
-  //  @Test
-    public void TestPolygonButton(){ HomePage home = new HomePage(driver);
-        SignInPage sign = new SignInPage(driver);
-        sign.enterEmail();
-        sign.enterPassword();
-        Assert.assertTrue(sign.logIn.isEnabled());
-        sign.logIn();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
-        sign.turnOnNotifications();
-        home.onPolygon();
-        waitFor(4);}
-   // @Test
-    public void TestAdd(){ HomePage home = new HomePage(driver);
-        SignInPage sign = new SignInPage(driver);
-        sign.enterEmail();
-        sign.enterPassword();
-        Assert.assertTrue(sign.logIn.isEnabled());
-        sign.logIn();
-        sign.loginnotNow();
-        sign.turnOnNotifications();
-        home.onAdd();
-        waitFor(4);}
-   // @Test
-    public void TestSendMessage(){ HomePage home = new HomePage(driver);
-        SignInPage sign = new SignInPage(driver);
-        sign.enterEmail();
-        sign.enterPassword();
-        Assert.assertTrue(sign.logIn.isEnabled());
-        sign.logIn();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
-        sign.turnOnNotifications();
-        waitFor(5);
-        home.sendMessage();
-        waitFor(8);}
-
-  //  @Test
-    public void SeeAll() {
+        waitFor(2);}
+    @Test
+    public void saved() {
         HomePage home = new HomePage(driver);
         SignInPage sign = new SignInPage(driver);
+        SaveLoginNotNow saveLogin = new SaveLoginNotNow(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        sign.loginnotNow();
-        sign.turnOnNotifications();
-        waitFor(5);
-        home.seaAll();
-        waitFor(8);
-    }
-    @Test
-    public void ChangeProfilePic(){ HomePage home = new HomePage(driver);
-        SignInPage sign = new SignInPage(driver);
-        sign.enterEmail();
-        sign.enterPassword();
-        Assert.assertTrue(sign.logIn.isEnabled());
-        sign.logIn();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         home.inProfile();
+        Assert.assertEquals(driver.getTitle(), "Instagram");
+        home.saved();
         waitFor(4);
+        Assert.assertEquals(driver.getTitle(), "Saifuddin Haque (@saihaq170) • Instagram photos and videos");
+    }
+    @Test
+    public void settings(){ HomePage home = new HomePage(driver);
+        SignInPage sign = new SignInPage(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
+        sign.enterEmail();
+        sign.enterPassword();
+        Assert.assertTrue(sign.logIn.isEnabled());
+        sign.logIn();
+        saveLogin.saveLoginNotNow();
+        sign.turnOnNotifications();
+        home.inProfile();
+        Assert.assertEquals(driver.getTitle(), "Instagram");
         home.onsettings();
         waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Edit Profile • Instagram");}
+
+    @Test
+    public void seeAll() {
+        HomePage home = new HomePage(driver);
+        SignInPage sign = new SignInPage(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
+        sign.enterEmail();
+        sign.enterPassword();
+        Assert.assertTrue(sign.logIn.isEnabled());
+        sign.logIn();
+        saveLogin.saveLoginNotNow();
+        sign.turnOnNotifications();
+        home.seaAll();
+        waitFor(8);
+        Assert.assertEquals(driver.getTitle(), "Instagram");
+    }
+   @Test
+    public void changeProfilePic(){ HomePage home = new HomePage(driver);
+        SignInPage sign = new SignInPage(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
+        sign.enterEmail();
+        sign.enterPassword();
+        Assert.assertTrue(sign.logIn.isEnabled());
+        sign.logIn();
+        saveLogin.saveLoginNotNow();
+        sign.turnOnNotifications();
+        home.inProfile();
+        Assert.assertEquals(driver.getTitle(), "Instagram");
+        home.onsettings();
         home.changeProfilePhoto();
         waitFor(4);
-        Assert.assertEquals(driver.getTitle(),"Edit Profile • Instagram");
+
     }
+    @Test
+    public void clickLogout(){ HomePage home = new HomePage(driver);
+        SignInPage sign = new SignInPage(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
+        sign.enterEmail();
+        sign.enterPassword();
+        Assert.assertTrue(sign.logIn.isEnabled());
+        sign.logIn();
+        saveLogin.saveLoginNotNow();
+        sign.turnOnNotifications();
+        waitFor(2);
+        home.inProfile();
+        Assert.assertEquals(driver.getTitle(), "Instagram");
+        home.onLogOut();
+        waitFor(4);}
 }
