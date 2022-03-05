@@ -37,11 +37,16 @@ public class commonApi {
     //-------------------------------
     public static com.relevantcodes.extentreports.ExtentReports extent;
     String path = System.getProperty("user.home");
+    Properties prop1= GetProperties.loadProperties("C:\\Users\\sadia\\IdeaProjects\\finalBootCampFramwork\\Instagram\\src\\test\\resources\\config.properties");
 
 
+   // String username=prop.getProperty("username");
+   // String password=prop.getProperty("password");
+    String Username1=prop1.getProperty("username");
+   String Password1=prop1.getProperty("password");
 
- 
-  //  Properties prop1= GetProperties.loadProperties("C:\\Users\\sadia\\IdeaProjects\\finalBootCampFramwork\\Instagram\\src\\test\\resources\\config.properties");
+  //  Properties prop= GetProperties.loadProperties("C:\\Users\\nchao\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
+    //public  Properties prop= GetProperties.loadProperties(path+"\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
 
    // String Username1=prop1.getProperty("username");
    //String Password1=prop1.getProperty("password");
@@ -59,6 +64,7 @@ public class commonApi {
 
    // String username=prop.getProperty("username");
     //String password=prop.getProperty("password");
+
 
     //Properties prop1= GetProperties.loadProperties("C:\\Users\\sadia\\IdeaProjects\\finalBootCampFramwork\\Instagram\\src\\test\\resources\\config.properties");
 

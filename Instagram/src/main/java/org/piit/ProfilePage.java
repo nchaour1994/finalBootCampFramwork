@@ -3,7 +3,6 @@ package org.piit;
 
 import base.commonApi;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,7 +29,6 @@ public class ProfilePage extends commonApi {
     @FindBy(xpath = "//body/div[@id='react-root']/section[1]/main[1]/div[1]/div[2]/article[1]/div[1]/div[2]/div[1]/div[1]/a[2]/img[1]")
     WebElement GooglePlay;
     public void clickGoogle(){click(GooglePlay);}
-
 
     public void onProfile(){
         click(OnProfile);}
