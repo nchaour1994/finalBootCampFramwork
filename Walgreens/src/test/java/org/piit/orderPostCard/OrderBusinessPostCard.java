@@ -50,6 +50,33 @@ public class OrderBusinessPostCard extends commonApi {
         businessCardDesign.clickOncreateNowBtn();
         Assert.assertEquals(getTitle(),titleCreateBusinessCard);
 
+    }
+
+    @Test
+    public void testOrderBusinessCardFromHomePage(){
+        HomePage home=new HomePage(driver);
+        CardsPage cards=new CardsPage(driver);
+        BusinessCardsPage businessCards=new BusinessCardsPage(driver);
+        BusinessCardDesignPage businessCardDesign=new BusinessCardDesignPage(driver);
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(2));
+        home.clickOnphotoCard();
+        cards.HoverOverbusinessInMenu();
+        Assert.assertTrue(cards.checkIfpostcardsIsEnabled());
+        cards.clickOnpostcards();
+        Assert.assertEquals(getTitle(),titleBusinessCardPage);
+        businessCards.clickOnchhoseAdesignBtn();
+        Assert.assertEquals(getTitle(),titleBusinessDesignCardPage);
+        businessCardDesign.typeOnSearchField();
+        Assert.assertEquals(businessCardDesign.getValueOfSearchField(),businessCardModel);
+        wait.until(ExpectedConditions.visibilityOf(businessCardDesign.forestDesign));
+        businessCardDesign.clickOnforestDesign();
+        Assert.assertTrue(businessCardDesign.checkIfcreateNowBtnIsEnabled());
+        businessCardDesign.clickOncreateNowBtn();
+        Assert.assertEquals(getTitle(),titleCreateBusinessCard);
+
+
+
+
 
 
     }

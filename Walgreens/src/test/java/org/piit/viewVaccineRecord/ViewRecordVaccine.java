@@ -30,8 +30,5 @@ public class ViewRecordVaccine extends commonApi {
          completeYourAccountPage.selectfromsecurityQuestion();
          completeYourAccountPage.typeOnanswerSecurityQuestion();
 
-
-
-
      }
 }

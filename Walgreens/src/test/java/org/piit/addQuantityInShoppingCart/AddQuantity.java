@@ -44,7 +44,6 @@ public class AddQuantity extends commonApi {
         Assert.assertEquals(getTitle(),titleShopingCart);
         Assert.assertTrue(shoppingCartPage.checkIfplusSignInFirstElementIsEnabled());
         shoppingCartPage.clickOnplusSignInFirstElement();
-        Assert.assertTrue(shoppingCartPage.checkIfplusSignInSecondElementIsEnabled());
         shoppingCartPage.clickOnplusSignInSecondElement();
         Assert.assertEquals(getTitle(),titleShopingCart);
 

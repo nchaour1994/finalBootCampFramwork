@@ -38,5 +38,20 @@ public class MakeCustomPuzzle extends commonApi {
 
 
     }
+    @Test
+    public void testMakeCustomPuzzleFromHomePage(){
+        HomePage home= new HomePage(driver);
+        ShopAllPhotoPage shopAllPhotoPage=new ShopAllPhotoPage(driver);
+        CustomPuzzlePage customPuzzlePage=new CustomPuzzlePage(driver);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        Assert.assertEquals(getTitle(),titleHomePage);
+        home.clickOnphotoCard();
+        shopAllPhotoPage.hoverOnsameDay();
+        shopAllPhotoPage.clickOncustomPuzzle();
+        customPuzzlePage.clickOnsize();
+        Assert.assertTrue(customPuzzlePage.checkIfcreateNowBtnIsEnabled());
+        customPuzzlePage.clickOncreateNowBtn();
+        Assert.assertEquals(getTitle(),titleCreateCustomPuzzle);
+    }
 
 }

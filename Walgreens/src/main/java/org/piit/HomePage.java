@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utility.GetProperties;
 
+import java.security.cert.X509Certificate;
 import java.util.Properties;
 
 public class HomePage extends commonApi {
@@ -145,6 +146,7 @@ public class HomePage extends commonApi {
     @FindBy(xpath = "//a[@data-element-name='Canvas & Décor']")
     WebElement canvasAndDecor;
     @FindBy(xpath = "//a[@data-element-name='Prescriptions']")
+    public
     WebElement prescriptionInMenu;
     @FindBy(xpath = "//a[@data-element-name='Getting Started']")
     WebElement gettingStartedInSubMenuPrescription;
@@ -203,7 +205,30 @@ public class HomePage extends commonApi {
     WebElement passportPhoto;
     @FindBy(xpath = "//a[@id='calendars']")
     WebElement calendar;
-
+    @FindBy(xpath = "//*[@data-element-name='More Pharmacy Services']")
+    WebElement morePharmacyServices;
+    @FindBy(xpath = "//*[@data-element-name='Pharmacy Chat']")
+    WebElement pharmacyChat;
+    @FindBy(xpath = "(//*[@class='card'])[4]")
+    WebElement healthServices;
+    @FindBy(xpath = "//*[@class='icon icon__order-prints ']")
+    WebElement orderPrints;
+    @FindBy(xpath = "(//*[@class='icon icon__order-prints '])[5]")
+    WebElement photoCard;
+    @FindBy(xpath = "//a[contains(text(),'Join FREE now')]")
+    WebElement joinFreeNow;
+    @FindBy(xpath = "//strong[contains(text(),'myWalgreens™ Credit Card')]")
+    WebElement creditCard;
+    @FindBy(xpath = "//strong[contains(text(),'Check out the NEW Weekly Ad! ›')]")
+    WebElement checkoutWeeklyAd;
+    @FindBy(xpath = "//a[contains(text(),'Find a Store')]")
+    WebElement findStore;
+    @FindBy(xpath = "//*[@data-element-name='Medicaid']")
+    WebElement medicaid;
+    @FindBy(xpath = "//a[contains(text(),'Find Rx Coverage')]")
+    WebElement rxCoverage;
+    @FindBy(xpath = "//*[@data-element-name='Same Day Pickup & Delivery']")
+    WebElement pickUp;
 
 
 
@@ -540,7 +565,45 @@ public class HomePage extends commonApi {
   public boolean checkIfshopGiftCardsIsEnabled(){
         return shopGiftCards.isEnabled();
   }
-
+  public void clickOnmorePharmacyServices(){
+        click(morePharmacyServices);
+  }
+  public void clickOnpharmacyChat(){
+        click(pharmacyChat);
+  }
+  public boolean checkIfprescriptionInMenuIsDisplayed(){
+        return prescriptionInMenu.isDisplayed();
+  }
+  public void clickOnhealthServices(){
+        click(healthServices);
+  }
+  public void clickOnorderPrints(){
+        click(orderPrints);
+  }
+  public void clickOnphotoCard(){
+        click(photoCard);
+  }
+  public void clickOnjoinFreeNow(){
+        click(joinFreeNow);
+  }
+  public void clickOncreditCard(){
+        click(creditCard);
+  }
+  public void clickOncheckoutWeeklyAd(){
+        click(checkoutWeeklyAd);
+  }
+  public void clickOnfindStore(){
+        click(findStore);
+  }
+  public void clickOnmedicaid(){
+        click(medicaid);
+  }
+  public void clickOnrxCoverage(){
+        click(rxCoverage);
+  }
+  public void clickOnpickUp(){
+        click(pickUp);
+  }
 
 
 }

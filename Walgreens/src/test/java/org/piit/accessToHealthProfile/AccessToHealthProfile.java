@@ -106,7 +106,7 @@ public class AccessToHealthProfile extends commonApi {
         Assert.assertTrue(signInPage.checkIfSignInBtnIsEnabled());
         signInPage.clickOnsignInBtn();
         //wait.until(ExpectedConditions.titleContains(titleConsentPage));
-        Assert.assertTrue(consentPage.checkIfhealthProfileActiveIsEnabled());
+      //  Assert.assertTrue(consentPage.checkIfhealthProfileActiveIsEnabled());
         consentPage.clickOnhealthProfileActive();
         consentPage.clickOnappointments();
         wait.until(ExpectedConditions.titleContains(titleAppointmentPage));

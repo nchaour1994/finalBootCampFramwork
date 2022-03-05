@@ -67,4 +67,39 @@ public class FindCare extends commonApi {
 
 
     }
+
+    @Test
+    public void testFindCareFromHome(){
+        HomePage home=new HomePage(driver);
+        FindCarePage findCarePage=new FindCarePage(driver);
+        CityMdPage cityMdPage=new CityMdPage(driver);
+        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(2));
+        Assert.assertEquals(getTitle(),titleHomePage);
+        home.clickOnhealthServices();
+        Assert.assertEquals(getTitle(),titleFindCarePage);
+        findCarePage.typeOnsymptomField();
+        Assert.assertEquals(findCarePage.getValueOfsymptomField(),symptom);
+        Assert.assertTrue(findCarePage.checkIffindLocationBtnInCityMdIsEnabled());
+        findCarePage.clickOnfindLocationInCityMd();
+        wait.until(ExpectedConditions.elementToBeClickable(findCarePage.gotItBtnInCityMd));
+        Assert.assertTrue(findCarePage.checkIfgotItBtnInCityMdIsEnabled());
+        findCarePage.clickOngotItBtnInCityMd();
+        String parent=driver.getWindowHandle();
+        Set<String> allTabs=driver.getWindowHandles();
+        for (String window:allTabs) {
+            if(!(parent.equals(window))){
+                driver.switchTo().window(window);
+                Assert.assertEquals(getTitle(),titleCityMdPage);
+                JavascriptExecutor js=(JavascriptExecutor)driver;
+                js.executeScript("arguments[0].click();",cityMdPage.findCityMD);
+                Assert.assertEquals(getTitle(),titleLocationsInCityMdPage);
+
+                // cityMdPage.clickOnfindCityMD();
+                //search btn not working
+
+            }
+        }
+
+
+    }
 }

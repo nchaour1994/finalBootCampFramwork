@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -42,14 +43,14 @@ public class commonApi {
  
   //  Properties prop1= GetProperties.loadProperties("C:\\Users\\sadia\\IdeaProjects\\finalBootCampFramwork\\Instagram\\src\\test\\resources\\config.properties");
 
-   // String username=prop.getProperty("username");
-   // String password=prop.getProperty("password");
    // String Username1=prop1.getProperty("username");
    //String Password1=prop1.getProperty("password");
 
   //  Properties prop= GetProperties.loadProperties("C:\\Users\\nchao\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
 
     public  Properties prop= GetProperties.loadProperties(path+"\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
+    String username=prop.getProperty("username");
+    String password=prop.getProperty("password");
 
 
 
@@ -130,13 +131,9 @@ public class commonApi {
     public void init( @Optional("false") boolean useCloud,@Optional("browserStack") String cloudEnvName,@Optional("windows") String os,@Optional("10") String versionOs, @Optional("chrome")String browserName,@Optional("98") String browserVersion, @Optional("https://www.google.com") String url) throws MalformedURLException {
         if (useCloud== true){
             if(cloudEnvName.equalsIgnoreCase("browserstack")){
-
-               getCloudDriver(cloudEnvName, "", "", os, versionOs, browserName, browserVersion);
-
-
+               getCloudDriver(cloudEnvName, username, password, os, versionOs, browserName, browserVersion);
              //  getCloudDriver(cloudEnvName, "", "", os, versionOs, browserName, browserVersion);
-                getCloudDriver(cloudEnvName, "sadiatarnima_7Ul96x", "EZy1LYHy7cMw1cpy9jt3", os, versionOs, browserName, browserVersion);
-
+               // getCloudDriver(cloudEnvName, "sadiatarnima_7Ul96x", "EZy1LYHy7cMw1cpy9jt3", os, versionOs, browserName, browserVersion);
               // getCloudDriver(cloudEnvName, "", "", os, versionOs, browserName, browserVersion);
 
                 //getCloudDriver(cloudEnvName, "sadiatarnima_7Ul96x", "EZy1LYHy7cMw1cpy9jt3", os, versionOs, browserName, browserVersion);
@@ -149,15 +146,14 @@ public class commonApi {
             getDriver(os, browserName);
         }
         driver.get(url);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
     }
     public WebDriver getDriver(String os ,String browserName ){
         ChromeOptions options = new ChromeOptions();
         Proxy proxy = new Proxy();
-        proxy.setHttpProxy("<HOST:PORT>");
-
+        proxy.setHttpProxy("137.184.136.180:43211");
         Map<String, Object> prefs = new HashMap<String, Object>();
         prefs.put("credentials_enable_service", false);
         if (browserName.equalsIgnoreCase("chrome")){
@@ -165,10 +161,10 @@ public class commonApi {
                 options.setExperimentalOption("useAutomationExtension", false);
                 options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
                 options.setExperimentalOption("prefs", prefs);
-                options.setCapability("proxy", proxy);
+                options.setCapability(CapabilityType.PROXY, proxy);
 
                 //  options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
-                System.setProperty("webdriver.chrome.driver",path+"\\IdeaProjects\\finalBootCampFramwork\\Generic\\src\\Drivers\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver",path+"\\IdeaProjects\\finalBootCampFramwork\\Generic\\src\\Drivers\\chromedriver1.exe");
             }else{
                 System.setProperty("webdriver.chrome.driver",path+"\\IdeaProjects\\finalBootCampFramwork\\Generic\\src\\Drivers\\chromedriver");
             }

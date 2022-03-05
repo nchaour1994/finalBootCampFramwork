@@ -13,7 +13,7 @@ import java.time.Duration;
 public class AccessToCoupon extends commonApi {
     String titleCouponPage=prop.getProperty("titleCouponPage");
      @Test
-    public void TestaccessToCouponPage(){
+    public void testAccessToCouponPage(){
          WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(1));
         HomePage home= new HomePage(driver);
         Assert.assertTrue(home.checkIfmenuBtnIsEnabled());
@@ -22,10 +22,6 @@ public class AccessToCoupon extends commonApi {
         Assert.assertTrue(home.checkIfcouponOnMenuListIsEnabled());
         home.clickOncouponOnMenuList();
         Assert.assertEquals(getTitle(),titleCouponPage);
-
-
-
-
 
    }
 }

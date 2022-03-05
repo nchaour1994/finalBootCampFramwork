@@ -49,7 +49,7 @@ public class QualifyForCreditCard extends commonApi {
         for (String window:allTabs) {
             if(!(parent.equals(window))){
                 driver.switchTo().window(window);
-                Assert.assertEquals(getTitle(),"WALGREENS");
+                Assert.assertEquals(getTitle(),titleApplicationCreditCard);
                 JavascriptExecutor js=(JavascriptExecutor)driver;
                 js.executeScript("window.scrollBy(0,200)");
                 startApplicationPage.typeOnssnField();
@@ -109,6 +109,44 @@ public class QualifyForCreditCard extends commonApi {
                 startApplicationPage.clickOncontinueBtnInApplication();
                 Assert.assertEquals(getTitle(),titleApplicationCreditCard);
 
+            }
+
+        }
+
+    }
+
+    @Test
+    public void testSeeIfQualifyFromHomePage(){
+        HomePage home=new HomePage(driver);
+        MyWalgreensCreditCardPage myWalgreensCreditCardPage=new MyWalgreensCreditCardPage(driver);
+        SignInPage signInPage=new SignInPage(driver);
+        StartApplicationPage startApplicationPage=new StartApplicationPage(driver);
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(8));
+        home.clickOncreditCard();
+        Assert.assertEquals(getTitle(),titleMyWalgreensCreditPage);
+        myWalgreensCreditCardPage.clickOnseeIfIqualifyBtn();
+        Assert.assertEquals(getTitle(),titleSignInPage);
+        signInPage.typeOnuserNameFieldInSignIn();
+        Assert.assertEquals(signInPage.getValueOfuserNameFieldInSignIn(),email);
+        signInPage.typeOnpasswordFieldInSignIn();
+        Assert.assertEquals(signInPage.getValueOfpasswordFieldInSignIn(),password);
+        signInPage.clickOnsignInBtn();
+        myWalgreensCreditCardPage.clickOnsetWithoutAddingAsPreferred();
+        wait.until(ExpectedConditions.elementToBeClickable(myWalgreensCreditCardPage.startMyApplicationBtn));
+        myWalgreensCreditCardPage.clickOnstartMyApplicationBtn();
+        waitFor(8);
+        String parent = driver.getWindowHandle();
+        Set<String> allTabs=driver.getWindowHandles();
+        for (String window:allTabs) {
+            if(!(parent.equals(window))){
+                driver.switchTo().window(window);
+                Assert.assertEquals(getTitle(),titleApplicationCreditCard);
+                JavascriptExecutor js=(JavascriptExecutor)driver;
+                js.executeScript("window.scrollBy(0,200)");
+                startApplicationPage.typeOnssnField();
+                startApplicationPage.typeOnphoneNumberFieldInApplication();
+                startApplicationPage.clickOncontinueBtnInApplication();
+                Assert.assertEquals(getTitle(),titleApplicationCreditCard);
             }
 
         }

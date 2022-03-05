@@ -79,9 +79,7 @@ public class PrintBook extends commonApi {
         waitFor(2);
         Assert.assertEquals(getTitle(),titlePrintBook);
 
-
-
-
-
     }
+
+
 }

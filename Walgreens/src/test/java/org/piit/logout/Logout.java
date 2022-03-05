@@ -37,7 +37,6 @@ public class Logout extends commonApi {
         Assert.assertEquals(signInPage.getValueOfpasswordFieldInSignIn(),password);
         Assert.assertTrue(signInPage.checkIfSignInBtnIsEnabled());
         signInPage.clickOnsignInBtn();
-
         Assert.assertTrue(home.checkIfAccountBtnIsEnabled());
         home.clickOnAccountBtn();
         Assert.assertTrue(home.checkIfsignOutBtnIsEnabled());

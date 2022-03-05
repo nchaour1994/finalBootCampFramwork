@@ -50,7 +50,7 @@ public class MakeBirthDayCard extends commonApi {
 
     }
 
-   // @Test
+    @Test
     public void testMakeMagnetCard(){
         HomePage home= new HomePage(driver);
         ShopAllPhotoPage shopAllPhotoPage=new ShopAllPhotoPage(driver);
