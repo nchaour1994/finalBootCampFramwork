@@ -1,10 +1,7 @@
 package org.piit.profileSelection;
 import base.commonApi;
 import org.openqa.selenium.support.PageFactory;
-import org.piit.HomePage;
-import org.piit.ProfilePage;
-import org.piit.ProfileSelections;
-import org.piit.SignInPage;
+import org.piit.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,20 +9,21 @@ import java.util.Set;
 ////18
 public class PofileSelection extends commonApi{
      @Test
-    public void TestMeta(){SignInPage sign = new SignInPage(driver);
+    public void testMeta(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfileSelections selections = new ProfileSelections(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-         Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Instagram");
         home.inProfile();
-        waitFor(4);
+         Assert.assertEquals(driver.getTitle(), "Instagram");
         profile.onProfile();
         waitFor(4);
         selections.clickOnMeta();
@@ -38,22 +36,24 @@ public class PofileSelection extends commonApi{
                 selections.clickWho();}}
         waitFor(4);
      }
-    //  @Test
-    public void TestAbout(){SignInPage sign = new SignInPage(driver);
+      @Test
+    public void testAbout(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
         ProfileSelections selections = new ProfileSelections(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Instagram");
         home.inProfile();
         waitFor(4);
         profile.onProfile();
-        waitFor(4);
+          Assert.assertEquals(driver.getTitle(), "Instagram");
         selections.clickOnAbout();
         waitFor(4);
         String parent = driver.getWindowHandle();
@@ -63,18 +63,20 @@ public class PofileSelection extends commonApi{
                 driver.switchTo().window(windows);
                 selections.clickAboutHome();}}
         waitFor(4);}
-    //@Test
-    public void TestBlogs(){SignInPage sign = new SignInPage(driver);
+    @Test
+    public void testBlogs(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
         ProfileSelections selections = new ProfileSelections(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Instagram");
         home.inProfile();
         waitFor(4);
         profile.onProfile();
@@ -88,19 +90,20 @@ public class PofileSelection extends commonApi{
                 driver.switchTo().window(windows);
                 selections.clickProduct();}}
         waitFor(4);}
-    //@Test
-    public void TestJobs(){SignInPage sign = new SignInPage(driver);
+    @Test
+    public void testJobs(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
         ProfileSelections selections = new ProfileSelections(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Instagram");
         home.inProfile();
         waitFor(4);
         profile.onProfile();
@@ -114,18 +117,20 @@ public class PofileSelection extends commonApi{
                 driver.switchTo().window(windows);
                 selections.clickTeams();}}
         waitFor(4);}
-    //  @Test
-    public void TestHelps(){SignInPage sign = new SignInPage(driver);
+      @Test
+    public void testHelps(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
         ProfileSelections selections = new ProfileSelections(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Instagram");
         home.inProfile();
         waitFor(4);
         profile.onProfile();
@@ -134,19 +139,20 @@ public class PofileSelection extends commonApi{
         waitFor(4);
         selections.clickCovid();
         waitFor(4);}
-    // @Test
-    public void TestAPI(){SignInPage sign = new SignInPage(driver);
+     @Test
+    public void testAPI(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
         ProfileSelections selections = new ProfileSelections(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Instagram");
         home.inProfile();
         waitFor(4);
         profile.onProfile();
@@ -160,57 +166,61 @@ public class PofileSelection extends commonApi{
                 driver.switchTo().window(windows);
                 selections.clickTools();}}
         waitFor(4);}
-    // @Test
-    public void TestPrivacy(){SignInPage sign = new SignInPage(driver);
+   //  @Test
+    public void testPrivacy(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
         ProfileSelections selections = new ProfileSelections(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Instagram");
         home.inProfile();
         waitFor(4);
         profile.onProfile();
         waitFor(4);
         selections.clickOnPrivacy();
         waitFor(4);}
-    // @Test
-    public void TestTerms(){SignInPage sign = new SignInPage(driver);
+ //    @Test
+    public void testTerms(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfileSelections selections = new ProfileSelections(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Instagram");
         home.inProfile();
         waitFor(4);
         profile.onProfile();
         waitFor(4);
         selections.clickOnTerms();
         waitFor(4);}
-    // @Test
-    public void TestTopAccounts(){SignInPage sign = new SignInPage(driver);
+ //    @Test
+    public void testTopAccounts(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
+        Search search = new Search(driver);
         ProfileSelections selections = new ProfileSelections(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Instagram");
         home.inProfile();
         waitFor(4);
         profile.onProfile();
@@ -221,19 +231,21 @@ public class PofileSelection extends commonApi{
         waitFor(5);
         selections.clickSix();
         waitFor(4);
-        home.onSearch();
+        search.onSearch();
         waitFor(4);}
-    //@Test
-    public void TestHashtags(){SignInPage sign = new SignInPage(driver);
+  //  @Test
+    public void testHashtags(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
+        Search search = new Search(driver);
         ProfileSelections selections = new ProfileSelections(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
         Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
         home.inProfile();
@@ -246,21 +258,22 @@ public class PofileSelection extends commonApi{
         waitFor(4);
         selections.clickHashDir();
         waitFor(6);
-        home.onSearch();
+        search.onSearch();
         waitFor(4);}
-    // @Test
-    public void TestUSALocations(){SignInPage sign = new SignInPage(driver);
+ //    @Test
+    public void testUSALocations(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfileSelections selections = new ProfileSelections(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Instagram");
         home.inProfile();
         waitFor(4);
         profile.onProfile();
@@ -274,19 +287,20 @@ public class PofileSelection extends commonApi{
         selections.clickMtea();
         waitFor(8);
     }
-    // @Test
-    public void TestBDLocations(){SignInPage sign = new SignInPage(driver);
+  //  @Test
+    public void testBDLocations(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfileSelections selections = new ProfileSelections(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Instagram");
         home.inProfile();
         waitFor(4);
         profile.onProfile();
@@ -297,19 +311,20 @@ public class PofileSelection extends commonApi{
         selections.clickDhaka();
         selections.clickSultans();
         waitFor(4);}
-    //@Test
-    public void TestDubaiLocations(){SignInPage sign = new SignInPage(driver);
+  //  @Test
+    public void testDubaiLocations(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfileSelections selections = new ProfileSelections(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
+        Assert.assertEquals(driver.getTitle(),"Instagram");
         home.inProfile();
         waitFor(4);
         profile.onProfile();
@@ -320,9 +335,10 @@ public class PofileSelection extends commonApi{
         selections.clickDubai();
         selections.clickBurj();
         waitFor(4);}
-    // @Test
-    public void TestLocationsSeeMore(){SignInPage sign = new SignInPage(driver);
+  //   @Test
+    public void testLocationsSeeMore(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfileSelections selections = new ProfileSelections(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
@@ -330,7 +346,7 @@ public class PofileSelection extends commonApi{
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
         Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
         home.inProfile();
@@ -341,17 +357,17 @@ public class PofileSelection extends commonApi{
         waitFor(4);
         selections.clickMore();
         waitFor(2);}
-    // @Test
-    public void TestInstagramLite(){SignInPage sign = new SignInPage(driver);
+  //  @Test
+    public void testInstagramLite(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfileSelections selections = new ProfileSelections(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
         home.inProfile();
@@ -360,17 +376,17 @@ public class PofileSelection extends commonApi{
         waitFor(4);
         selections.clickInstagramLite();
         waitFor(4);}
-    //@Test
-    public void TestEnglish(){SignInPage sign = new SignInPage(driver);
+  //  @Test
+    public void testEnglish(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfileSelections selections = new ProfileSelections(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
         home.inProfile();
@@ -379,17 +395,17 @@ public class PofileSelection extends commonApi{
         waitFor(4);
         selections.clickEnglish();
         waitFor(4);}
-    // @Test
-    public void TestInstagramMeta(){SignInPage sign = new SignInPage(driver);
+   // @Test
+    public void testInstagramMeta(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfileSelections selections = new ProfileSelections(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
         home.inProfile();
@@ -398,17 +414,17 @@ public class PofileSelection extends commonApi{
         waitFor(4);
         selections.clickInstaMeta();
         waitFor(4);}
-    // @Test
-    public void TestIstanbulLocations(){SignInPage sign = new SignInPage(driver);
+ //   @Test
+    public void testIstanbulLocations(){SignInPage sign = new SignInPage(driver);
         HomePage home = new HomePage(driver);
         ProfileSelections selections = new ProfileSelections(driver);
+        SaveLoginNotNow saveLogin=new SaveLoginNotNow(driver);
         ProfilePage profile = new ProfilePage(driver);
         sign.enterEmail();
         sign.enterPassword();
         Assert.assertTrue(sign.logIn.isEnabled());
         sign.logIn();
-        Assert.assertEquals(driver.getTitle(),"Instagram");
-        sign.loginnotNow();
+        saveLogin.saveLoginNotNow();
         sign.turnOnNotifications();
         waitFor(4);
         home.inProfile();

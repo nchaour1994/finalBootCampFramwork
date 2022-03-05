@@ -11,12 +11,31 @@
     <parameter name="browserName" value="chrome"></parameter>
     <test name="practice test">
         <classes>
+<!---->
 
-            <class name="org.piit.home.OnHome"></class>
-<!--            <class name="org.piit.inProfile.InProfilePage"></class>-->
-<!--                <class name="org.piit.signPage.SignPage"></class>-->
+<!--           <class name="org.piit.home.OnHome"></class>-->
+<!--           <class name="org.piit.inProfile.InProfilePage"></class>-->
+<!--            <class name="org.piit.profileSelection.PofileSelection"></class>-->
+<!--            <class name="org.piit.saveLogin.saveNotNow"></class>-->
+<!--            <class name="org.piit.saveLogin.saveInfo"></class>-->
 <!--            <class name="org.piit.setting.TestSettingPages"></class>-->
-<!--               <class name="org.piit.profileSelection.PofileSelection"></class>-->
+<!--            <class name="org.piit.signPage.SignPage"></class>-->
+<!--            <class name="org.piit.photo.AddPhotos"></class>-->
+<!--            <class name="org.piit.logo.Logo"></class>-->
+<!--            <class name="org.piit.OnActivityPost"></class>-->
+<!--            <class name="org.piit.Polygon"></class>-->
+<!--            <class name="org.piit.SearchButton"></class>-->
+<!--            <class name="org.piit.SendMessages"></class>-->
+<!--            <class name="org.piit.SomeonesProfile"></class>-->
+            <class name="org.piit.StoreEmail"></class>
+<!--            <class name="org.piit.DotAngelina"></class>-->
+<!--            <class name="org.piit.Block"></class>-->
+<!--            <class name="org.piit.Restricts"></class>-->
+<!--            <class name="org.piit.ReportAccounts"></class>-->
+<!--            <class name="org.piit.NewPage</class>-->
+<!--            <class name="org.piit.SeeStories"></class>-->
+
+
 
 
         </classes>

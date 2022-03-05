@@ -1,7 +1,5 @@
 package org.piit;
 import base.commonApi;
-
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,8 +14,6 @@ public class SignInPage extends commonApi{
      WebElement password;
     @FindBy(xpath = "//*[@id=\"loginForm\"]/div/div[3]")
     public WebElement logIn;
-    @FindBy(xpath = "//*[@id=\"react-root\"]/section/main/div/div/div/div/button")
-     WebElement logininfoNotNow;
     @FindBy(css = "button.aOOlW:nth-child(1)")
     WebElement turnOn;
     public void enterEmail() {
@@ -30,8 +26,6 @@ public class SignInPage extends commonApi{
         type(password,"Newyork");}
     public void logIn(){
         click(logIn);}
-    public void loginnotNow(){
-        click(logininfoNotNow);}
     public void turnOnNotifications(){
         click(turnOn);}
 }
