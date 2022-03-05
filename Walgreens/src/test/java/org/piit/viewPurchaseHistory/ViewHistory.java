@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class ViewHistory extends commonApi {
 
-    //@Test
+    @Test
     public void TestViewHistory(){
         HomePage home =new HomePage(driver);
         MyWalgreensPage myWalgreensPage=new MyWalgreensPage(driver);
@@ -32,7 +32,7 @@ public class ViewHistory extends commonApi {
         yourAccountPage.clickOnhistoryPurchseInSubMenuPurchase();
     }
 
-    //@Test
+    @Test
     public void TestViewHistoryFromAccountMenu(){
         HomePage home =new HomePage(driver);
         SignInPage signInPage=new SignInPage(driver);

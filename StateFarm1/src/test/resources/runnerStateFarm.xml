@@ -6,7 +6,20 @@
     <parameter name="browserName" value="chrome"></parameter>
     <test name="practice test">
         <classes>
-            <class name="org.piit.AppTest"></class>
+<!--            <class name="org.piit.insurancePage.InsurancePageTest"></class>-->
+<!--            <class name="org.piit.bankingPage.BankingPageTest"></class>-->
+<!--            <class name="org.piit.investmentsPage.InvestmentsPageTest"></class>-->
+<!--            <class name="org.piit.getAQuotePage.GetAQuotePageTest"></class>-->
+<!--            <class name="org.piit.payABillPage.PayABillPageTest"></class>-->
+<!--            <class name="org.piit.claimsPage.ClaimsPageTest"></class>-->
+<!--            <class name="org.piit.findAnAgentPage.FindAnAgentPageTest"></class>-->
+<!--            <class name="org.piit.payInsuranceBillPage.PayInsuranceBillPageTest"></class>-->
+<!--            <class name="org.piit.enrollInAutoPayPage.EnrollInAutoPayPageTest"></class>-->
+<!--            <class name="org.piit.goPaperLessPage.GoPaperLessPageTest"></class>-->
+<!--            <class name="org.piit.searchPage.SearchPageTest"></class>-->
+<!--            <class name="org.piit.helpPage.HelpPageTest"></class>-->
+
+
         </classes>
 
     </test>

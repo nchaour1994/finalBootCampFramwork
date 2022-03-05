@@ -4,8 +4,10 @@ import com.relevantcodes.extentreports.LogStatus;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -13,10 +15,10 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import org.testng.annotations.Optional;
 import reporting.ExtentManager;
 import reporting.ExtentTestManager;
 import utility.GetProperties;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -26,10 +28,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class commonApi {
@@ -40,6 +39,7 @@ public class commonApi {
     String path = System.getProperty("user.home");
     Properties prop1= GetProperties.loadProperties("C:\\Users\\sadia\\IdeaProjects\\finalBootCampFramwork\\Instagram\\src\\test\\resources\\config.properties");
 
+
    // String username=prop.getProperty("username");
    // String password=prop.getProperty("password");
     String Username1=prop1.getProperty("username");
@@ -48,10 +48,29 @@ public class commonApi {
   //  Properties prop= GetProperties.loadProperties("C:\\Users\\nchao\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
     //public  Properties prop= GetProperties.loadProperties(path+"\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
 
+   // String Username1=prop1.getProperty("username");
+   //String Password1=prop1.getProperty("password");
+
+  //  Properties prop= GetProperties.loadProperties("C:\\Users\\nchao\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
+
+    public  Properties prop= GetProperties.loadProperties(path+"\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
+    String username=prop.getProperty("username");
+    String password=prop.getProperty("password");
+
+
+
+    // Properties prop= GetProperties.loadProperties("C:\\Users\\nchao\\IdeaProjects\\finalBootCampFramwork\\Walgreens\\src\\test\\resources\\config.properties");
+    //Properties prop1= GetProperties.loadProperties("C:\\Users\\sadia\\IdeaProjects\\finalBootCampFramwork\\Instagram\\src\\test\\resources\\config.properties");
+
+   // String username=prop.getProperty("username");
+    //String password=prop.getProperty("password");
+
+
     //Properties prop1= GetProperties.loadProperties("C:\\Users\\sadia\\IdeaProjects\\finalBootCampFramwork\\Instagram\\src\\test\\resources\\config.properties");
 
   //  String username=prop.getProperty("username");
   //  String password=prop.getProperty("password");
+
     //String Username1=prop1.getProperty("username");
    // String Password1=prop1.getProperty("password");
 
@@ -118,11 +137,11 @@ public class commonApi {
     public void init( @Optional("false") boolean useCloud,@Optional("browserStack") String cloudEnvName,@Optional("windows") String os,@Optional("10") String versionOs, @Optional("chrome")String browserName,@Optional("98") String browserVersion, @Optional("https://www.google.com") String url) throws MalformedURLException {
         if (useCloud== true){
             if(cloudEnvName.equalsIgnoreCase("browserstack")){
-
+               getCloudDriver(cloudEnvName, username, password, os, versionOs, browserName, browserVersion);
              //  getCloudDriver(cloudEnvName, "", "", os, versionOs, browserName, browserVersion);
-                getCloudDriver(cloudEnvName, "sadiatarnima_7Ul96x", "EZy1LYHy7cMw1cpy9jt3", os, versionOs, browserName, browserVersion);
-
+               // getCloudDriver(cloudEnvName, "sadiatarnima_7Ul96x", "EZy1LYHy7cMw1cpy9jt3", os, versionOs, browserName, browserVersion);
               // getCloudDriver(cloudEnvName, "", "", os, versionOs, browserName, browserVersion);
+
                 //getCloudDriver(cloudEnvName, "sadiatarnima_7Ul96x", "EZy1LYHy7cMw1cpy9jt3", os, versionOs, browserName, browserVersion);
 
             }else if(cloudEnvName.equalsIgnoreCase("saucelabs")){
@@ -133,18 +152,29 @@ public class commonApi {
             getDriver(os, browserName);
         }
         driver.get(url);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
     }
     public WebDriver getDriver(String os ,String browserName ){
+        ChromeOptions options = new ChromeOptions();
+        Proxy proxy = new Proxy();
+        proxy.setHttpProxy("137.184.136.180:43211");
+        Map<String, Object> prefs = new HashMap<String, Object>();
+        prefs.put("credentials_enable_service", false);
         if (browserName.equalsIgnoreCase("chrome")){
             if (os.equalsIgnoreCase("windows")){
-                System.setProperty("webdriver.chrome.driver",path+"\\IdeaProjects\\finalBootCampFramwork\\Generic\\src\\Drivers\\chromedriver.exe");
+//                options.setExperimentalOption("useAutomationExtension", false);
+//                options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+//                options.setExperimentalOption("prefs", prefs);
+              //  options.setCapability(CapabilityType.PROXY, proxy);
+
+                //  options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+                System.setProperty("webdriver.chrome.driver",path+"\\IdeaProjects\\finalBootCampFramwork\\Generic\\src\\Drivers\\chromedriver1.exe");
             }else{
                 System.setProperty("webdriver.chrome.driver",path+"\\IdeaProjects\\finalBootCampFramwork\\Generic\\src\\Drivers\\chromedriver");
             }
-            driver=new ChromeDriver();
+            driver=new ChromeDriver(options);
         }else if (browserName.equalsIgnoreCase("firefox")){
             if(os.equalsIgnoreCase("windows")){
                 System.setProperty("webdriver.gecko.driver",path+"\\IdeaProjects\\finalBootCampFramwork\\Generic\\src\\Drivers\\geckodriver.exe");
@@ -195,7 +225,7 @@ public class commonApi {
 
         element.sendKeys(text, Keys.ENTER);
     }
-    public void click(WebElement element){
+    public static void click(WebElement element){
 
         element.click();
     }

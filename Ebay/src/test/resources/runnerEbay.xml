@@ -6,6 +6,9 @@
     <parameter name="browserName" value="chrome"></parameter>
     <test name="Ebay test">
         <classes>
+
+        
+
 <!--            <class name="org.piit.home.TestHelpAndContact"></class>-->
 <!--            <class name="org.piit.home.TestFindStore"></class>-->
 <!--            <class name="org.piit.home.TestBrandOutlet"></class>-->
@@ -28,12 +31,13 @@
 <!--            <class name="org.piit.home.TestEbay"></class>-->
 <!--            <class name="org.piit.home.TestFees"></class>-->
 <!--            <class name="org.piit.home.TestInvestorDay"></class>-->
-            <class name="org.piit.home.TestImpact"></class>
+<!--            <class name="org.piit.home.TestImpact"></class>-->
 
 
 
 
             <!--            -->
+
         </classes>
 
     </test>

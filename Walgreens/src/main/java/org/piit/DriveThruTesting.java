@@ -29,6 +29,8 @@ public class DriveThruTesting extends commonApi {
     WebElement testTime;
     @FindBy(xpath = "//span[contains(text(),'Continue')]")
     WebElement continueBtn;
+    @FindBy(css = "#ui-datepicker-div")
+    WebElement calendar;
 
 
 
@@ -59,5 +61,8 @@ public class DriveThruTesting extends commonApi {
     }
     public boolean checkIfrapidDiagnosticTestIsSelected(){
         return rapidDiagnosticTest.isSelected();
+    }
+    public boolean checkIfcalendarIsDisplayed(){
+        return calendar.isDisplayed();
     }
 }

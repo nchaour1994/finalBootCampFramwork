@@ -17,14 +17,11 @@ public class UpdateAccountInformations extends commonApi {
         SignInPage signInPage=new SignInPage(driver);
         YourAccountPage yourAccountPage=new YourAccountPage(driver);
         PersonalInformationPage personalInformationPage=new PersonalInformationPage(driver);
-
         Assert.assertTrue(home.accountBtn.isEnabled());
         home.clickOnAccountBtn();
-
         Assert.assertTrue(home.signInBtnInAccountMenu.isEnabled());
         home.clickOnsignInBtnInAccountMenu();
         waitFor(2);
-
         signInPage.typeOnuserNameFieldInSignIn();
         signInPage.typeOnpasswordFieldInSignIn();
         Assert.assertTrue(signInPage.signInBtn.isEnabled());

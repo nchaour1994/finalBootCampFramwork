@@ -1,6 +1,8 @@
 package org.piit.logout;
 
 import base.commonApi;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.piit.CompleteYourAccountPage;
 import org.piit.HomePage;
 import org.piit.SignInPage;
@@ -8,6 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utility.GetProperties;
 
+import java.time.Duration;
 import java.util.Properties;
 
 public class Logout extends commonApi {
@@ -21,6 +24,7 @@ public class Logout extends commonApi {
     public void testLogoutFromMyAccount(){
         HomePage home=new HomePage(driver);
         SignInPage signInPage=new SignInPage(driver);
+         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(3));
         Assert.assertEquals(getTitle(),titleHomePage);
         Assert.assertTrue(home.checkIfAccountBtnIsEnabled());
         home.clickOnAccountBtn();
@@ -33,7 +37,6 @@ public class Logout extends commonApi {
         Assert.assertEquals(signInPage.getValueOfpasswordFieldInSignIn(),password);
         Assert.assertTrue(signInPage.checkIfSignInBtnIsEnabled());
         signInPage.clickOnsignInBtn();
-        waitFor(3);
         Assert.assertTrue(home.checkIfAccountBtnIsEnabled());
         home.clickOnAccountBtn();
         Assert.assertTrue(home.checkIfsignOutBtnIsEnabled());
@@ -45,10 +48,11 @@ public class Logout extends commonApi {
     public void testLogoutFromMenu(){
         HomePage home = new HomePage(driver);
         SignInPage signInPage = new SignInPage(driver);
+        WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(3));
         Assert.assertEquals(getTitle(),titleHomePage);
         Assert.assertTrue(home.checkIfmenuBtnIsEnabled());
         home.clickONMenuBtn();
-        waitFor(1);
+        wait.until(ExpectedConditions.visibilityOf(home.yourAccountInMenuDropDown));
         Assert.assertTrue(home.checkIfyourAccountInMenuDropDownIsEnabled());
         home.clickOnAccountMenuInDropDown();
         Assert.assertTrue(home.checkIfsingInBtnInMenuIsEnabled());
@@ -61,10 +65,10 @@ public class Logout extends commonApi {
         signInPage.clickOnsignInBtn();
         Assert.assertTrue(home.checkIfmenuBtnIsEnabled());
         home.clickONMenuBtn();
-        waitFor(1);
+        wait.until(ExpectedConditions.visibilityOf(home.yourAccountInMenuDropDown));
         Assert.assertTrue(home.checkIfyourAccountInMenuDropDownIsEnabled());
         home.clickOnAccountMenuInDropDown();
-        waitFor(1);
+        wait.until(ExpectedConditions.visibilityOf(home.signOutBtnInMenu));
         home.scrollTosignOutBtnInMenu();
         Assert.assertTrue(home.checkIfsignOutBtnIsEnabled());
         home.clickOnsignOutBtnInMenu();

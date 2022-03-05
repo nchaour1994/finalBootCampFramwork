@@ -1,37 +1,34 @@
 package org.piit.accessToMyShoppingCart;
 
 import base.commonApi;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.piit.HomePage;
 import org.piit.SignInPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utility.GetProperties;
 
+import java.time.Duration;
 import java.util.Properties;
 
 public class AccessShoppingCart extends commonApi {
     String titleHomePage=prop.getProperty("titleHomePage");
     String titleSignInPage=prop.getProperty("titleSignInPage");
-    String titleCompleteAccountPage= prop.getProperty("titleCompleteAccountPage");
-    String dob=prop.getProperty("dateOfBirth");
-    String typeGender=prop.getProperty("gender");
-    String myAdress=prop.getProperty("adress");
-    String myCity=prop.getProperty("city");
-    String myState=prop.getProperty("state");
-    String mySecurityQuestion= prop.getProperty("securityQuestion");
-    String securityQuestionAnswer=prop.getProperty("answerSecurity");
     String email=prop.getProperty("email");
     String password=prop.getProperty("passwordAccount");
+    String titleShoppingCartPage=prop.getProperty("titleShoppingCartPage");
 
 
     @Test
     public void accessShoppingCart(){
         HomePage home=new HomePage(driver);
         SignInPage signInPage=new SignInPage(driver);
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(3));
         Assert.assertEquals(getTitle(),titleHomePage);
         Assert.assertTrue(home.checkIfmenuBtnIsEnabled());
         home.clickOnAccountBtn();
-        waitFor(1);
+        wait.until(ExpectedConditions.visibilityOf(home.signInBtnInAccountMenu));
         Assert.assertTrue(home.checkIfsignInBtnInAccountMenuIsEnabled());
         home.clickOnsignInBtnInAccountMenu();
         Assert.assertEquals(getTitle(),titleSignInPage);
@@ -43,7 +40,7 @@ public class AccessShoppingCart extends commonApi {
         signInPage.clickOnsignInBtn();
         Assert.assertTrue(home.checkIfshoppingCartIsEnbled());
         home.clickOnshoppingCart();
-
+        Assert.assertEquals(getTitle(),titleShoppingCartPage);
 
     }
 }

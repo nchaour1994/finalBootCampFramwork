@@ -18,6 +18,10 @@ public class ShoppingCartPage extends commonApi {
     WebElement plusSignInSecondElement;
     @FindBy(xpath = "//*[text()='Learn more and apply now']")
     WebElement learnMoreAndApply;
+    @FindBy(css = "#wag-cart-qty-input_401460693")
+    WebElement itemsNumberInFirstElement;
+    @FindBy(xpath = "")
+    WebElement itemsNumberInSecondElement;
     public void clickOnplusSignInFirstElement(){
         click(plusSignInFirstElement);
     }
@@ -32,6 +36,12 @@ public class ShoppingCartPage extends commonApi {
     }
     public boolean checkIfplusSignInFirstElementIsEnabled(){
         return plusSignInFirstElement.isEnabled();
+    }
+    public String getitemsNumberInFirstElement(){
+        return itemsNumberInFirstElement.getAttribute("value");
+    }
+    public String getitemsNumberInSecondElement(){
+        return itemsNumberInSecondElement.getAttribute("value");
     }
 
 }

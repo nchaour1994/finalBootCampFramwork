@@ -13,11 +13,17 @@
         <classes>
 <!---->
 
+
 <!--           <class name="org.piit.home.OnHome"></class>-->
 <!--           <class name="org.piit.inProfile.InProfilePage"></class>-->
 <!--            <class name="org.piit.profileSelection.PofileSelection"></class>-->
 <!--            <class name="org.piit.saveLogin.saveNotNow"></class>-->
 <!--            <class name="org.piit.saveLogin.saveInfo"></class>-->
+
+<!--            <class name="org.piit.home.OnHome"></class>-->
+<!--            <class name="org.piit.inProfile.InProfilePage"></class>-->
+<!--                <class name="org.piit.signPage.SignPage"></class>-->
+
 <!--            <class name="org.piit.setting.TestSettingPages"></class>-->
 <!--            <class name="org.piit.signPage.SignPage"></class>-->
 <!--            <class name="org.piit.photo.AddPhotos"></class>-->

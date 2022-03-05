@@ -46,4 +46,10 @@ public class BannersPage extends commonApi {
     public void clickOncreateNowBtn(){
         click(createNowBtn);
     }
+    public boolean checkIfbirthdayBannerIsEnabled(){
+        return birthdayBanner.isEnabled();
+    }
+    public boolean checkIfcreateNowBtnIsEnabled(){
+        return createNowBtn.isEnabled();
+    }
 }

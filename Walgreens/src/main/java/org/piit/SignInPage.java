@@ -45,7 +45,7 @@ public class SignInPage extends commonApi {
     }
     public void clickOnsignInBtn(){
 
-        click(signInBtn);
+       click(signInBtn);
     }
     public void printErrorMsg(){
         System.out.println(errorMsg.getText());

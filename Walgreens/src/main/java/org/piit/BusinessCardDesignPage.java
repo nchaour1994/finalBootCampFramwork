@@ -18,6 +18,7 @@ public class BusinessCardDesignPage extends commonApi {
     @FindBy(css= "#search")
     WebElement SearchField;
     @FindBy(xpath = "//a[text()=' Forest ']")
+    public
     WebElement forestDesign;
 
     @FindBy(css = "#buttonId")

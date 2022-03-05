@@ -24,6 +24,7 @@ public class FindCarePage extends commonApi {
     public
     WebElement findLocationBtnInCityMd;
     @FindBy(xpath = "(//a[text()='Got it'])[1]")
+    public
     WebElement gotItBtnInCityMd;
 
 
