@@ -12,7 +12,7 @@
     <test name="practice test">
         <classes>
 
-            <class name="org.piit.home.OnHome"></class>
+<!--            <class name="org.piit.home.OnHome"></class>-->
 <!--            <class name="org.piit.inProfile.InProfilePage"></class>-->
 <!--                <class name="org.piit.signPage.SignPage"></class>-->
 <!--            <class name="org.piit.setting.TestSettingPages"></class>-->

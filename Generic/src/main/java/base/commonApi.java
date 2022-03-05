@@ -158,10 +158,10 @@ public class commonApi {
         prefs.put("credentials_enable_service", false);
         if (browserName.equalsIgnoreCase("chrome")){
             if (os.equalsIgnoreCase("windows")){
-                options.setExperimentalOption("useAutomationExtension", false);
-                options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-                options.setExperimentalOption("prefs", prefs);
-                options.setCapability(CapabilityType.PROXY, proxy);
+//                options.setExperimentalOption("useAutomationExtension", false);
+//                options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+//                options.setExperimentalOption("prefs", prefs);
+              //  options.setCapability(CapabilityType.PROXY, proxy);
 
                 //  options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
                 System.setProperty("webdriver.chrome.driver",path+"\\IdeaProjects\\finalBootCampFramwork\\Generic\\src\\Drivers\\chromedriver1.exe");
