@@ -42,7 +42,5 @@ public class AccessShoppingCart extends commonApi {
         home.clickOnshoppingCart();
         Assert.assertEquals(getTitle(),titleShoppingCartPage);
 
-
-
     }
 }

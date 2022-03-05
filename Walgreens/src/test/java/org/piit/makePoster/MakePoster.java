@@ -38,6 +38,7 @@ public class MakePoster extends commonApi {
         Assert.assertEquals(getTitle(),titlePosterAndBannerPage);
         posterAndBannerPage.clickOnposters();
         Assert.assertEquals(getTitle(),titlePosterPage);
+        waitFor(1);
         Assert.assertTrue(posterPage.checkIfmaterialIsEnabled());
         posterPage.clickOnmaterial();
         Assert.assertTrue(posterPage.checkIfsizeIsEnbaled());
@@ -70,6 +71,7 @@ public class MakePoster extends commonApi {
         Assert.assertTrue(posterPage.checkIfsizeIsEnbaled());
         posterPage.clickOnsize();
         Assert.assertTrue(posterPage.checkIfcreateNowBtnIsEnabled());
+        waitFor(1);
         posterPage.clickOncreateNowBtn();
         Assert.assertEquals(getTitle(),titleCreatePoster);
 
@@ -95,6 +97,7 @@ public class MakePoster extends commonApi {
         Assert.assertEquals(getTitle(),titlePosterAndBannerPage);
         posterAndBannerPage.clickOnbanners();
         Assert.assertEquals(getTitle(),titleBannerPage);
+        waitFor(1);
         banners.selectFromsortByField();
         Assert.assertTrue(banners.checkIfbirthdayBannerIsEnabled());
         banners.clickOnbirthdayBanner();
@@ -122,6 +125,7 @@ public class MakePoster extends commonApi {
         Assert.assertTrue(home.checkIfshopAllProductInPhotoIsEnabled());
         home.clickOnshopAllProductInPhoto();
         Assert.assertEquals(getTitle(),titleAllPhotoProduct);
+        waitFor(1);
         shopAllPhotoPage.hoverOnPosters();
         shopAllPhotoPage.clickOnBanner();
         Assert.assertEquals(getTitle(),titleBannerPage);

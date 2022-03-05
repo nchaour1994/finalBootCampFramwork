@@ -16,7 +16,7 @@ public class WeekyAd extends commonApi {
     String titleWeeklyAdPage=prop.getProperty("titleWeekAdPage");
 
     @Test
-    public void TestAccessToweeklyAd(){
+    public void testAccessToweeklyAd(){
         HomePage home=new HomePage(driver);
         WeeklyAdPage weeklyAd=new WeeklyAdPage(driver);
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(2));
@@ -30,6 +30,19 @@ public class WeekyAd extends commonApi {
         Assert.assertTrue(weeklyAd.jumpToDropDown.isDisplayed());
 
 
+
+    }
+
+    @Test
+    public void testAccessToweeklyAdFromHomePage(){
+        HomePage home=new HomePage(driver);
+        WeeklyAdPage weeklyAd=new WeeklyAdPage(driver);
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(2));
+        Assert.assertTrue(home.checkIfmenuBtnIsEnabled());
+        home.clickOncheckoutWeeklyAd();
+        Assert.assertEquals(driver.getTitle(),titleWeeklyAdPage);
+        weeklyAd.selectFromjumpToDropDown();
+        Assert.assertTrue(weeklyAd.jumpToDropDown.isDisplayed());
 
     }
 }

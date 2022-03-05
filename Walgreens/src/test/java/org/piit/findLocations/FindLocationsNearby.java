@@ -56,4 +56,24 @@ public class FindLocationsNearby extends commonApi {
         Assert.assertTrue(findStorePage.checkIflocationFieldIsDisplayed());
         findStorePage.typeOnlocationField();
     }
+    @Test
+    public void testFindLocationFromInformationPage(){
+        HomePage home= new HomePage(driver);
+        FindStorePage findStorePage=new FindStorePage(driver);
+        Assert.assertEquals(getTitle(),titleHomePage);
+        home.clickOncovid19vaccineInformationIcon();
+
+
+    }
+    @Test
+    public void testFindLocationFromHomePage(){
+        HomePage home= new HomePage(driver);
+        FindStorePage findStorePage=new FindStorePage(driver);
+        Assert.assertEquals(getTitle(),titleHomePage);
+        home.clickOnfindStore();
+        Assert.assertEquals(driver.getTitle(),titleFindStorePage);
+        findStorePage.clickOnUpdateLocation();
+        Assert.assertTrue(findStorePage.checkIflocationFieldIsDisplayed());
+        findStorePage.typeOnlocationField();
+    }
 }

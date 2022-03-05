@@ -57,6 +57,7 @@ public class MakeCanvas extends commonApi {
         wait.until(ExpectedConditions.visibilityOf(home.photosInMenu));
         Assert.assertTrue(home.checkIfphotosInMenuIsEnabled());
         home.clickOnphotosInMenu();
+        waitFor(1);
         Assert.assertTrue(home.checkIfshopAllProductInPhotoIsEnabled());
         home.clickOnshopAllProductInPhoto();
         Assert.assertEquals(getTitle(),titleAllPhotoProduct);
@@ -70,6 +71,25 @@ public class MakeCanvas extends commonApi {
         woodPanelPage.clickOncreateNowBtn();
         Assert.assertEquals(getTitle(),titleCreateWoodPanelPage);
 
+    }
+
+    @Test
+    public void testMakeCanvasFromHomePage(){
+        HomePage home = new HomePage(driver);
+        ShopAllPhotoPage shopAllPhotoPage = new ShopAllPhotoPage(driver);
+        WoodPanelPage woodPanelPage=new WoodPanelPage(driver);
+        CanvasAndDecorPage canvasAndDecor =new CanvasAndDecorPage(driver);
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(2));
+        home.clickOnorderPrints();
+        shopAllPhotoPage.hoverOncanvasAndDecor();
+        shopAllPhotoPage.clickOnwoodPanel();
+        Assert.assertTrue(canvasAndDecor.checkIfwoodPanelIsEnabled());
+        canvasAndDecor.clickOnwoodPanel();
+        Assert.assertEquals(getTitle(),titleWoodPanelPage);
+        woodPanelPage.clickOnsizePanel();
+        Assert.assertTrue(woodPanelPage.checkIfcreateNowBtnIsEnabled());
+        woodPanelPage.clickOncreateNowBtn();
+        Assert.assertEquals(getTitle(),titleCreateWoodPanelPage);
 
     }
 }

@@ -32,4 +32,24 @@ public class ChatWithWalgreens extends commonApi {
         //----to see--------------
 
     }
+    @Test
+    public void testChatFromMenu(){
+        HomePage home=new HomePage(driver);
+        ChatPage chatPage=new ChatPage(driver);
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(2));
+        Assert.assertEquals(getTitle(),titleHomePage);
+        Assert.assertTrue(home.checkIfmenuBtnIsEnabled());
+        home.clickONMenuBtn();
+        wait.until(ExpectedConditions.visibilityOf(home.prescriptionInMenu));
+        Assert.assertTrue(home.checkIfprescriptionInMenuIsDisplayed());
+        home.clickOnprescriptionInMenu();
+        home.clickOnmorePharmacyServices();
+        home.clickOnpharmacyChat();
+        Assert.assertEquals(getTitle(),titleChatPage);
+        chatPage.clickOnchatBtn();
+        wait.until(ExpectedConditions.visibilityOf(chatPage.chatWindow));
+        Assert.assertTrue(chatPage.checkIfchatWindowIsDsplayed());
+
+    }
+
 }
