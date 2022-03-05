@@ -1,7 +1,7 @@
 package base;
 
 import com.relevantcodes.extentreports.LogStatus;
-import com.sun.deploy.config.JREInfo;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;

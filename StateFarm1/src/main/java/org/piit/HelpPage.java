@@ -12,16 +12,22 @@ public class HelpPage extends commonApi {
         PageFactory.initElements(driver, this);
     }
     @FindBy(css = "#btn1")
+    public
     WebElement forgotUserId;
     @FindBy(xpath = "//input[@id='forgotPhoneInput']")
+    public
     WebElement phoneNumberField;
     @FindBy(xpath = "//input[@id='forgotDobInput']")
+    public
     WebElement birthDayField;
     @FindBy(xpath = "//input[@id='forgotEmailInput']")
+    public
     WebElement emailField;
     @FindBy(xpath = "//label[contains(text(),'Text')]")
+    public
     WebElement textSelected;
     @FindBy(xpath = "//button[@id='submitBtn']")
+    public
     WebElement submitBtn;
 
 

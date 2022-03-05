@@ -49,6 +49,11 @@
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.22.1</version>
+                    <configuration>
+                        <suiteXmlFiles>
+                            <suiteXmlFile>C:\Users\user1\IdeaProjects\finalBootCampFramwork\StateFarm1\src\test\resources\runnerStateFarm.xml</suiteXmlFile>
+                        </suiteXmlFiles>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>

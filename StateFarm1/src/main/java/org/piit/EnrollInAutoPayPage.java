@@ -12,10 +12,13 @@ public class EnrollInAutoPayPage extends commonApi {
         PageFactory.initElements(driver, this);
     }
     @FindBy(xpath = "//input[@id='liteAuthCustomerPhoneNumber']")
+    public
     WebElement phoneNumberField;
     @FindBy(xpath = "//input[@id='liteAuthCustomerDateOfBirth']")
+    public
     WebElement dateOfBirthField;
     @FindBy(xpath = "//button[@id='continueBtn']")
+    public
     WebElement continueBtn;
 
 

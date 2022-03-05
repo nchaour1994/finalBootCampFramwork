@@ -12,10 +12,13 @@ public class PayInsuranceBillPage extends commonApi {
         PageFactory.initElements(driver, this);
     }
     @FindBy(xpath ="//input[@id='pay-a-bill-phoneNo']")
+    public
     WebElement phoneNumberField;
     @FindBy(xpath = "//input[@id='pay-a-bill-DOB']")
+    public
     WebElement dateOfBirthField;
     @FindBy(xpath = "//button[@id='pay-a-bill-submitButton']")
+    public
     WebElement payNowBtn;
 
 
