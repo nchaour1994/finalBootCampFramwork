@@ -6,7 +6,7 @@
     <parameter name="browserName" value="chrome"></parameter>
     <test name="practice test">
         <classes>
-            <class name="org.piit.insurancePage.InsurancePageTest"></class>
+<!--            <class name="org.piit.insurancePage.InsurancePageTest"></class>-->
 <!--            <class name="org.piit.bankingPage.BankingPageTest"></class>-->
 <!--            <class name="org.piit.investmentsPage.InvestmentsPageTest"></class>-->
 <!--            <class name="org.piit.getAQuotePage.GetAQuotePageTest"></class>-->

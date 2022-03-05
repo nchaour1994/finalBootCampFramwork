@@ -17,7 +17,7 @@ public class AccessToAllPhoto extends commonApi {
    String titleMarketPalce=prop.getProperty("titleMarketPalce");
 
 
-    @Test
+   // @Test
     public void testAccessToAllPhoto() {
         HomePage home = new HomePage(driver);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
@@ -32,7 +32,7 @@ public class AccessToAllPhoto extends commonApi {
         Assert.assertEquals(getTitle(), titleAllPhotoProduct);
     }
 
-    @Test
+   // @Test
     public void testAccessToMedicaid(){
         HomePage home = new HomePage(driver);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
@@ -60,7 +60,7 @@ public class AccessToAllPhoto extends commonApi {
         Assert.assertEquals(getTitle(),titleRxCoveragePage);
 
     }
-    @Test
+   // @Test
     public void testHealthInsurranceMarketPlace() {
         HomePage home = new HomePage(driver);
         HealthInssurancePage healthInssurancePage = new HealthInssurancePage(driver);
@@ -76,7 +76,7 @@ public class AccessToAllPhoto extends commonApi {
         home.clickOnhealthInssurance();
         Assert.assertEquals(getTitle(),titleMarketPalce);
     }
-    @Test
+  //  @Test
     public  void testAccessShopLneses() {
         HomePage home = new HomePage(driver);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
@@ -90,7 +90,7 @@ public class AccessToAllPhoto extends commonApi {
         home.clickOnshopAllcontactAndGlasses();
 
     }
-    @Test
+    //@Test
     public void testAccessToKitchenAppliances() {
         HomePage home = new HomePage(driver);
         Assert.assertEquals(getTitle(), titleHomePage);
