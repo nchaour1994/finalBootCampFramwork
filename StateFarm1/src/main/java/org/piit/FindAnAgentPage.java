@@ -12,16 +12,22 @@ public class FindAnAgentPage extends commonApi {
         PageFactory.initElements(driver, this);
     }
     @FindBy(xpath = "//input[@id='oneX-findAnAgentZipCode']")
+    public
     WebElement zipCodeField;
     @FindBy(xpath = "//button[@id='findAnAgentButton']")
+    public
     WebElement findAnAgentBtn;
     @FindBy(xpath = "//span[@id='search-options-toggle']")
+    public
     WebElement advanceSearchOptions;
     @FindBy(xpath = "//input[@id='firstName']")
+    public
     WebElement firstNameField;
     @FindBy(xpath = "//input[@id='lastName']")
+    public
     WebElement lastNameField;
     @FindBy(xpath = "//button[@id='search_advSearchOptions']")
+    public
     WebElement searchBtn;
 
 

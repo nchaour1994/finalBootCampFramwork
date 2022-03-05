@@ -12,10 +12,13 @@ public class GoPaperLessPage extends commonApi {
         PageFactory.initElements(driver, this);
     }
     @FindBy(xpath = "//input[@id='phoneNumber-input']")
+    public
     WebElement phoneNumberField;
     @FindBy(xpath = "//input[@id='dob-input']")
+    public
     WebElement dateOfBirthField;
     @FindBy(xpath = "//button[@id='auth-primary-button']")
+    public
     WebElement continueBtn;
 
 

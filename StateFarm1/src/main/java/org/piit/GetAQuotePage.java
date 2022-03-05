@@ -7,8 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class GetAQuotePage extends commonApi {
-
-
     public GetAQuotePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -20,8 +18,10 @@ public class GetAQuotePage extends commonApi {
     public
     WebElement productDropDown;
     @FindBy(xpath = "//input[@id='getaquote-zip']")
+    public
     WebElement zipCodeField;
     @FindBy(xpath = "//button[@id='getaQuoteButton']")
+    public
     WebElement startQuoteBtn;
 
 

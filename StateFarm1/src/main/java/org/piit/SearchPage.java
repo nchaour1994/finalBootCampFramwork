@@ -12,12 +12,16 @@ public class SearchPage extends commonApi {
         PageFactory.initElements(driver, this);
     }
     @FindBy(css = "#util-sf-search")
+    public
     WebElement searchField;
     @FindBy(xpath = "//button[contains(text(),'Search')]")
+    public
     WebElement searchBtn;
     @FindBy(css = "body.-oneX.-oneX-resize-bound:nth-child(2) div.-oneX-container.-oneX.search-table:nth-child(2) div.search-container section.filter-navigation div.filter-hidden div.filter div.filter-results ul.filter-result-list li:nth-child(3) > a.-oneX-body--secondary.-oneX-link--inline")
+    public
     WebElement auto;
     @FindBy(xpath = "//a[contains(text(),'What to Do After a Car Accident - State Farm®')]")
+    public
     WebElement whatToDoAfterAccident;
 
 

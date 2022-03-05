@@ -6,6 +6,19 @@
     <parameter name="browserName" value="chrome"></parameter>
     <test name="practice test">
         <classes>
+            <class name="org.piit.insuranceMenu.InsuranceMenuTest"></class>
+            <class name="org.piit.banking.BankingOptionsTest"></class>
+            <class name="org.piit.investments.InvestmentsFeaturesTest"></class>
+            <class name="org.piit.getAQuote.GetAQuoteTest"></class>
+            <class name="org.piit.payABill.PayABillTest"></class>
+            <class name="org.piit.claims.ClaimsFeaturesTest"></class>
+            <class name="org.piit.findAnAgent.FindAnAgentTest"></class>
+            <class name="org.piit.payInsuranceBill.PayInsuranceBillTest"></class>
+            <class name="org.piit.enrollInAutoPay.EnrollInAutoPayTest"></class>
+            <class name="org.piit.goPaperLess.GoPaperLessTest"></class>
+            <class name="org.piit.search.SearchTest"></class>
+            <class name="org.piit.help.HelpTest"></class>
+
 <!--            <class name="org.piit.insurancePage.InsurancePageTest"></class>-->
 <!--            <class name="org.piit.bankingPage.BankingPageTest"></class>-->
 <!--            <class name="org.piit.investmentsPage.InvestmentsPageTest"></class>-->
@@ -18,6 +31,7 @@
 <!--            <class name="org.piit.goPaperLessPage.GoPaperLessPageTest"></class>-->
 <!--            <class name="org.piit.searchPage.SearchPageTest"></class>-->
 <!--            <class name="org.piit.helpPage.HelpPageTest"></class>-->
+
 
 
         </classes>

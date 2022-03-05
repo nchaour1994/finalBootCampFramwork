@@ -8,9 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class PayABillPage extends commonApi {
-    public static Menu payABillPage;
-
-    public PayABillPage(WebDriver driver) {
+   public PayABillPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -30,4 +28,6 @@ public class PayABillPage extends commonApi {
 
     public void payNowBtn() {click(payNowBtn);
     }
+
+
 }
