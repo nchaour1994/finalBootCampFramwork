@@ -305,8 +305,113 @@ public class HomePage extends commonApi {
     WebElement GlobalImpact;
     @FindBy(xpath = "//a[@class='js-l1-link'][normalize-space()='Impact']")
     WebElement ImpactButton;
-
-
+    @FindBy(xpath = "//a[contains(text(),'Government relations')]")
+    WebElement GovernmentRelations;
+    @FindBy(xpath = "(//a[text()='Our Community'])[1]")
+    WebElement OurCommunityButton;
+    @FindBy(xpath = "//h3[@class='x-refine__item']")
+    WebElement DeliveryOptions;
+    @FindBy(xpath = "(//span[@class='x-overlay-aspect__label'])[1]")
+    WebElement CategoryButton;
+    @FindBy(xpath = "//a[normalize-space()='Charity Shop']")
+    WebElement CharityShop;
+    @FindBy(xpath = "//span[normalize-space()='Media'](")
+    WebElement Media;
+    @FindBy(xpath = "//a[normalize-space()='eCI Licenses']")
+    WebElement EciLicenses;
+    @FindBy(xpath = "//a[normalize-space()='Money Transmitter #785']")
+    WebElement MoneyTransmitter;
+    @FindBy(xpath = "//a[normalize-space()='eBay Returns']")
+    WebElement EbayReturns;
+    @FindBy(xpath = "//h1[normalize-space()='Returns Made Simple']")
+    WebElement ReturnsMade;
+    //////////////////////////////////////////////////////////////////////////////
+    @FindBy(xpath = "//a[normalize-space()='Decals']")
+    WebElement Decals;
+    @FindBy(xpath = "//a[normalize-space()='Storage']")
+    WebElement Storage;
+    @FindBy(xpath = "//a[normalize-space()='Seating']")
+    WebElement Seating;
+    @FindBy(xpath = "//span[normalize-space()='Boat Parts']")
+    WebElement BoatParts;
+    @FindBy(xpath = "//a[normalize-space()='Paint & Maintenance']")
+    WebElement PaintsMaintenance;
+    @FindBy(xpath = "//span[normalize-space()='Topside Paint']")
+    WebElement TopsidePaint;
+    @FindBy(xpath = "//span[normalize-space()='Evercoat']")
+    WebElement Evercoat;
+    @FindBy(xpath = "//a[normalize-space()='Safety Gear & Devices']")
+    WebElement SafetyGearDevices;
+    @FindBy(xpath = "//span[normalize-space()='Unbranded']")
+    WebElement Unbranded;
+    @FindBy(xpath = "//h3[normalize-space()='Featured Refinements']")
+    WebElement FeaturedRefinements;
+    @FindBy(xpath = "//span[normalize-space()='Show only']")
+    WebElement ShowOnly;
+    @FindBy(xpath = "//span[normalize-space()='Smartphones']")
+    WebElement Smartphones;
+    @FindBy(xpath = "//a[normalize-space()='Apple - Up to 50% off']")
+    WebElement Apple;
+    @FindBy(xpath = "//a[normalize-space()='Trailer Parts']")
+    WebElement TrailerParts;
+    @FindBy(xpath = "//h3[normalize-space()='Transom Saver Arm']")
+    WebElement TransomSaverArm;
+    @FindBy(xpath = "//span[contains(text(),'Account')]")
+    WebElement Account;
+    @FindBy(xpath = "//a[normalize-space()='Your Account Status']")
+    WebElement YourAccountStatus;
+    @FindBy(xpath = "//a[normalize-space()='Trolling Motors & Components']")
+    WebElement TrollingMotorsComponents;
+    @FindBy(xpath = "//a[normalize-space()='Complete Trolling Motors']")
+    WebElement CompleteTrollingMotors;
+    @FindBy(xpath = "//span[normalize-space()='New']")
+    WebElement New;
+    @FindBy(xpath = "//a[normalize-space()='Plumbing & Ventilation']")
+    WebElement PlumbingVentilation;
+    @FindBy(xpath = "//span[normalize-space()='Air Conditioner']")
+    WebElement AirConditioner;
+    @FindBy(xpath = "//a[normalize-space()='Marine Batteries']")
+    WebElement MarineBatteries;
+    @FindBy(xpath = "//span[normalize-space()='Used']")
+    WebElement Used;
+    @FindBy(xpath = "//a[normalize-space()='Electronics & Navigation']")
+    WebElement ElectronicsNavigation;
+    @FindBy(xpath = "//a[normalize-space()='GPS & Chartplotters']")
+    WebElement GpsAndCHartplotters;
+    @FindBy(xpath = "//a[normalize-space()='Bidding & buying help']")
+    WebElement BiddingAndBuyingHelp;
+    @FindBy(xpath = "//a[normalize-space()='Buying Items']")
+    WebElement BuyingItems;
+    @FindBy(xpath = "//a[normalize-space()='Wedding & Formal Wear']")
+    WebElement WeddingAndFormalWear;
+    @FindBy(xpath = "//a[contains(text(),'Wedding Dresses')]")
+    WebElement WeddingDresses;
+    @FindBy(xpath = "//a[normalize-space()='Bridal Shoes']")
+    WebElement BridalShoes;
+    @FindBy(xpath = "//a[@class='b-textlink b-textlink--parent'][normalize-space()='Uniforms & Work Clothing']")
+    WebElement UniformsAndWorkClothing;
+    @FindBy(xpath = "//a[contains(text(),'Hats')]")
+    WebElement Hats;
+    @FindBy(xpath = "//a[normalize-space()='Sports Fan Clothing']")
+    WebElement SportsAndFanClothing;
+    @FindBy(xpath = "//a[normalize-space()='Boxing']")
+    WebElement Boxing;
+    @FindBy(xpath = "//a[normalize-space()='Traditional & World Clothing']")
+    WebElement TraditionalAndWorldClothing;
+    @FindBy(xpath = "//a[normalize-space()='Specialty']")
+    WebElement Specialty;
+    @FindBy(xpath = "//a[normalize-space()='Personalized Items']")
+    WebElement PersonalizedItems;
+    @FindBy(xpath = "//a[contains(text(),'Apparel')]")
+    WebElement Apparel;
+    @FindBy(xpath = "//a[normalize-space()='Holiday Gifts']")
+    WebElement HolidayGifts;
+    @FindBy(xpath = "//span[normalize-space()='Greeting Cards & Party Supply']")
+    WebElement GreetingCardsAndpartySupply;
+    @FindBy(xpath = "//a[normalize-space()='Costumes']")
+    WebElement Costumes;
+    @FindBy(xpath = "//a[normalize-space()='Infants & Toddlers']")
+    WebElement InfantsAndToddlers;
 
 
 
@@ -341,7 +446,170 @@ public class HomePage extends commonApi {
         clickById(watchListLink);
     }
 
-    ////////////////////////////////////////////////////
+    ///////////////////////////////// // //////////////////////////////////////////////////////
+    public void setDecals() {
+        click(Decals);
+    }
+
+    public void Storage() {
+        click(Storage);
+    }
+
+    public void setSeating() {
+        click(Seating);
+    }
+
+    public void BoatParts() {
+        click(BoatParts);
+    }
+
+    public void setPaintsMaintenance() {
+        click(PaintsMaintenance);
+    }
+
+    public void TopsidePaints() {
+        click(TopsidePaint);
+    }
+
+    public void Evercoat() {
+        click(Evercoat);
+    }
+
+    public void setSafetyGearDevices() {
+        click(SafetyGearDevices);
+    }
+
+    public void Unbranded() {
+        click(Unbranded);
+    }
+
+    public void setFeaturedRefinements() {
+        click(FeaturedRefinements);
+    }
+
+    public void ShowOnly() {
+        click(ShowOnly);
+    }
+
+    public void setSmartphones() {
+        click(Smartphones);
+    }
+
+    public void Apple() {
+        click(Apple);
+    }
+
+    public void setTrailerParts() {
+        click(TrailerParts);
+    }
+
+    public void TransomSaverArm() {
+        click(TransomSaverArm);
+    }
+
+    public void setAccount() {
+        click(Account);
+    }
+
+    public void YourAccountStatus() {
+        click(YourAccountStatus);
+    }
+
+    public void setTrollingMotorsComponents() {
+        click(TrollingMotorsComponents);
+    }
+
+    public void CompleteTrollingMotors() {
+        click(CompleteTrollingMotors);
+    }
+
+    public void New() {
+        click(New);
+    }
+
+    public void setPlumbingVentilation() {
+        click(PlumbingVentilation);
+    }
+
+    public void AirConditioner() {
+        click(AirConditioner);
+    }
+
+    public void setMarineBatteries() {
+        click(MarineBatteries);
+    }
+
+    public void Used() {
+        click(Used);
+    }
+
+    public void setElectronicsNavigation() {
+        click(ElectronicsNavigation);
+    }
+
+    public void GpsAndCHartplotters() {
+        click(GpsAndCHartplotters);
+    }
+
+    public void setBiddingAndBuyingHelp() {
+        click(BiddingAndBuyingHelp);
+    }
+
+    public void BuyingItems() {
+        click(BuyingItems);
+    }
+
+    public void setWeddingAndFormalWear() {
+        click(WeddingAndFormalWear);
+    }
+
+    public void WeddingDresses() {
+        click(WeddingDresses);
+    }
+
+    public void BridalShoes() {
+        click(BridalShoes);
+    }
+    public void setUniformsAndWorkClothing(){
+        click(UniformsAndWorkClothing);
+    }
+    public void Hats(){
+        click(Hats);
+    }
+    public void setSportsAndFanClothing(){
+        click(SportsAndFanClothing);
+    }
+    public void Boxing(){
+        click(Boxing);
+    }
+    public void setTraditionalAndWorldClothing(){
+        click(TraditionalAndWorldClothing);
+    }
+    public void Specialty(){
+        click(Specialty);
+    }
+    public void setPersonalizedItems(){
+        click(PersonalizedItems);
+    }
+
+    public void Apparel(){
+        click(Apparel);
+    }
+    public void setHolidayGifts(){
+        click(HolidayGifts);
+    }
+
+    public void GreetingCardsAndpartySupply(){
+        click(GreetingCardsAndpartySupply);
+    }
+    public void setCostumes(){
+        click(Costumes);
+    }
+    public void InfantsAndToddlers(){
+        click(InfantsAndToddlers);
+    }
+
+    //////////////////////////////////////////////////////////
     public void helpAndContact() {
         click(helpContact);
         waitFor(3);
@@ -813,7 +1081,49 @@ public class HomePage extends commonApi {
         click(GlobalImpact);
     }
 
-    public void setImpactButton(){
-             click(ImpactButton);
+    public void setImpactButton() {
+        click(ImpactButton);
     }
+
+    public void GovernmentRelations() {
+        click(GovernmentRelations);
+
+    }
+
+    public void setOurCommunityButton() {
+        click(OurCommunityButton);
+    }
+
+    public void DeliveryOptions() {
+        click(DeliveryOptions);
+    }
+
+    public void setCategoryButton() {
+        click(CategoryButton);
+    }
+
+    public void CharityShop() {
+        click(CharityShop);
+    }
+
+    public void setMedia() {
+        click(Media);
+    }
+
+    public void EciLicenses() {
+        click(EciLicenses);
+    }
+
+    public void setMoneyTransmitter() {
+        click(MoneyTransmitter);
+    }
+
+    public void EbayReturns() {
+        click(EbayReturns);
+    }
+
+    public void setReturnsMade() {
+        click(ReturnsMade);
+    }
+
 }

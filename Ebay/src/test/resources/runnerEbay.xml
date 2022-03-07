@@ -6,34 +6,58 @@
     <parameter name="browserName" value="chrome"></parameter>
     <test name="Ebay test">
         <classes>
-<!--            <class name="org.piit.home.TestHelpAndContact"></class>-->
-<!--            <class name="org.piit.home.TestFindStore"></class>-->
-<!--            <class name="org.piit.home.TestBrandOutlet"></class>-->
-<!--            <class name="org.piit.home.TestFeatured"></class>-->
-<!--            <class name="org.piit.home.TestForFriends"></class>-->
-<!--            <class name="org.piit.home.TestLifeTimeWaranty"></class>-->
-<!--            <class name="org.piit.home.TestMensShoes"></class>-->
-<!--            <class name="org.piit.home.TestGetTheSavings"></class>-->
-<!--            <class name="org.piit.home.TestCockieNotice"></class>-->
-<!--            <class name="org.piit.home.TestSolutions"></class>-->
-<!--            <class name="org.piit.home.TestSecurityResearchers"></class>-->
-<!--            <class name="org.piit.home.TestCampusPhotos"></class>-->
-<!--            <class name="org.piit.home.TestCommerce"></class>-->
-<!--            <class name="org.piit.home.TestOverview"></class>-->
-<!--            <class name="org.piit.home.TestRatchets"></class>-->
-<!--            <class name="org.piit.home.TestStyle"></class>-->
-<!--            <class name="org.piit.home.TestClutch"></class>-->
-<!--            <class name="org.piit.home.TestWomen"></class>-->
-<!--            <class name="org.piit.home.TestRegister"></class>-->
-<!--            <class name="org.piit.home.TestEbay"></class>-->
-<!--            <class name="org.piit.home.TestFees"></class>-->
-<!--            <class name="org.piit.home.TestInvestorDay"></class>-->
+            <class name="org.piit.home.TestHelpAndContact"></class>
+            <class name="org.piit.home.TestFindStore"></class>
+            <class name="org.piit.home.TestBrandOutlet"></class>
+            <class name="org.piit.home.TestFeatured"></class>
+            <class name="org.piit.home.TestForFriends"></class>
+            <class name="org.piit.home.TestLifeTimeWaranty"></class>
+            <class name="org.piit.home.TestMensShoes"></class>
+            <class name="org.piit.home.TestGetTheSavings"></class>
+            <class name="org.piit.home.TestCockieNotice"></class>
+            <class name="org.piit.home.TestSolutions"></class>
+            <class name="org.piit.home.TestSecurityResearchers"></class>
+            <class name="org.piit.home.TestCampusPhotos"></class>
+            <class name="org.piit.home.TestCommerce"></class>
+            <class name="org.piit.home.TestOverview"></class>
+            <class name="org.piit.home.TestStyle"></class>
+            <class name="org.piit.home.TestClutch"></class>
+            <class name="org.piit.home.TestWomen"></class>
+            <class name="org.piit.home.TestRegister"></class>
+            <class name="org.piit.home.TestEbay"></class>
+            <class name="org.piit.home.TestFees"></class>
+            <class name="org.piit.home.TestInvestorDay"></class>
             <class name="org.piit.home.TestImpact"></class>
-
-
+            <class name="org.piit.home.TestOurCommunity"></class>
+            <class name="org.piit.home.TestCategory"></class>
+            <class name="org.piit.home.TestMedia"></class>
+            <class name="org.piit.home.TestMoneyTransmitter"></class>
+            <class name="org.piit.home.TestReturnsMade"></class>
+            <class name="org.piit.home.TestReturnsMade"></class>
+            <class name="org.piit.home.TestSeating"></class>
+            <class name="org.piit.home.TestSafetyGearDevices"></class>
+            <class name="org.piit.home.TestFeaturedRefinements"></class>
+            <class name="org.piit.home.TestSmartPhones"></class>
+            <class name="org.piit.home.TestTrailerParts"></class>
+            <class name="org.piit.home.TestAccount"></class>
+            <class name="org.piit.home.TestTrollingMotorsComponents"></class>
+            <class name="org.piit.home.TestPlumbingVentilation"></class>
+            <class name="org.piit.home.TestMarineBatteries"></class>
+            <class name="org.piit.home.TestElectronicsNavigation"></class>
+            <class name="org.piit.home.TestBiddingAndBuyingHelp"></class>
+            <class name="org.piit.home.TestWeddingAndFormalWear"></class>
+            <class name="org.piit.home.TestUniformsAndWorkClothing"></class>
+            <class name="org.piit.home.TestSportsAndFanClothing"></class>
+            <class name="org.piit.home.TestTraditionalAndWorldClothing"></class>
+            <class name="org.piit.home.TestPersonalizedItems"></class>
+            <class name="org.piit.home.TestHolidayGifts"></class>
+<!--            <class name="org.piit.home.TestCostumes"></class>-->
 
 
             <!--            -->
+
+
+
         </classes>
 
     </test>
